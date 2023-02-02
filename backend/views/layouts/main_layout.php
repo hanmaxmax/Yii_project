@@ -17,924 +17,1734 @@ AppAsset::register($this);
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 
-
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Dashboard V.1 | Nalika - Material Admin Template</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- favicon
-		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="statics2/img/favicon.ico">
-    <!-- Google Fonts
-		============================================ -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/bootstrap.min.css">
-    <!-- Bootstrap CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/font-awesome.min.css">
-	<!-- nalika Icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/nalika-icon.css">
-    <!-- owl.carousel CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/owl.carousel.css">
-    <link rel="stylesheet" href="statics2/css/owl.theme.css">
-    <link rel="stylesheet" href="statics2/css/owl.transitions.css">
-    <!-- animate CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/animate.css">
-    <!-- normalize CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/normalize.css">
-    <!-- meanmenu icon CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/meanmenu.min.css">
-    <!-- main CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/main.css">
-    <!-- morrisjs CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/morrisjs/morris.css">
-    <!-- mCustomScrollbar CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/scrollbar/jquery.mCustomScrollbar.min.css">
-    <!-- metisMenu CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/metisMenu/metisMenu.min.css">
-    <link rel="stylesheet" href="statics2/css/metisMenu/metisMenu-vertical.css">
-    <!-- calendar CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/calendar/fullcalendar.min.css">
-    <link rel="stylesheet" href="statics2/css/calendar/fullcalendar.print.min.css">
-    <!-- style CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/style.css">
-    <!-- responsive CSS
-		============================================ -->
-    <link rel="stylesheet" href="statics2/css/responsive.css">
-    <!-- modernizr JS
-		============================================ -->
-    <script src="statics2/js/vendor/modernizr-2.8.3.min.js"></script>
-<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>Datum | CRM Admin Dashboard Template</title>
+      
+      <link rel="stylesheet" href="static/css/backend-plugin.min.css">
+      <link rel="stylesheet" href="static/css/backend.css">  <style type="text/css">.apexcharts-canvas {
+  position: relative;
+  user-select: none;
+  /* cannot give overflow: hidden as it will crop tooltips which overflow outside chart area */
+}
+
+
+/* scrollbar is not visible by default for legend, hence forcing the visibility */
+.apexcharts-canvas ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 6px;
+}
+
+.apexcharts-canvas ::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, .5);
+  box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+  -webkit-box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+
+.apexcharts-inner {
+  position: relative;
+}
+
+.apexcharts-text tspan {
+  font-family: inherit;
+}
+
+.legend-mouseover-inactive {
+  transition: 0.15s ease all;
+  opacity: 0.20;
+}
+
+.apexcharts-series-collapsed {
+  opacity: 0;
+}
+
+.apexcharts-tooltip {
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px -4px #999;
+  cursor: default;
+  font-size: 14px;
+  left: 62px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  white-space: nowrap;
+  z-index: 12;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light {
+  border: 1px solid #e3e3e3;
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark {
+  color: #fff;
+  background: rgba(30, 30, 30, 0.8);
+}
+
+.apexcharts-tooltip * {
+  font-family: inherit;
+}
+
+
+.apexcharts-tooltip-title {
+  padding: 6px;
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.apexcharts-tooltip.apexcharts-theme-light .apexcharts-tooltip-title {
+  background: #ECEFF1;
+  border-bottom: 1px solid #ddd;
+}
+
+.apexcharts-tooltip.apexcharts-theme-dark .apexcharts-tooltip-title {
+  background: rgba(0, 0, 0, 0.7);
+  border-bottom: 1px solid #333;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+  display: inline-block;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.apexcharts-tooltip-text-y-label:empty,
+.apexcharts-tooltip-text-y-value:empty,
+.apexcharts-tooltip-text-goals-label:empty,
+.apexcharts-tooltip-text-goals-value:empty,
+.apexcharts-tooltip-text-z-value:empty {
+  display: none;
+}
+
+.apexcharts-tooltip-text-y-value,
+.apexcharts-tooltip-text-goals-value,
+.apexcharts-tooltip-text-z-value {
+  font-weight: 600;
+}
+
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-goals-group, 
+.apexcharts-tooltip-text-goals-label, 
+.apexcharts-tooltip-text-goals-value {
+  display: flex;
+}
+.apexcharts-tooltip-text-goals-label:not(:empty),
+.apexcharts-tooltip-text-goals-value:not(:empty) {
+  margin-top: -6px;
+}
+
+.apexcharts-tooltip-marker {
+  width: 12px;
+  height: 12px;
+  position: relative;
+  top: 0px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+.apexcharts-tooltip-series-group {
+  padding: 0 10px;
+  display: none;
+  text-align: left;
+  justify-content: left;
+  align-items: center;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active .apexcharts-tooltip-marker {
+  opacity: 1;
+}
+
+.apexcharts-tooltip-series-group.apexcharts-active,
+.apexcharts-tooltip-series-group:last-child {
+  padding-bottom: 4px;
+}
+
+.apexcharts-tooltip-series-group-hidden {
+  opacity: 0;
+  height: 0;
+  line-height: 0;
+  padding: 0 !important;
+}
+
+.apexcharts-tooltip-y-group {
+  padding: 6px 0 5px;
+}
+
+.apexcharts-tooltip-box, .apexcharts-custom-tooltip {
+  padding: 4px 8px;
+}
+
+.apexcharts-tooltip-boxPlot {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.apexcharts-tooltip-box>div {
+  margin: 4px 0;
+}
+
+.apexcharts-tooltip-box span.value {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-rangebar {
+  padding: 5px 8px;
+}
+
+.apexcharts-tooltip-rangebar .category {
+  font-weight: 600;
+  color: #777;
+}
+
+.apexcharts-tooltip-rangebar .series-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.apexcharts-xaxistooltip {
+  opacity: 0;
+  padding: 9px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-xaxistooltip:after,
+.apexcharts-xaxistooltip:before {
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-xaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-left: -6px;
+}
+
+.apexcharts-xaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-left: -7px;
+}
+
+.apexcharts-xaxistooltip-bottom:after,
+.apexcharts-xaxistooltip-bottom:before {
+  bottom: 100%;
+}
+
+.apexcharts-xaxistooltip-top:after,
+.apexcharts-xaxistooltip-top:before {
+  top: 100%;
+}
+
+.apexcharts-xaxistooltip-bottom:after {
+  border-bottom-color: #ECEFF1;
+}
+
+.apexcharts-xaxistooltip-bottom:before {
+  border-bottom-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:after {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-bottom.apexcharts-theme-dark:before {
+  border-bottom-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top:after {
+  border-top-color: #ECEFF1
+}
+
+.apexcharts-xaxistooltip-top:before {
+  border-top-color: #90A4AE;
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:after {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip-top.apexcharts-theme-dark:before {
+  border-top-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-xaxistooltip.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-yaxistooltip {
+  opacity: 0;
+  padding: 4px 10px;
+  pointer-events: none;
+  color: #373d3f;
+  font-size: 13px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  z-index: 10;
+  background: #ECEFF1;
+  border: 1px solid #90A4AE;
+}
+
+.apexcharts-yaxistooltip.apexcharts-theme-dark {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.apexcharts-yaxistooltip:after,
+.apexcharts-yaxistooltip:before {
+  top: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.apexcharts-yaxistooltip:after {
+  border-color: rgba(236, 239, 241, 0);
+  border-width: 6px;
+  margin-top: -6px;
+}
+
+.apexcharts-yaxistooltip:before {
+  border-color: rgba(144, 164, 174, 0);
+  border-width: 7px;
+  margin-top: -7px;
+}
+
+.apexcharts-yaxistooltip-left:after,
+.apexcharts-yaxistooltip-left:before {
+  left: 100%;
+}
+
+.apexcharts-yaxistooltip-right:after,
+.apexcharts-yaxistooltip-right:before {
+  right: 100%;
+}
+
+.apexcharts-yaxistooltip-left:after {
+  border-left-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-left:before {
+  border-left-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:after {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-left.apexcharts-theme-dark:before {
+  border-left-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right:after {
+  border-right-color: #ECEFF1;
+}
+
+.apexcharts-yaxistooltip-right:before {
+  border-right-color: #90A4AE;
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:after {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip-right.apexcharts-theme-dark:before {
+  border-right-color: rgba(0, 0, 0, 0.5);
+}
+
+.apexcharts-yaxistooltip.apexcharts-active {
+  opacity: 1;
+}
+
+.apexcharts-yaxistooltip-hidden {
+  display: none;
+}
+
+.apexcharts-xcrosshairs,
+.apexcharts-ycrosshairs {
+  pointer-events: none;
+  opacity: 0;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-xcrosshairs.apexcharts-active,
+.apexcharts-ycrosshairs.apexcharts-active {
+  opacity: 1;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-ycrosshairs-hidden {
+  opacity: 0;
+}
+
+.apexcharts-selection-rect {
+  cursor: move;
+}
+
+.svg_select_boundingRect, .svg_select_points_rot {
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.apexcharts-selection-rect + g .svg_select_boundingRect,
+.apexcharts-selection-rect + g .svg_select_points_rot {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.apexcharts-selection-rect + g .svg_select_points_l,
+.apexcharts-selection-rect + g .svg_select_points_r {
+  cursor: ew-resize;
+  opacity: 1;
+  visibility: visible;
+}
+
+.svg_select_points {
+  fill: #efefef;
+  stroke: #333;
+  rx: 2;
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-zoom {
+  cursor: crosshair
+}
+
+.apexcharts-svg.apexcharts-zoomable.hovering-pan {
+  cursor: move
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon,
+.apexcharts-reset-icon,
+.apexcharts-pan-icon,
+.apexcharts-selection-icon,
+.apexcharts-menu-icon,
+.apexcharts-toolbar-custom-icon {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  line-height: 24px;
+  color: #6E8192;
+  text-align: center;
+}
+
+.apexcharts-zoom-icon svg,
+.apexcharts-zoomin-icon svg,
+.apexcharts-zoomout-icon svg,
+.apexcharts-reset-icon svg,
+.apexcharts-menu-icon svg {
+  fill: #6E8192;
+}
+
+.apexcharts-selection-icon svg {
+  fill: #444;
+  transform: scale(0.76)
+}
+
+.apexcharts-theme-dark .apexcharts-zoom-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomin-icon svg,
+.apexcharts-theme-dark .apexcharts-zoomout-icon svg,
+.apexcharts-theme-dark .apexcharts-reset-icon svg,
+.apexcharts-theme-dark .apexcharts-pan-icon svg,
+.apexcharts-theme-dark .apexcharts-selection-icon svg,
+.apexcharts-theme-dark .apexcharts-menu-icon svg,
+.apexcharts-theme-dark .apexcharts-toolbar-custom-icon svg {
+  fill: #f3f4f5;
+}
+
+.apexcharts-canvas .apexcharts-zoom-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-selection-icon.apexcharts-selected svg,
+.apexcharts-canvas .apexcharts-reset-zoom-icon.apexcharts-selected svg {
+  fill: #008FFB;
+}
+
+.apexcharts-theme-light .apexcharts-selection-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoom-icon:not(.apexcharts-selected):hover svg,
+.apexcharts-theme-light .apexcharts-zoomin-icon:hover svg,
+.apexcharts-theme-light .apexcharts-zoomout-icon:hover svg,
+.apexcharts-theme-light .apexcharts-reset-icon:hover svg,
+.apexcharts-theme-light .apexcharts-menu-icon:hover svg {
+  fill: #333;
+}
+
+.apexcharts-selection-icon,
+.apexcharts-menu-icon {
+  position: relative;
+}
+
+.apexcharts-reset-icon {
+  margin-left: 5px;
+}
+
+.apexcharts-zoom-icon,
+.apexcharts-reset-icon,
+.apexcharts-menu-icon {
+  transform: scale(0.85);
+}
+
+.apexcharts-zoomin-icon,
+.apexcharts-zoomout-icon {
+  transform: scale(0.7)
+}
+
+.apexcharts-zoomout-icon {
+  margin-right: 3px;
+}
+
+.apexcharts-pan-icon {
+  transform: scale(0.62);
+  position: relative;
+  left: 1px;
+  top: 0px;
+}
+
+.apexcharts-pan-icon svg {
+  fill: #fff;
+  stroke: #6E8192;
+  stroke-width: 2;
+}
+
+.apexcharts-pan-icon.apexcharts-selected svg {
+  stroke: #008FFB;
+}
+
+.apexcharts-pan-icon:not(.apexcharts-selected):hover svg {
+  stroke: #333;
+}
+
+.apexcharts-toolbar {
+  position: absolute;
+  z-index: 11;
+  max-width: 176px;
+  text-align: right;
+  border-radius: 3px;
+  padding: 0px 6px 2px 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.apexcharts-menu {
+  background: #fff;
+  position: absolute;
+  top: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  padding: 3px;
+  right: 10px;
+  opacity: 0;
+  min-width: 110px;
+  transition: 0.15s ease all;
+  pointer-events: none;
+}
+
+.apexcharts-menu.apexcharts-menu-open {
+  opacity: 1;
+  pointer-events: all;
+  transition: 0.15s ease all;
+}
+
+.apexcharts-menu-item {
+  padding: 6px 7px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.apexcharts-theme-light .apexcharts-menu-item:hover {
+  background: #eee;
+}
+
+.apexcharts-theme-dark .apexcharts-menu {
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  .apexcharts-canvas:hover .apexcharts-toolbar {
+    opacity: 1;
+  }
+}
+
+.apexcharts-datalabel.apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-pie-label,
+.apexcharts-datalabels,
+.apexcharts-datalabel,
+.apexcharts-datalabel-label,
+.apexcharts-datalabel-value {
+  cursor: default;
+  pointer-events: none;
+}
+
+.apexcharts-pie-label-delay {
+  opacity: 0;
+  animation-name: opaque;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease;
+}
+
+.apexcharts-canvas .apexcharts-element-hidden {
+  opacity: 0;
+}
+
+.apexcharts-hide .apexcharts-series-points {
+  opacity: 0;
+}
+
+.apexcharts-gridline,
+.apexcharts-annotation-rect,
+.apexcharts-tooltip .apexcharts-marker,
+.apexcharts-area-series .apexcharts-area,
+.apexcharts-line,
+.apexcharts-zoom-rect,
+.apexcharts-toolbar svg,
+.apexcharts-area-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-line-series .apexcharts-series-markers .apexcharts-marker.no-pointer-events,
+.apexcharts-radar-series path,
+.apexcharts-radar-series polygon {
+  pointer-events: none;
+}
+
+
+/* markers */
+
+.apexcharts-marker {
+  transition: 0.15s ease all;
+}
+
+@keyframes opaque {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+/* Resize generated styles */
+
+@keyframes resizeanim {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.resize-triggers {
+  animation: 1ms resizeanim;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.resize-triggers,
+.resize-triggers>div,
+.contract-trigger:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.resize-triggers>div {
+  background: #eee;
+  overflow: auto;
+}
+
+.contract-trigger:before {
+  width: 200%;
+  height: 200%;
+}</style><style id="smooth-scrollbar-style">
+[data-scrollbar] {
+  display: block;
+  position: relative;
+}
+
+.scroll-content {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+.scrollbar-track {
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+  background: rgba(222, 222, 222, .75);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transition: opacity 0.5s 0.5s ease-out;
+          transition: opacity 0.5s 0.5s ease-out;
+}
+.scrollbar-track.show,
+.scrollbar-track:hover {
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+
+.scrollbar-track-x {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+}
+.scrollbar-track-y {
+  top: 0;
+  right: 0;
+  width: 8px;
+  height: 100%;
+}
+.scrollbar-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 4px;
+}
+</style></head>
 
 
 
 
 
 
-<body>
-    <!--[if lt IE 8]>
-            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
 
-    <div class="left-sidebar-pro">
-        <nav id="sidebar" class="">
-            <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="statics2/img/logo/logo.png" alt=""></a>
-                <strong><img src="statics2/img/logo/logosn.png" alt=""></strong>            </div>
-	  <div class="nalika-profile">
-				<div class="profile-dtl">
-					<a href="#"><img src="statics2/img/notification/4.jpg" alt=""></a>
-					<h2>Lakian <span class="min-dtn">Das</span></h2>
-				</div>
-				<div class="profile-social-dtl">
-					<ul class="dtl-social">
-						<li><a href="#"><i class="icon nalika-facebook"></i></a></li>
-						<li><a href="#"><i class="icon nalika-twitter"></i></a></li>
-						<li><a href="#"><i class="icon nalika-linkedin"></i></a></li>
-					</ul>
-				</div>
-			</div>
-            <div class="left-custom-menu-adp-wrap comment-scrollbar mCustomScrollbar _mCS_1 mCS-autoHide" style="position: relative; overflow: visible;"><div id="mCSB_1" class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside" style="max-height: none;" tabindex="0"><div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: 0px; left: 0px;" dir="ltr">
-                <nav class="sidebar-nav left-sidebar-menu-pro">
-                    <ul class="metismenu" id="menu1">
-                        <li class="active">
-                            <a class="has-arrow" href="index.html">
-								   <i class="icon nalika-home icon-wrap"></i>
-								   <span class="mini-click-non">Ecommerce</span>								</a>
-                            <ul class="submenu-angle collapse in" aria-expanded="true">
-                                <li><a title="Dashboard v.1" href="index.html"><span class="mini-sub-pro">Dashboard v.1</span></a></li>
-                                <li><a title="Dashboard v.2" href="index-1.html"><span class="mini-sub-pro">Dashboard v.2</span></a></li>
-                                <li><a title="Dashboard v.3" href="index-2.html"> <span class="mini-sub-pro">Dashboard v.3</span></a></li>
-                                <li><a title="Product List" href="product-list.html"><span class="mini-sub-pro">Product List</span></a></li>
-                                <li><a title="Product Edit" href="product-edit.html"><span class="mini-sub-pro">Product Edit</span></a></li>
-                                <li><a title="Product Detail" href="product-detail.html"><span class="mini-sub-pro">Product Detail</span></a></li>
-                                <li><a title="Product Cart" href="product-cart.html"><span class="mini-sub-pro">Product Cart</span></a></li>
-                                <li><a title="Product Payment" href="product-payment.html"><span class="mini-sub-pro">Product Payment</span></a></li>
-                                <li><a title="Analytics" href="analytics.html"><span class="mini-sub-pro">Analytics</span></a></li>
-                                <li><a title="Widgets" href="widgets.html"><span class="mini-sub-pro">Widgets</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-mail icon-wrap"></i> <span class="mini-click-non">Mailbox</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Inbox" href="mailbox.html"><span class="mini-sub-pro">Inbox</span></a></li>
-                                <li><a title="View Mail" href="mailbox-view.html"><span class="mini-sub-pro">View Mail</span></a></li>
-                                <li><a title="Compose Mail" href="mailbox-compose.html"><span class="mini-sub-pro">Compose Mail</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-diamond icon-wrap"></i> <span class="mini-click-non">Interface</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Google Map" href="google-map.html"><span class="mini-sub-pro">Google Map</span></a></li>
-                                <li><a title="Data Maps" href="data-maps.html"><span class="mini-sub-pro">Data Maps</span></a></li>
-                                <li><a title="Pdf Viewer" href="pdf-viewer.html"><span class="mini-sub-pro">Pdf Viewer</span></a></li>
-                                <li><a title="X-Editable" href="x-editable.html"><span class="mini-sub-pro">X-Editable</span></a></li>
-                                <li><a title="Code Editor" href="code-editor.html"><span class="mini-sub-pro">Code Editor</span></a></li>
-                                <li><a title="Tree View" href="tree-view.html"><span class="mini-sub-pro">Tree View</span></a></li>
-                                <li><a title="Preloader" href="preloader.html"><span class="mini-sub-pro">Preloader</span></a></li>
-                                <li><a title="Images Cropper" href="images-cropper.html"><span class="mini-sub-pro">Images Cropper</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-pie-chart icon-wrap"></i> <span class="mini-click-non">Miscellaneous</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="File Manager" href="file-manager.html"><span class="mini-sub-pro">File Manager</span></a></li>
-                                <li><a title="Blog" href="blog.html"><span class="mini-sub-pro">Blog</span></a></li>
-                                <li><a title="Blog Details" href="blog-details.html"><span class="mini-sub-pro">Blog Details</span></a></li>
-                                <li><a title="404 Page" href="404.html"><span class="mini-sub-pro">404 Page</span></a></li>
-                                <li><a title="500 Page" href="500.html"><span class="mini-sub-pro">500 Page</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-bar-chart icon-wrap"></i> <span class="mini-click-non">Charts</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Bar Charts" href="bar-charts.html"><span class="mini-sub-pro">Bar Charts</span></a></li>
-                                <li><a title="Line Charts" href="line-charts.html"><span class="mini-sub-pro">Line Charts</span></a></li>
-                                <li><a title="Area Charts" href="area-charts.html"><span class="mini-sub-pro">Area Charts</span></a></li>
-                                <li><a title="Rounded Charts" href="rounded-chart.html"><span class="mini-sub-pro">Rounded Charts</span></a></li>
-                                <li><a title="C3 Charts" href="c3.html"><span class="mini-sub-pro">C3 Charts</span></a></li>
-                                <li><a title="Sparkline Charts" href="sparkline.html"><span class="mini-sub-pro">Sparkline Charts</span></a></li>
-                                <li><a title="Peity Charts" href="peity.html"><span class="mini-sub-pro">Peity Charts</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-table icon-wrap"></i> <span class="mini-click-non">Data Tables</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Peity Charts" href="static-table.html"><span class="mini-sub-pro">Static Table</span></a></li>
-                                <li><a title="Data Table" href="data-table.html"><span class="mini-sub-pro">Data Table</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-forms icon-wrap"></i> <span class="mini-click-non">Forms Elements</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Basic Form Elements" href="basic-form-element.html"><span class="mini-sub-pro">Bc Form Elements</span></a></li>
-                                <li><a title="Advance Form Elements" href="advance-form-element.html"><span class="mini-sub-pro">Ad Form Elements</span></a></li>
-                                <li><a title="Password Meter" href="password-meter.html"><span class="mini-sub-pro">Password Meter</span></a></li>
-                                <li><a title="Multi Upload" href="multi-upload.html"><span class="mini-sub-pro">Multi Upload</span></a></li>
-                                <li><a title="Text Editor" href="tinymc.html"><span class="mini-sub-pro">Text Editor</span></a></li>
-                                <li><a title="Dual List Box" href="dual-list-box.html"><span class="mini-sub-pro">Dual List Box</span></a></li>
-                            </ul>
-                        </li>
-                  <li>
-                            <a class="has-arrow" href="mailbox.html" aria-expanded="false"><i class="icon nalika-smartphone-call icon-wrap"></i> <span class="mini-click-non">App views</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Notifications" href="notifications.html"><span class="mini-sub-pro">Notifications</span></a></li>
-                                <li><a title="Alerts" href="alerts.html"><span class="mini-sub-pro">Alerts</span></a></li>
-                                <li><a title="Modals" href="modals.html"><span class="mini-sub-pro">Modals</span></a></li>
-                                <li><a title="Buttons" href="buttons.html"><span class="mini-sub-pro">Buttons</span></a></li>
-                                <li><a title="Tabs" href="tabs.html"><span class="mini-sub-pro">Tabs</span></a></li>
-                                <li><a title="Accordion" href="accordion.html"><span class="mini-sub-pro">Accordion</span></a></li>
-                            </ul>
-                        </li>
-                  <li id="removable">
-                            <a class="has-arrow" href="#" aria-expanded="false"><i class="icon nalika-new-file icon-wrap"></i> <span class="mini-click-non">Pages</span></a>
-                            <ul class="submenu-angle collapse" aria-expanded="false">
-                                <li><a title="Login" href="login.html"><span class="mini-sub-pro">Login</span></a></li>
-                                <li><a title="Register" href="register.html"><span class="mini-sub-pro">Register</span></a></li>
-                                <li><a title="Lock" href="lock.html"><span class="mini-sub-pro">Lock</span></a></li>
-                                <li><a title="Password Recovery" href="password-recovery.html"><span class="mini-sub-pro">Password Recovery</span></a></li>
-                            </ul>
-                        </li>
-                  </ul>
-                </nav>
-            </div></div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light-1 mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 340px; max-height: 570px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
-        </nav>
+
+
+
+
+
+<body class="sidebar-main">
+    <!-- loader Start -->
+    <div id="loading" style="display: none;">
+          <div id="loading-center">
+          </div>
     </div>
-    <!-- Start Welcome area -->
-    <div class="all-content-wrapper">
+    <!-- loader END -->
+    <!-- Wrapper Start -->
+    <div class="wrapper">
+      <div class="iq-sidebar  sidebar-default  ">
+          <div class="iq-sidebar-logo d-flex align-items-end justify-content-between">
+               <a href="" class="header-logo">
+                  <img src="static/picture/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
+                  <img src="static/picture/logo-dark.png" class="img-fluid rounded-normal d-none sidebar-light-img" alt="logo">
+                  <span>Datum</span>            
+              </a>
+              <div class="side-menu-bt-sidebar-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="text-light wrapper-menu open" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                  </div>
+          </div>
+          <div class="data-scrollbar" data-scroll="1" data-scrollbar="true" tabindex="-1" style="overflow: hidden; outline: none;"><div class="scroll-content">
+              <nav class="iq-sidebar-menu">
+                  <ul id="iq-sidebar-toggle" class="side-menu">
+                      <li class="active sidebar-layout">
+                          <a href="" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Dashboard</span>
+                              <p class="mb-0 w-10 badge badge-pill badge-primary">6</p>
+                          </a>
+                      </li>
+                      <li class="px-3 pt-3 pb-2 ">
+                          <span class="text-uppercase small font-weight-bold">Application</span>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="customer.html" class="svg-icon ">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Customer</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="product.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Product</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="order.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Order</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="invoice.html" class="svg-icon">
+                              <i class="">
+                                  <svg class="icon line" width="18" id="receipt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path d="M17,16V3L13,5,10,3,7,5,3,3V17.83A3.13,3.13,0,0,0,5.84,21,3,3,0,0,0,9,18V17a1,1,0,0,1,1-1H20a1,1,0,0,1,1,1v1a3,3,0,0,1-3,3H6" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path>
+                                      <line x1="8" y1="10" x2="12" y2="10" style="fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line>
+                                  </svg> 
+                              </i>
+                              <span class="ml-2">Invoice</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="todo.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                                  </svg>
+                              </i><span class="ml-2">Todo</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="calendar.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Calendar</span>
+                              <p class="mb-0 px-2 badge badge-pill badge-success">New</p>
+                          </a>
+                      </li>
+                      <li class="px-3 pt-3 pb-2">
+                          <span class="text-uppercase small font-weight-bold">Pages</span>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="chat.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                                  </svg>
+                              </i><span class="ml-2">Chat</span>
+                          </a>
+                      </li>
+                       <li class=" sidebar-layout">
+                          <a href="user-profile.html" class="svg-icon">
+                              <i class="">
+                                  <svg class="svg-icon" id="iq-user-1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                  </svg>
+                              </i><span class="ml-2">User Profile</span>
+                          </a>
+                      </li>
+                      <li class="sidebar-layout">
+                          <a href="#app1" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                              <i>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Authentication</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg>
+                          </a>
+                          <ul id="app1" class="submenu collapse" data-parent="#iq-sidebar-toggle">                        
+                              <li class=" sidebar-layout">
+                                  <a href="auth-login.html" class="svg-icon">
+                                      <i class=""><svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4"></path>
+                                      </svg>
+                                      </i><span class="">Login</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="auth-sign-up.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                                          </svg>
+                                      </i><span class="">Register</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="auth-recover-pwd.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path>
+                                          </svg>
+                                      </i><span class="">Reset Password</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="auth-confirm-mail.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                          </svg>
+                                      </i><span class="">Confirm Mail</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="auth-lock-screen.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                          </svg>
+                                      </i><span class="">Lock Screen</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="sidebar-layout">
+                          <a href="#app6" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                              <i>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Error</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg>
+                          </a>
+                          <ul id="app6" class="submenu collapse" data-parent="#iq-sidebar-toggle">
+                              <li class=" sidebar-layout">
+                                  <a href="pages-error.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="ml-2">Error 404</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="pages-error-500.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a4.978 4.978 0 01-1.414-2.83m-1.414 5.658a9 9 0 01-2.167-9.238m7.824 2.167a1 1 0 111.414 1.414m-1.414-1.414L3 3m8.293 8.293l1.414 1.414"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="ml-2">Error 500</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="pages-comingsoon.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                  </svg>
+                              </i><span class="ml-2">Comingsoon</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="pages-maintenance.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                                  </svg>
+                              </i><span class="ml-2">Maintenance</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="pages-blank-page.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                                  </svg>
+                              </i><span class="ml-2">Blank Page</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="pages-faq.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V8a2 2 0 00-2-2h-5m-4 0V5a2 2 0 114 0v1m-4 0a2 2 0 104 0m-5 8a2 2 0 100-4 2 2 0 000 4zm0 0c1.306 0 2.417.835 2.83 2M9 14a3.001 3.001 0 00-2.83 2M15 11h3m-3 4h2"></path>
+                                  </svg>
+                              </i><span class="ml-2">Faq</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="pricing.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                  </svg>
+                              </i><span class="ml-2">Pricing</span>
+                          </a>
+                      </li>
+                       <li class=" sidebar-layout">
+                          <a href="timeline.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                  </svg>
+                              </i><span class="ml-2">Timeline</span>
+                          </a>
+                      </li>
+                      <li class="px-3 pt-3 pb-2">
+                          <span class="text-uppercase small font-weight-bold">Components</span>
+                      </li>
+                      <li class="sidebar-layout">
+                          <a href="#app2" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                              <i>
+                                  <svg class="svg-icon" id="iq-ui-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" style="stroke-dasharray: 97, 117; stroke-dashoffset: 0;"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">UI Elements</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg>
+                          </a>
+                          <ul id="app2" class="submenu collapse" data-parent="#iq-sidebar-toggle">                        
+                              <li class=" sidebar-layout">
+                                  <a href="ui-avatars.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" id="iq-ui-1-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" style="stroke-dasharray: 90, 110; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Avatars</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-alerts.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" style="stroke-dasharray: 56, 76; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Alerts</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-badges.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" style="stroke-dasharray: 74, 94; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Badges</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-breadcrumb.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" style="stroke-dasharray: 48, 68; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Breadcrumb</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-buttons.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="{2}" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" style="stroke-dasharray: 72, 92; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Buttons</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-buttons-group.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" id="iq-ui-1-5" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" style="stroke-dasharray: 90, 110; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Buttons Group</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-boxshadow.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" style="stroke-dasharray: 84, 104; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Box Shadow</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-colors.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-7" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" style="stroke-dasharray: 97, 117; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Colors</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-cards.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" style="stroke-dasharray: 79, 99; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Cards</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-carousel.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" style="stroke-dasharray: 133, 153; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Carousel</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-grid.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" style="stroke-dasharray: 83, 103; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Grid</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-images.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" style="stroke-dasharray: 85, 105; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Images</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-list-group.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path>
+                                          </svg>
+                                      </i><span class="">list Group</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-media-object.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-14" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" style="stroke-dasharray: 90, 110; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Media</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-modal.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-15" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                              <path d="M12 3h7a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-7m0-18H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h7m0-18v18" style="stroke-dasharray: 87, 107; stroke-dashoffset: 0;">
+                                              </path>
+                                          </svg>
+                                      </i><span class="">Modal</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-notifications.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" style="stroke-dasharray: 63, 83; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Notifications</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-pagination.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-ui-1-17" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z" style="stroke-dasharray: 19, 39; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Pagination</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-popovers.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 11l3-3m0 0l3 3m-3-3v8m0-13a9 9 0 110 18 9 9 0 010-18z"></path>
+                                          </svg>
+                                      </i><span class="">Popovers</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-progressbars.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                                          </svg>
+                                      </i><span class="">Progressbars</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-typography.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" id="iq-ui-1-20" xmlns="http://www.w3.org/2000/svg" fill="none" width="18" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" style="stroke-dasharray: 67, 87; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Typography</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-tabs.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" id="iq-ui-1-21" xmlns="http://www.w3.org/2000/svg" fill="none" width="18" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" style="stroke-dasharray: 98, 118; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Tabs</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-tooltips.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" width="18" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                          </svg>
+                                      </i><span class="">Tooltips</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="ui-embed-video.html" class="svg-icon">
+                                      <i class="">
+                                          <svg class="svg-icon" id="iq-ui-1-23" xmlns="http://www.w3.org/2000/svg" fill="none" width="18" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" style="stroke-dasharray: 66, 86; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i><span class="">Video</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="sidebar-layout">
+                          <a href="#app3" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                              <i>
+                                  <svg class="svg-icon" id="iq-form-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" style="stroke-dasharray: 74, 94; stroke-dashoffset: 0;"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Forms</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg>
+                          </a>
+                          <ul id="app3" class="submenu collapse" data-parent="#iq-sidebar-toggle">
+                              <li class="sidebar-layout">
+                                  <a href="#form1" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-form-1-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" style="stroke-dasharray: 61, 81; stroke-dashoffset: 0;"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="">Form Control</span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                      </svg>
+                                  </a>
+                                  <ul id="form1" class="submenu collapse" data-parent="#app3">
+                                      <li class=" sidebar-layout">
+                                          <a href="form-layout.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
+                                                  </svg>
+                                              </i><span class="">Form Elements</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-input-group.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 13h6M3 17V7a2 2 0 012-2h6l2 2h6a2 2 0 012 2v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                                                  </svg>
+                                              </i><span class="">Form Input</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">   
+                                          <a href="form-validation.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                                  </svg>
+                                              </i><span class="">Form Validation</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-switch.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path>
+                                                  </svg>
+                                              </i><span class="">Form Switch</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-chechbox.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                                  </svg>
+                                              </i><span class="">Form Checkbox</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-radio.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                  </svg>
+                                              </i><span class="">Form Radio</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-textarea.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                  </svg>
+                                              </i><span class="">Form Textarea</span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li class="sidebar-layout">
+                                  <a href="#form2" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                                      <i class="">
+                                          <svg class="svg-icon" width="18" id="iq-user-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="">Form Widget</span>
+                                      <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                      </svg>
+                                  </a>
+                                  <ul id="form2" class="submenu collapse" data-parent="#app3">
+                                      <li class=" sidebar-layout">
+                                          <a href="form-datepicker.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                                                  </svg>
+                                              </i><span class="">Datepicker</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-select.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path>
+                                                  </svg>
+                                              </i><span class="">Select2</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-file-uploader.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
+                                                  </svg>
+                                              </i><span class="">File Upload</span>
+                                          </a>
+                                      </li>
+                                      <li class=" sidebar-layout">
+                                          <a href="form-quill.html" class="svg-icon">
+                                              <i class="">
+                                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                  </svg>
+                                              </i><span class="">Form quill</span>
+                                          </a>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class="sidebar-layout">
+                          <a href="#app5" class="collapsed svg-icon" data-toggle="collapse" aria-expanded="false">
+                              <i>
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Table</span>
+                              <svg xmlns="http://www.w3.org/2000/svg" class="svg-icon iq-arrow-right arrow-active" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                              </svg>
+                          </a>
+                          <ul id="app5" class="submenu collapse" data-parent="#iq-sidebar-toggle">
+                              <li class=" sidebar-layout">
+                                  <a href="tables-basic.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="ml-2">Basic Tables</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="table-data.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="ml-2">Data Table</span>
+                                  </a>
+                              </li>
+                              <li class=" sidebar-layout">
+                                  <a href="table-editable.html" class="svg-icon">
+                                      <i class="">
+                                          <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
+                                          </svg>
+                                      </i>
+                                      <span class="ml-2">Editable Table</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="chart-apex.html" class="svg-icon">
+                              <i class="">
+                                  <svg class="svg-icon" id="iq-chart-1" width="18" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 13v-1m4 1v-3m4 3V8M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z" style="stroke-dasharray: 96, 116; stroke-dashoffset: 0;"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Chart</span>
+                          </a>
+                      </li>
+                      <li class=" sidebar-layout">
+                          <a href="icon-heroicon.html" class="svg-icon">
+                              <i class="">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v2.5M20 7l-2 1m2-1l-2-1m2 1v2.5M14 4l-2-1-2 1M4 7l2-1M4 7l2 1M4 7v2.5M12 21l-2-1m2 1l2-1m-2 1v-2.5M6 18l-2-1v-2.5M18 18l2-1v-2.5"></path>
+                                  </svg>
+                              </i>
+                              <span class="ml-2">Icon</span>
+                          </a>
+                      </li>  
+                  </ul>
+              </nav>
+              <div class="pt-5 pb-5"></div>
+          </div><div class="scrollbar-track scrollbar-track-x" style="display: none;"><div class="scrollbar-thumb scrollbar-thumb-x" style="width: 260px; transform: translate3d(0px, 0px, 0px);"></div></div><div class="scrollbar-track scrollbar-track-y" style="display: block;"><div class="scrollbar-thumb scrollbar-thumb-y" style="height: 1041.77px; transform: translate3d(0px, 0px, 0px);"></div></div></div>
+      </div>
+       <div class="iq-top-navbar">
+          <div class="iq-navbar-custom">
+              <nav class="navbar navbar-expand-lg navbar-light p-0">
+                  <div class="side-menu-bt-sidebar">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary wrapper-menu" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                      </svg>
+                  </div>
+                  <div class="d-flex align-items-center">
+                      <div class="change-mode">
+                          <div class="custom-control custom-switch custom-switch-icon custom-control-inline">
+                              <div class="custom-switch-inner">
+                                  <p class="mb-0"> </p>
+                                  <input type="checkbox" class="custom-control-input" id="dark-mode" data-active="true">
+                                  <label class="custom-control-label" for="dark-mode" data-mode="toggle">
+                                      <span class="switch-icon-right">
+                                          <svg xmlns="http://www.w3.org/2000/svg" id="h-moon" height="20" width="20" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                                          </svg>
+                                      </span>
+                                      <span class="switch-icon-left">
+                                          <svg xmlns="http://www.w3.org/2000/svg" id="h-sun" height="20" width="20" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                                          </svg>
+                                      </span>
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-label="Toggle navigation">
+                          <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                          </svg>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                          <ul class="navbar-nav ml-auto navbar-list align-items-center">
+                              <li class="nav-item nav-icon dropdown"> 
+                                  <a href="#" class="search-toggle dropdown-toggle" id="notification-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" class="h-6 w-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                                      </svg>
+                                      <span class="bg-primary"></span>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="notification-dropdown">
+                                      <div class="card shadow-none m-0 border-0">
+                                          <div class="p-3 card-header-border">
+                                              <h6 class="text-center">
+                                                  Notifications
+                                              </h6>
+                                          </div>
+                                          <div class="card-body overflow-auto card-header-border p-0 card-body-list" style="max-height: 500px;">                                        
+                                              <ul class="dropdown-menu-1 overflow-auto list-style-1 mb-0">
+                                                  <li class="dropdown-item-1 float-none p-3">
+                                                      <div class="list-item d-flex justify-content-start align-items-start">
+                                                          <div class="avatar">
+                                                              <div class="avatar-img avatar-danger avatar-20">
+                                                                  <span>
+                                                                      <svg class="icon line" width="30" height="30" id="cart-alt1" stroke="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,3H5.32a1,1,0,0,1,.93.63L10,13,8.72,15.55A1,1,0,0,0,9.62,17H19" style="fill: none;stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></path><polyline points="10 13 18.2 13 21 6" style="fill: none;stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></polyline><line x1="20.8" y1="6" x2="7.2" y2="6" style="fill: none;stroke-linecap: round; stroke-linejoin: round; stroke-width: 2;"></line><circle cx="10.5" cy="20.5" r="0.5" style="fill: none;stroke-miterlimit: 10; stroke-width: 2;"></circle><circle cx="16.5" cy="20.5" r="0.5" style="fill: none;stroke-miterlimit: 10; stroke-width: 2;"></circle></svg>
+                                                                  </span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="list-style-detail ml-2 mr-2">
+                                                              <h6 class="font-weight-bold">Your order is placed</h6>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">If several languages coalesce</small>
+                                                              </p>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">
+                                                                      <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mr-1" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                      </svg>
+                                                                  3 hours ago</small>
+                                                              </p>
+                                                          </div>
+                                                      </div>                                                
+                                                  </li>
+                                                   <li class="dropdown-item-1 float-none p-3">
+                                                       <div class="list-item d-flex justify-content-start align-items-start">
+                                                           <div class="avatar">
+                                                              <div class="avatar-img avatar-success avatar-20">
+                                                                  <span><img class="avatar is-squared rounded-circle" src="static/picture/2.jpg" alt="2.jpg"></span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="list-style-detail ml-2 mr-2">
+                                                              <h6 class="font-weight-bold">New message form cate</h6>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">You have 3 unreded messages</small>
+                                                              </p>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">
+                                                                      <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mr-1" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                      </svg>
+                                                                      5 hours ago</small>
+                                                              </p>
+                                                          </div>
+                                                       </div>                                                
+                                                  </li>
+                                                   <li class="dropdown-item-1 float-none p-3">
+                                                       <div class="list-item d-flex justify-content-start align-items-start">
+                                                           <div class="avatar">
+                                                              <div class="avatar-img avatar-warning avatar-20">
+                                                              <span>
+                                                                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="30" height="30" stroke="white" id="Capa_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M386.689,304.403c-35.587,0-64.538,28.951-64.538,64.538s28.951,64.538,64.538,64.538    c35.593,0,64.538-28.951,64.538-64.538S422.276,304.403,386.689,304.403z M386.689,401.21c-17.796,0-32.269-14.473-32.269-32.269    c0-17.796,14.473-32.269,32.269-32.269c17.796,0,32.269,14.473,32.269,32.269C418.958,386.738,404.485,401.21,386.689,401.21z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M166.185,304.403c-35.587,0-64.538,28.951-64.538,64.538s28.951,64.538,64.538,64.538s64.538-28.951,64.538-64.538    S201.772,304.403,166.185,304.403z M166.185,401.21c-17.796,0-32.269-14.473-32.269-32.269c0-17.796,14.473-32.269,32.269-32.269    c17.791,0,32.269,14.473,32.269,32.269C198.454,386.738,183.981,401.21,166.185,401.21z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M430.15,119.675c-2.743-5.448-8.32-8.885-14.419-8.885h-84.975v32.269h75.025l43.934,87.384l28.838-14.5L430.15,119.675z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <rect x="216.202" y="353.345" width="122.084" height="32.269"></rect>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M117.781,353.345H61.849c-8.912,0-16.134,7.223-16.134,16.134c0,8.912,7.223,16.134,16.134,16.134h55.933    c8.912,0,16.134-7.223,16.134-16.134C133.916,360.567,126.693,353.345,117.781,353.345z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M508.612,254.709l-31.736-40.874c-3.049-3.937-7.755-6.239-12.741-6.239H346.891V94.655    c0-8.912-7.223-16.134-16.134-16.134H61.849c-8.912,0-16.134,7.223-16.134,16.134s7.223,16.134,16.134,16.134h252.773v112.941    c0,8.912,7.223,16.134,16.134,16.134h125.478l23.497,30.268v83.211h-44.639c-8.912,0-16.134,7.223-16.134,16.134    c0,8.912,7.223,16.134,16.134,16.134h60.773c8.912,0,16.134-7.223,16.135-16.134V264.605    C512,261.023,510.806,257.538,508.612,254.709z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M116.706,271.597H42.487c-8.912,0-16.134,7.223-16.134,16.134c0,8.912,7.223,16.134,16.134,16.134h74.218    c8.912,0,16.134-7.223,16.134-16.134C132.84,278.82,125.617,271.597,116.706,271.597z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M153.815,208.134H16.134C7.223,208.134,0,215.357,0,224.269s7.223,16.134,16.134,16.134h137.681    c8.912,0,16.134-7.223,16.134-16.134S162.727,208.134,153.815,208.134z"></path>
+                                                                      </g>
+                                                                  </g>
+                                                                  <g>
+                                                                      <g>
+                                                                          <path d="M180.168,144.672H42.487c-8.912,0-16.134,7.223-16.134,16.134c0,8.912,7.223,16.134,16.134,16.134h137.681    c8.912,0,16.134-7.223,16.134-16.134C196.303,151.895,189.08,144.672,180.168,144.672z"></path>
+                                                                      </g>
+                                                                  </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g> </svg>
+                                                              </span>
+                                                              </div>
+                                                          </div>
+                                                          <div class="list-style-detail ml-2 mr-2">
+                                                              <h6 class="font-weight-bold">Your item is shipped</h6>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">You got new order of goods</small>
+                                                              </p>
+                                                              <p class="m-0">
+                                                                  <small class="text-secondary">
+                                                                      <svg xmlns="http://www.w3.org/2000/svg" class="text-secondary mr-1" width="15" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                                                      </svg>
+                                                                      5 hours ago</small>
+                                                              </p>
+                                                          </div>
+                                                       </div>                                                
+                                                  </li>
+                                              </ul>
+                                          </div>
+                                          <div class="card-footer text-muted p-3">
+                                              <p class="mb-0 text-primary text-center font-weight-bold">Show all notifications</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>                        
+                              <li class="nav-item nav-icon dropdown">
+                                  <a href="#" class="search-toggle dropdown-toggle" id="dropdownMenuButton2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  <img src="static/picture/flag001.png" class="img-fluid rounded-circle" alt="user" style="height: 30px; min-width: 30px; width: 30px;">
+                                  <span class="bg-primary"></span>
+                                  </a>
+                                  <div class="iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                                      <div class="card shadow-none m-0 border-0">
+                                          <div class=" p-0 ">
+                                              <ul class="dropdown-menu-1 list-group list-group-flush">
+                                                  <li class="dropdown-item-1 list-group-item  px-2"><a class="p-0" href="#"><img src="static/picture/flag-03.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;">Spanish</a></li>
+                                                  <li class="dropdown-item-1 list-group-item  px-2"><a class="p-0" href="#"><img src="static/picture/flag-04.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;">Italian</a></li>
+                                                  <li class="dropdown-item-1 list-group-item  px-2"><a class="p-0" href="#"><img src="static/picture/flag-02.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;">French</a></li>
+                                                  <li class="dropdown-item-1 list-group-item  px-2"><a class="p-0" href="#"><img src="static/picture/flag-05.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;">German</a></li>
+                                                  <li class="dropdown-item-1 list-group-item  px-2"><a class="p-0" href="#"><img src="static/picture/flag-06.png" alt="img-flaf" class="img-fluid mr-2" style="width: 15px;height: 15px;min-width: 15px;">Japanese</a></li>
+                                              </ul>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon search-content">
+                                  <a href="#" class="search-toggle rounded" id="dropdownSearch" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <svg class="svg-icon text-secondary" id="h-suns" height="25" width="25" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                      </svg>
+                                  </a>
+                                  <div class="iq-search-bar iq-sub-dropdown dropdown-menu" aria-labelledby="dropdownSearch">
+                                      <form action="#" class="searchbox p-2">
+                                          <div class="form-group mb-0 position-relative">
+                                          <input type="text" class="text search-input font-size-12" placeholder="type here to search...">
+                                          <a href="#" class="search-link">
+                                              <svg xmlns="http://www.w3.org/2000/svg" class="" width="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                              </svg>
+                                          </a> 
+                                          </div>
+                                      </form>
+                                  </div>
+                              </li>
+                              <li class="nav-item nav-icon dropdown">
+                                  <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <img src="static/picture/1.jpg" class="img-fluid avatar-rounded" alt="user">
+                                      <span class="mb-0 ml-2 user-name">John Doe</span>
+                                  </a>
+                                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                      <li class="dropdown-item d-flex svg-icon">
+                                          <svg class="svg-icon mr-0 text-secondary" id="h-01-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                          </svg>
+                                          <a href="user-profile.html">My Profile</a>
+                                      </li>
+                                      <li class="dropdown-item d-flex svg-icon">
+                                          <svg class="svg-icon mr-0 text-secondary" id="h-02-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                                          </svg>
+                                          <a href="user-profile-edit.html">Edit Profile</a>
+                                      </li>
+                                      <li class="dropdown-item d-flex svg-icon">
+                                          <svg class="svg-icon mr-0 text-secondary" id="h-03-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                          </svg>
+                                          <a href="user-account-setting.html">Account Settings</a>
+                                      </li>
+                                      <li class="dropdown-item d-flex svg-icon">
+                                          <svg class="svg-icon mr-0 text-secondary" id="h-04-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                          </svg>
+                                          <a href="user-privacy-setting.html">Privacy Settings</a>
+                                      </li>
+                                      <li class="dropdown-item  d-flex svg-icon border-top">
+                                          <svg class="svg-icon mr-0 text-secondary" id="h-05-p" width="20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path>
+                                          </svg>
+                                          <a href="auth-sign-in.html">Logout</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                          </ul>                     
+                      </div> 
+                  </div>
+              </nav>
+          </div>
+      </div>
+    <div class="content-page">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="statics2/img/logo/logo.png" alt=""></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="header-advance-area">
-            <div class="header-top-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="header-top-wraper">
-                                <div class="row">
-                                    <div class="col-lg-1 col-md-0 col-sm-1 col-xs-12">
-                                        <div class="menu-switcher-pro">
-                                            <button type="button" id="sidebarCollapse" class="btn bar-button-pro header-drl-controller-btn btn-info navbar-btn">
-													<i class="icon nalika-menu-task"></i>
-												</button>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-7 col-sm-6 col-xs-12">
-                                        <div class="header-top-menu tabl-d-n hd-search-rp">
-                                            <div class="breadcome-heading">
-												<form role="search" class="">
-													<input type="text" placeholder="Search..." class="form-control">
-													<a href=""><i class="fa fa-search"></i></a>
-												</form>
-											</div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-                                        <div class="header-right-info">
-                                            <ul class="nav navbar-nav mai-top-nav header-right-menu">
-                                                <li class="nav-item dropdown">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-mail" aria-hidden="true"></i><span class="indicator-ms"></span></a>
-                                                    <div role="menu" class="author-message-top dropdown-menu animated zoomIn">
-                                                        <div class="message-single-top">
-                                                            <h1>Message</h1>
-                                                        </div>
-                                                        <ul class="message-menu mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;"><div id="mCSB_2" class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 325px;"><div id="mCSB_2_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="message-img">
-                                                                        <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
-                                                                    </div>
-                                                                    <div class="message-content">
-                                                                        <span class="message-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </div></div><div id="mCSB_2_scrollbar_vertical" class="mCSB_scrollTools mCSB_2_scrollbar mCS-light-1 mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_2_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></ul>
-                                                        <div class="message-view">
-                                                            <a href="#">View All Messages</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-alarm" aria-hidden="true"></i><span class="indicator-nt"></span></a>
-                                                    <div role="menu" class="notification-author dropdown-menu animated zoomIn">
-                                                        <div class="notification-single-top">
-                                                            <h1>Notifications</h1>
-                                                        </div>
-                                                        <ul class="notification-menu mCustomScrollbar _mCS_3 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;"><div id="mCSB_3" class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 325px;"><div id="mCSB_3_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="icon nalika-tick" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Advanda Cro</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="icon nalika-cloud" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Sulaiman din</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="icon nalika-folder" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                            <li>
-                                                                <a href="#">
-                                                                    <div class="notification-icon">
-                                                                        <i class="icon nalika-bar-chart" aria-hidden="true"></i>
-                                                                    </div>
-                                                                    <div class="notification-content">
-                                                                        <span class="notification-date">16 Sept</span>
-                                                                        <h2>Victor Jara</h2>
-                                                                        <p>Please done this project as soon possible.</p>
-                                                                    </div>
-                                                                </a>
-                                                            </li>
-                                                        </div></div><div id="mCSB_3_scrollbar_vertical" class="mCSB_scrollTools mCSB_3_scrollbar mCS-light-1 mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></ul>
-                                                        <div class="notification-view">
-                                                            <a href="#">View All Notification</a>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="nav-item">
-                                                    <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
-															<i class="icon nalika-user"></i>
-															<span class="admin-name">Advanda Cro</span>
-															<i class="icon nalika-down-arrow nalika-angle-dw"></i>
-														</a>
-                                                    <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated zoomIn">
-                                                        <li><a href="register.html"><span class="icon nalika-home author-log-ic"></span> Register</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="icon nalika-user author-log-ic"></span> My Profile</a>
-                                                        </li>
-                                                        <li><a href="lock.html"><span class="icon nalika-diamond author-log-ic"></span> Lock</a>
-                                                        </li>
-                                                        <li><a href="#"><span class="icon nalika-settings author-log-ic"></span> Settings</a>
-                                                        </li>
-                                                        <li><a href="login.html"><span class="icon nalika-unlocked author-log-ic"></span> Log Out</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li class="nav-item nav-setting-open"><a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle"><i class="icon nalika-menu-task"></i></a>
-
-                                                    <div role="menu" class="admintab-wrap menu-setting-wrap menu-setting-wrap-bg dropdown-menu animated zoomIn">
-                                                        <ul class="nav nav-tabs custon-set-tab">
-                                                            <li class="active"><a data-toggle="tab" href="#Notes">News</a>
-                                                            </li>
-                                                            <li><a data-toggle="tab" href="#Projects">Activity</a>
-                                                            </li>
-                                                            <li><a data-toggle="tab" href="#Settings">Settings</a>
-                                                            </li>
-                                                        </ul>
-
-                                                        <div class="tab-content custom-bdr-nt">
-                                                            <div id="Notes" class="tab-pane fade in active">
-                                                                <div class="notes-area-wrap">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="icon nalika-chat"></i> Latest News</h2>
-                                                                        <p>You have 10 New News.</p>
-                                                                    </div>
-                                                                    <div class="notes-list-area notes-menu-scrollbar mCustomScrollbar _mCS_4 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;"><div id="mCSB_4" class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 315px;"><div id="mCSB_4_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                                        <ul class="notes-menu-list">
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="notes-list-flow">
-                                                                                        <div class="notes-img">
-                                                                                            <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
-                                                                                        </div>
-                                                                                        <div class="notes-content">
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
-                                                                                            <span>Yesterday 2:45 pm</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div></div><div id="mCSB_4_scrollbar_vertical" class="mCSB_scrollTools mCSB_4_scrollbar mCS-light-1 mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_4_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
-                                                                </div>
-                                                            </div>
-                                                            <div id="Projects" class="tab-pane fade">
-                                                                <div class="projects-settings-wrap">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="icon nalika-happiness"></i> Recent Activity</h2>
-                                                                        <p> You have 20 Recent Activity.</p>
-                                                                    </div>
-                                                                    <div class="project-st-list-area project-st-menu-scrollbar mCustomScrollbar _mCS_5 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;"><div id="mCSB_5" class="mCustomScrollBox mCS-light-1 mCSB_vertical mCSB_outside" tabindex="0" style="max-height: 315px;"><div id="mCSB_5_container" class="mCSB_container mCS_y_hidden mCS_no_scrollbar_y" style="position:relative; top:0; left:0;" dir="ltr">
-                                                                        <ul class="projects-st-menu-list">
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">1 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">2 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">3 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order Received</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">4 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User Registered</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">5 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">6 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New User</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">7 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                            <li>
-                                                                                <a href="#">
-                                                                                    <div class="project-list-flow">
-                                                                                        <div class="projects-st-heading">
-                                                                                            <h2>New Order</h2>
-                                                                                            <p> The point of using Lorem Ipsum is that it has a more or less normal.</p>
-                                                                                            <span class="project-st-time">9 hours ago</span>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </a>
-                                                                            </li>
-                                                                        </ul>
-                                                                    </div></div><div id="mCSB_5_scrollbar_vertical" class="mCSB_scrollTools mCSB_5_scrollbar mCS-light-1 mCSB_scrollTools_vertical" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_5_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div></div>
-                                                                </div>
-                                                            </div>
-                                                            <div id="Settings" class="tab-pane fade">
-                                                                <div class="setting-panel-area">
-                                                                    <div class="note-heading-indicate">
-                                                                        <h2><i class="icon nalika-gear"></i> Settings Panel</h2>
-                                                                        <p> You have 20 Settings. 5 not completed.</p>
-                                                                    </div>
-                                                                    <ul class="setting-panel-list">
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Show notifications</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example">
-                                                                                            <label class="onoffswitch-label" for="example">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Disable Chat</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example3">
-                                                                                            <label class="onoffswitch-label" for="example3">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Enable history</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example4">
-                                                                                            <label class="onoffswitch-label" for="example4">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Show charts</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="example7">
-                                                                                            <label class="onoffswitch-label" for="example7">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Update everyday</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example2">
-                                                                                            <label class="onoffswitch-label" for="example2">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Global search</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example6">
-                                                                                            <label class="onoffswitch-label" for="example6">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                        <li>
-                                                                            <div class="checkbox-setting-pro">
-                                                                                <div class="checkbox-title-pro">
-                                                                                    <h2>Offline users</h2>
-                                                                                    <div class="ts-custom-check">
-                                                                                        <div class="onoffswitch">
-                                                                                            <input type="checkbox" name="collapsemenu" checked="" class="onoffswitch-checkbox" id="example5">
-                                                                                            <label class="onoffswitch-label" for="example5">
-																									<span class="onoffswitch-inner"></span>
-																									<span class="onoffswitch-switch"></span>
-																								</label>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </li>
-                                                                    </ul>
-
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu start -->
-            <div class="mobile-menu-area">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="mobile-menu">
-                                <nav id="dropdown" style="display: block;">
-                                    <ul class="mobile-menu-nav">
-                                        <li><a data-toggle="collapse" data-target="#Charts" href="#">Home <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul class="collapse dropdown-header-top">
-                                                <li><a href="index.html">Dashboard v.1</a></li>
-                                                <li><a href="index-1.html">Dashboard v.2</a></li>
-                                                <li><a href="index-3.html">Dashboard v.3</a></li>
-                                                <li><a href="product-list.html">Product List</a></li>
-                                                <li><a href="product-edit.html">Product Edit</a></li>
-                                                <li><a href="product-detail.html">Product Detail</a></li>
-                                                <li><a href="product-cart.html">Product Cart</a></li>
-                                                <li><a href="product-payment.html">Product Payment</a></li>
-                                                <li><a href="analytics.html">Analytics</a></li>
-                                                <li><a href="widgets.html">Widgets</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#demo" href="#">Mailbox <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="demo" class="collapse dropdown-header-top">
-                                                <li><a href="mailbox.html">Inbox</a>
-                                                </li>
-                                                <li><a href="mailbox-view.html">View Mail</a>
-                                                </li>
-                                                <li><a href="mailbox-compose.html">Compose Mail</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#others" href="#">Miscellaneous <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="others" class="collapse dropdown-header-top">
-                                                <li><a href="file-manager.html">File Manager</a></li>
-                                                <li><a href="contacts.html">Contacts Client</a></li>
-                                                <li><a href="projects.html">Project</a></li>
-                                                <li><a href="project-details.html">Project Details</a></li>
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="blog-details.html">Blog Details</a></li>
-                                                <li><a href="404.html">404 Page</a></li>
-                                                <li><a href="500.html">500 Page</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Miscellaneousmob" href="#">Interface <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="Miscellaneousmob" class="collapse dropdown-header-top">
-                                                <li><a href="google-map.html">Google Map</a>
-                                                </li>
-                                                <li><a href="data-maps.html">Data Maps</a>
-                                                </li>
-                                                <li><a href="pdf-viewer.html">Pdf Viewer</a>
-                                                </li>
-                                                <li><a href="x-editable.html">X-Editable</a>
-                                                </li>
-                                                <li><a href="code-editor.html">Code Editor</a>
-                                                </li>
-                                                <li><a href="tree-view.html">Tree View</a>
-                                                </li>
-                                                <li><a href="preloader.html">Preloader</a>
-                                                </li>
-                                                <li><a href="images-cropper.html">Images Cropper</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Chartsmob" href="#">Charts <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="Chartsmob" class="collapse dropdown-header-top">
-                                                <li><a href="bar-charts.html">Bar Charts</a>
-                                                </li>
-                                                <li><a href="line-charts.html">Line Charts</a>
-                                                </li>
-                                                <li><a href="area-charts.html">Area Charts</a>
-                                                </li>
-                                                <li><a href="rounded-chart.html">Rounded Charts</a>
-                                                </li>
-                                                <li><a href="c3.html">C3 Charts</a>
-                                                </li>
-                                                <li><a href="sparkline.html">Sparkline Charts</a>
-                                                </li>
-                                                <li><a href="peity.html">Peity Charts</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Tablesmob" href="#">Tables <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="Tablesmob" class="collapse dropdown-header-top">
-                                                <li><a href="static-table.html">Static Table</a>
-                                                </li>
-                                                <li><a href="data-table.html">Data Table</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#formsmob" href="#">Forms <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="formsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Appviewsmob" href="#">App views <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="Appviewsmob" class="collapse dropdown-header-top">
-                                                <li><a href="basic-form-element.html">Basic Form Elements</a>
-                                                </li>
-                                                <li><a href="advance-form-element.html">Advanced Form Elements</a>
-                                                </li>
-                                                <li><a href="password-meter.html">Password Meter</a>
-                                                </li>
-                                                <li><a href="multi-upload.html">Multi Upload</a>
-                                                </li>
-                                                <li><a href="tinymc.html">Text Editor</a>
-                                                </li>
-                                                <li><a href="dual-list-box.html">Dual List Box</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li><a data-toggle="collapse" data-target="#Pagemob" href="#">Pages <span class="admin-project-icon nalika-icon nalika-down-arrow"></span></a>
-                                            <ul id="Pagemob" class="collapse dropdown-header-top">
-                                                <li><a href="login.html">Login</a>
-                                                </li>
-                                                <li><a href="register.html">Register</a>
-                                                </li>
-                                                <li><a href="lock.html">Lock</a>
-                                                </li>
-                                                <li><a href="password-recovery.html">Password Recovery</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Mobile Menu end -->
-        </div>
-        <div class="section-admin container-fluid">
-            <div class="row admin text-center">
-                
-            </div>
-        </div>
         
-
-        <div class="row">
-            ::before
+<div class="row">
+            
             <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
 
 
@@ -951,80 +1761,67 @@ AppAsset::register($this);
 
 
             </div>
-            ::after
+            
         </div>
-
-        
-        
-        <div class="footer-copyright-area">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="footer-copy-right">
-                            <p>
-                            Copyright © 2018 Colorlib All rights reserved.More Templates <a href="#" target="_blank" title="tanjia">tanjia</a> - Collect from <a href="#" title="网页模板" target="_blank">网页模板</a></p>
-                        </div>
-                    </div>
+            <!-- Page end  -->
+        </div>
+    </div>
+    </div>
+    <!-- Wrapper End-->
+    <footer class="iq-footer">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li class="list-inline-item"><a href="terms-of-service.html">Terms of Use</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-right">
+                    <span class="mr-1">Copyright © 2021.Company name All rights reserved.</span>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- jquery
-		============================================ -->
-    <script src="statics2/js/vendor/jquery-1.12.4.min.js"></script>
-    <!-- bootstrap JS
-		============================================ -->
-    <script src="statics2/js/bootstrap.min.js"></script>
-    <!-- wow JS
-		============================================ -->
-    <script src="statics2/js/wow.min.js"></script>
-    <!-- price-slider JS
-		============================================ -->
-    <script src="statics2/js/jquery-price-slider.js"></script>
-    <!-- meanmenu JS
-		============================================ -->
-    <script src="statics2/js/jquery.meanmenu.js"></script>
-    <!-- owl.carousel JS
-		============================================ -->
-    <script src="statics2/js/owl.carousel.min.js"></script>
-    <!-- sticky JS
-		============================================ -->
-    <script src="statics2/js/jquery.sticky.js"></script>
-    <!-- scrollUp JS
-		============================================ -->
-    <script src="statics2/js/jquery.scrollUp.min.js"></script>
-    <!-- mCustomScrollbar JS
-		============================================ -->
-    <script src="statics2/js/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="statics2/js/scrollbar/mCustomScrollbar-active.js"></script>
-    <!-- metisMenu JS
-		============================================ -->
-    <script src="statics2/js/metisMenu/metisMenu.min.js"></script>
-    <script src="statics2/js/metisMenu/metisMenu-active.js"></script>
-    <!-- sparkline JS
-		============================================ -->
-    <script src="statics2/js/sparkline/jquery.sparkline.min.js"></script>
-    <script src="statics2/js/sparkline/jquery.charts-sparkline.js"></script>
-    <!-- calendar JS
-		============================================ -->
-    <script src="statics2/js/calendar/moment.min.js"></script>
-    <script src="statics2/js/calendar/fullcalendar.min.js"></script>
-    <script src="statics2/js/calendar/fullcalendar-active.js"></script>
-	<!-- float JS
-		============================================ -->
-    <script src="statics2/js/flot/jquery.flot.js"></script>
-    <script src="statics2/js/flot/jquery.flot.resize.js"></script>
-    <script src="statics2/js/flot/curvedLines.js"></script>
-    <script src="statics2/js/flot/flot-active.js"></script><div class="flot-tooltip" style="display: none;"></div><div class="flot-tooltip" style="display: none;"></div><div class="flot-tooltip" style="display: none;"></div>
-    <!-- plugins JS
-		============================================ -->
-    <script src="statics2/js/plugins.js"></script>
-    <!-- main JS
-		============================================ -->
-    <script src="statics2/js/main.js"></script><a id="scrollUp" href="#top" style="display: none; position: fixed; z-index: 2147483647;"><i class="fa fa-angle-up"></i></a>
-
-
+    </footer>    <!-- Backend Bundle JavaScript -->
+    <script src="static/js/backend-bundle.min.js"></script>
+    <!-- Chart Custom JavaScript -->
+    <script src="static/js/customizer.js"></script>
+    
+    <script src="static/js/sidebar.js"></script>
+    
+    <!-- Flextree Javascript-->
+    <script src="static/js/flex-tree.min.js"></script>
+    <script src="static/js/tree.js"></script>
+    
+    <!-- Table Treeview JavaScript -->
+    <script src="static/js/table-treeview.js"></script>
+    
+    <!-- SweetAlert JavaScript -->
+    <script src="static/js/sweetalert.js"></script>
+    
+    <!-- Vectoe Map JavaScript -->
+    <script src="static/js/vector-map-custom.js"></script>
+    
+    <!-- Chart Custom JavaScript -->
+    <script src="static/js/chart-custom.js"></script>
+    <script src="static/js/01.js"></script>
+    <svg id="SvgjsSvg1170" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1171"></defs><polyline id="SvgjsPolyline1172" points="0,0"></polyline><path id="SvgjsPath1173" d="M-1 262.5L-1 262.5C-1 262.5 163.6153846153846 262.5 163.6153846153846 262.5C163.6153846153846 262.5 272.6923076923077 262.5 272.6923076923077 262.5C272.6923076923077 262.5 381.7692307692308 262.5 381.7692307692308 262.5C381.7692307692308 262.5 490.8461538461538 262.5 490.8461538461538 262.5C490.8461538461538 262.5 599.9230769230769 262.5 599.9230769230769 262.5C599.9230769230769 262.5 709 262.5 709 262.5C709 262.5 709 262.5 709 262.5 "></path></svg><script src="static/js/02.js"></script>
+    
+    <!-- slider JavaScript -->
+    <script src="static/js/slider.js"></script>
+    
+    <!-- Emoji picker -->
+    <script src="static/js/index.js" type="module"></script>
+    
+    
+    <!-- app JavaScript -->
+    <script src="static/js/app.js"></script><div class="datepicker datepicker-dropdown datepicker-orient-top datepicker-orient-left" style="top: 104.981px; left: 782.269px;"><div class="datepicker-picker"><div class="datepicker-header"><div class="datepicker-title" style="display: none;"></div><div class="datepicker-controls"><button type="button" class="button prev-btn">«</button><button type="button" class="button view-switch">February 2023</button><button type="button" class="button next-btn">»</button></div></div><div class="datepicker-main"><div class="datepicker-view"><div class="days"><div class="days-of-week"><span class="dow">Su</span><span class="dow">Mo</span><span class="dow">Tu</span><span class="dow">We</span><span class="dow">Th</span><span class="dow">Fr</span><span class="dow">Sa</span></div><div class="datepicker-grid"><span class="datepicker-cell day prev" data-date="1674921600000">29</span><span class="datepicker-cell day prev" data-date="1675008000000">30</span><span class="datepicker-cell day prev" data-date="1675094400000">31</span><span class="datepicker-cell day" data-date="1675180800000">1</span><span class="datepicker-cell day focused" data-date="1675267200000">2</span><span class="datepicker-cell day" data-date="1675353600000">3</span><span class="datepicker-cell day" data-date="1675440000000">4</span><span class="datepicker-cell day" data-date="1675526400000">5</span><span class="datepicker-cell day" data-date="1675612800000">6</span><span class="datepicker-cell day" data-date="1675699200000">7</span><span class="datepicker-cell day" data-date="1675785600000">8</span><span class="datepicker-cell day" data-date="1675872000000">9</span><span class="datepicker-cell day" data-date="1675958400000">10</span><span class="datepicker-cell day" data-date="1676044800000">11</span><span class="datepicker-cell day" data-date="1676131200000">12</span><span class="datepicker-cell day" data-date="1676217600000">13</span><span class="datepicker-cell day" data-date="1676304000000">14</span><span class="datepicker-cell day" data-date="1676390400000">15</span><span class="datepicker-cell day" data-date="1676476800000">16</span><span class="datepicker-cell day" data-date="1676563200000">17</span><span class="datepicker-cell day" data-date="1676649600000">18</span><span class="datepicker-cell day" data-date="1676736000000">19</span><span class="datepicker-cell day" data-date="1676822400000">20</span><span class="datepicker-cell day" data-date="1676908800000">21</span><span class="datepicker-cell day" data-date="1676995200000">22</span><span class="datepicker-cell day" data-date="1677081600000">23</span><span class="datepicker-cell day" data-date="1677168000000">24</span><span class="datepicker-cell day" data-date="1677254400000">25</span><span class="datepicker-cell day" data-date="1677340800000">26</span><span class="datepicker-cell day" data-date="1677427200000">27</span><span class="datepicker-cell day" data-date="1677513600000">28</span><span class="datepicker-cell day next" data-date="1677600000000">1</span><span class="datepicker-cell day next" data-date="1677686400000">2</span><span class="datepicker-cell day next" data-date="1677772800000">3</span><span class="datepicker-cell day next" data-date="1677859200000">4</span><span class="datepicker-cell day next" data-date="1677945600000">5</span><span class="datepicker-cell day next" data-date="1678032000000">6</span><span class="datepicker-cell day next" data-date="1678118400000">7</span><span class="datepicker-cell day next" data-date="1678204800000">8</span><span class="datepicker-cell day next" data-date="1678291200000">9</span><span class="datepicker-cell day next" data-date="1678377600000">10</span><span class="datepicker-cell day next" data-date="1678464000000">11</span></div></div></div></div><div class="datepicker-footer"><div class="datepicker-controls"><button type="button" class="button today-btn" style="display: none;">Today</button><button type="button" class="button clear-btn" style="display: none;">Clear</button></div></div></div></div><div class="datepicker datepicker-dropdown datepicker-orient-top datepicker-orient-left" style="top: 104.981px; left: 1036.42px;"><div class="datepicker-picker"><div class="datepicker-header"><div class="datepicker-title" style="display: none;"></div><div class="datepicker-controls"><button type="button" class="button prev-btn">«</button><button type="button" class="button view-switch">February 2023</button><button type="button" class="button next-btn">»</button></div></div><div class="datepicker-main"><div class="datepicker-view"><div class="days"><div class="days-of-week"><span class="dow">Su</span><span class="dow">Mo</span><span class="dow">Tu</span><span class="dow">We</span><span class="dow">Th</span><span class="dow">Fr</span><span class="dow">Sa</span></div><div class="datepicker-grid"><span class="datepicker-cell day prev" data-date="1674921600000">29</span><span class="datepicker-cell day prev" data-date="1675008000000">30</span><span class="datepicker-cell day prev" data-date="1675094400000">31</span><span class="datepicker-cell day" data-date="1675180800000">1</span><span class="datepicker-cell day focused" data-date="1675267200000">2</span><span class="datepicker-cell day" data-date="1675353600000">3</span><span class="datepicker-cell day" data-date="1675440000000">4</span><span class="datepicker-cell day" data-date="1675526400000">5</span><span class="datepicker-cell day" data-date="1675612800000">6</span><span class="datepicker-cell day" data-date="1675699200000">7</span><span class="datepicker-cell day" data-date="1675785600000">8</span><span class="datepicker-cell day" data-date="1675872000000">9</span><span class="datepicker-cell day" data-date="1675958400000">10</span><span class="datepicker-cell day" data-date="1676044800000">11</span><span class="datepicker-cell day" data-date="1676131200000">12</span><span class="datepicker-cell day" data-date="1676217600000">13</span><span class="datepicker-cell day" data-date="1676304000000">14</span><span class="datepicker-cell day" data-date="1676390400000">15</span><span class="datepicker-cell day" data-date="1676476800000">16</span><span class="datepicker-cell day" data-date="1676563200000">17</span><span class="datepicker-cell day" data-date="1676649600000">18</span><span class="datepicker-cell day" data-date="1676736000000">19</span><span class="datepicker-cell day" data-date="1676822400000">20</span><span class="datepicker-cell day" data-date="1676908800000">21</span><span class="datepicker-cell day" data-date="1676995200000">22</span><span class="datepicker-cell day" data-date="1677081600000">23</span><span class="datepicker-cell day" data-date="1677168000000">24</span><span class="datepicker-cell day" data-date="1677254400000">25</span><span class="datepicker-cell day" data-date="1677340800000">26</span><span class="datepicker-cell day" data-date="1677427200000">27</span><span class="datepicker-cell day" data-date="1677513600000">28</span><span class="datepicker-cell day next" data-date="1677600000000">1</span><span class="datepicker-cell day next" data-date="1677686400000">2</span><span class="datepicker-cell day next" data-date="1677772800000">3</span><span class="datepicker-cell day next" data-date="1677859200000">4</span><span class="datepicker-cell day next" data-date="1677945600000">5</span><span class="datepicker-cell day next" data-date="1678032000000">6</span><span class="datepicker-cell day next" data-date="1678118400000">7</span><span class="datepicker-cell day next" data-date="1678204800000">8</span><span class="datepicker-cell day next" data-date="1678291200000">9</span><span class="datepicker-cell day next" data-date="1678377600000">10</span><span class="datepicker-cell day next" data-date="1678464000000">11</span></div></div></div></div><div class="datepicker-footer"><div class="datepicker-controls"><button type="button" class="button today-btn" style="display: none;">Today</button><button type="button" class="button clear-btn" style="display: none;">Clear</button></div></div></div></div>  
 </body>
+
+
+
+
+
 
 
 
