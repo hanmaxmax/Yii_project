@@ -26,7 +26,7 @@ AppAsset::register($this);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- favicon
 		============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="statics2/img2favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="statics2/img/favicon.ico">
     <!-- Google Fonts
 		============================================ -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900" rel="stylesheet">
@@ -94,11 +94,11 @@ AppAsset::register($this);
     <div class="left-sidebar-pro">
         <nav id="sidebar" class="">
             <div class="sidebar-header">
-                <a href="index.html"><img class="main-logo" src="statics2/img2logo/logo.png" alt=""></a>
-                <strong><img src="statics2/img2logo/logosn.png" alt=""></strong>            </div>
+                <a href="index.html"><img class="main-logo" src="statics2/img/logo/logo.png" alt=""></a>
+                <strong><img src="statics2/img/logo/logosn.png" alt=""></strong>            </div>
 	  <div class="nalika-profile">
 				<div class="profile-dtl">
-					<a href="#"><img src="statics2/img2notification/4.jpg" alt=""></a>
+					<a href="#"><img src="statics2/img/notification/4.jpg" alt=""></a>
 					<h2>Lakian <span class="min-dtn">Das</span></h2>
 				</div>
 				<div class="profile-social-dtl">
@@ -221,7 +221,7 @@ AppAsset::register($this);
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="logo-pro">
-                        <a href="index.html"><img class="main-logo" src="statics2/img2logo/logo.png" alt=""></a>
+                        <a href="index.html"><img class="main-logo" src="statics2/img/logo/logo.png" alt=""></a>
                     </div>
                 </div>
             </div>
@@ -263,7 +263,7 @@ AppAsset::register($this);
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="statics2/img2contact/1.jpg" alt="" class="mCS_img_loaded">
+                                                                        <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -275,7 +275,7 @@ AppAsset::register($this);
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="statics2/img2contact/4.jpg" alt="" class="mCS_img_loaded">
+                                                                        <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -287,7 +287,7 @@ AppAsset::register($this);
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="statics2/img2contact/3.jpg" alt="" class="mCS_img_loaded">
+                                                                        <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -299,7 +299,7 @@ AppAsset::register($this);
                                                             <li>
                                                                 <a href="#">
                                                                     <div class="message-img">
-                                                                        <img src="statics2/img2contact/2.jpg" alt="" class="mCS_img_loaded">
+                                                                        <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
                                                                     </div>
                                                                     <div class="message-content">
                                                                         <span class="message-date">16 Sept</span>
@@ -418,7 +418,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/4.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -431,7 +431,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/1.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -444,7 +444,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/2.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -457,7 +457,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/3.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -470,7 +470,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/4.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/4.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -483,7 +483,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/1.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -496,7 +496,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/2.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -509,7 +509,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/1.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/1.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -522,7 +522,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/2.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/2.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -535,7 +535,7 @@ AppAsset::register($this);
                                                                                 <a href="#">
                                                                                     <div class="notes-list-flow">
                                                                                         <div class="notes-img">
-                                                                                            <img src="statics2/img2contact/3.jpg" alt="" class="mCS_img_loaded">
+                                                                                            <img src="statics2/img/contact/3.jpg" alt="" class="mCS_img_loaded">
                                                                                         </div>
                                                                                         <div class="notes-content">
                                                                                             <p> The point of using Lorem Ipsum is that it has a more-or-less normal.</p>
@@ -925,34 +925,6 @@ AppAsset::register($this);
                 </div>
             </div>
             <!-- Mobile Menu end -->
-            <div class="breadcome-area">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <div class="breadcome-list">
-                                <div class="row">
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcomb-wp">
-											<div class="breadcomb-icon">
-												<i class="icon nalika-home"></i>
-											</div>
-											<div class="breadcomb-ctn">
-												<h2>Dashboard One</h2>
-												<p>Welcome to Nalika <span class="bread-ntd">Admin Template</span></p>
-											</div>
-										</div>
-                                    </div>
-                                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                                        <div class="breadcomb-report">
-											<button data-toggle="tooltip" data-placement="left" title="" class="btn" data-original-title="Download Report"><i class="icon nalika-download"></i></button>
-										</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </div>
         <div class="section-admin container-fluid">
             <div class="row admin text-center">
@@ -961,13 +933,27 @@ AppAsset::register($this);
         </div>
         
 
-                <!-- Begin: Content -->
-                <section id="content" class="table-layout animated fadeIn">
-                <?= $content ?>
+        <div class="row">
+            ::before
+            <div class="col-lg-15 col-md-15 col-sm-15 col-xs-15">
 
-                </section>
-                <!-- End: Content -->
-        
+
+            
+                <div class="container">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                    <?= Alert::widget() ?>
+                    <?= $content ?>
+                </div>
+
+
+
+
+            </div>
+            ::after
+        </div>
+
         
         
         <div class="footer-copyright-area">
