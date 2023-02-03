@@ -10,11 +10,7 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
-<<<<<<< HEAD
-    public $baseUrl = '@web/statics';
-=======
     public $baseUrl = '@web/statics'; 
->>>>>>> main
     public $css = [
         //'css/site.css',
         'css/bootstrap.css',

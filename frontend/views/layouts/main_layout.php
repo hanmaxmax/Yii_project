@@ -14,17 +14,6 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
-<<<<<<< HEAD
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?php $this->registerCsrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
-
-    <?php $this->head() ?>
-=======
 <html lang="zxx">
 <head>
 	<title>Home</title>
@@ -50,7 +39,6 @@ AppAsset::register($this);
 	<link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
 	<?php $this->head() ?>
->>>>>>> main
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -60,11 +48,7 @@ AppAsset::register($this);
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
 				<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 00950804988436
-<<<<<<< HEAD
-				<a href="contact.html">Contact Us </a>
-=======
 				<a href="contact.php">Contact Us </a>
->>>>>>> main
 			</h6>
 			<div class="log">
 				<h5>Free delivery order over $100</h5>
@@ -104,15 +88,9 @@ AppAsset::register($this);
 								<i class="fas fa-angle-down"></i>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-<<<<<<< HEAD
-								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
+							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">时间线</a>
-=======
-								<a class="dropdown-item" href="404.html">404</a>
-								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="soon.html">Comingsoon</a>
->>>>>>> main
 
 							</div>
 						</li>
@@ -152,437 +130,12 @@ AppAsset::register($this);
 	</header>
 	<!--//header-->
 
-<<<<<<< HEAD
-	<!--/banner-->
-	<div class="banner">
-		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-			<ol class="carousel-indicators">
-				<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-				<li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-			</ol>
-			<div class="carousel-inner" role="listbox">
-				<div class="carousel-item active">
-					<div class="carousel-caption">
-						<h3>Gold Jewellery </h3>
-						<h5>2018
-							<span>New Looks</span>
-						</h5>
-					</div>
-				</div>
-				<div class="carousel-item item2">
-					<div class="carousel-caption">
-						<h3>Flexi Rings </h3>
-						<h5>2018
-							<span>New Looks</span>
-						</h5>
-					</div>
-				</div>
-				<div class="carousel-item item3">
-					<div class="carousel-caption">
-						<h3>Gold Jewellery </h3>
-						<h5>2018
-							<span>New Looks</span>
-						</h5>
-					</div>
-				</div>
-				<div class="carousel-item item4">
-					<div class="carousel-caption">
-						<h3>Flexi Rings </h3>
-						<h5>2018
-							<span>New Looks</span>
-						</h5>
-					</div>
-				</div>
-			</div>
-			<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-				<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
-				<span class="sr-only">Next</span>
-			</a>
-		</div>
-	</div>
-	<!--/model-->
-	<!--//banner-->
-	<!--/banner-bottom-w3ls-agileinfo-->
-	<section class="banner-bottom-w3ls-agileinfo">
-		<div class="container">
-			<div class="row jewel-grids-main-in">
-				<div class="col-lg-4 bottom-sub-grid text-center" data-aos="fade-up">
-					<div class="bt-icon">
-
-						<span class="fas fa-gift"></span>
-					</div>
-
-					<h4 class="sub-tittle">Gift Card</h4>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4 bottom-sub-grid text-center" data-aos="fade-up">
-					<div class="bt-icon">
-						<span class="fas fa-home"></span>
-					</div>
-
-					<h4 class="sub-tittle">Store</h4>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-
-				</div>
-				<!-- /.col-lg-4 -->
-				<div class="col-lg-4 bottom-sub-grid text-center" data-aos="fade-up">
-					<div class="bt-icon">
-						<span class="far fa-life-ring"></span>
-					</div>
-
-					<h4 class="sub-tittle">Full Support</h4>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-
-				</div>
-				<!-- /.col-lg-4 -->
-			</div>
-		</div>
-		<!-- /.row -->
-	</section>
-	<!---->
-	<div class="featured-items banner-bottom-w3ls-agileinfo">
-		<h3 class="tittle text-center">Featured Brands This Week</h3>
-		<div class="inner-sec-wthree-agileits">
-			<div class="sreen-gallery-cursual">
-
-				<div class="owl-carousel owl-theme">
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g1.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g2.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g3.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g4.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g5.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g5.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g6.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g8.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g7.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item-owl">
-						<div class="item-review text-center">
-							<img src="images/g1.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g2.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-					<div class="item">
-						<div class="item-review text-center">
-							<img src="images/g3.jpg" class="img-fluid rounded" alt="" />
-							<h5>Some Text</h5>
-						</div>
-					</div>
-				</div>
-				<!--//screen-gallery-->
-			</div>
-		</div>
-	</div>
-
-	<section class="reviews_sec featured-items banner-bottom-w3ls-agileinfo">
-		<div class="container">
-			<h3 class="tittle">What our clients say</h3>
-			<div class="inner-sec-wthree-agileits">
-				<!---->
-				<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-					<div class="carousel-inner" role="listbox">
-						<div class="carousel-item active">
-							<div class="row test-slides">
-								<div class="col-md-6 testimonials_grid text-center">
-									<div class="testimonials_grid-inn">
-										<img src="images/t3.jpg" alt=" " class="img-fluid" />
-										<div class="test_social_pos">
-											<ul class="social_list1">
-												<li>
-													<a href="#" class="facebook1">
-														<i class="fab fa-facebook-f"></i>
-
-													</a>
-												</li>
-												<li>
-													<a href="#" class="twitter2">
-														<i class="fab fa-twitter"></i>
-
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-									<h3>Gretchen
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl nibh vel lacus.
-									</p>
-								</div>
-
-								<div class="col-md-6 testimonials_grid text-center">
-									<div class="testimonials_grid-inn">
-										<img src="images/t2.jpg" alt=" " class="img-fluid" />
-										<div class="test_social_pos">
-											<ul class="social_list1">
-												<li>
-													<a href="#" class="facebook1">
-														<i class="fab fa-facebook-f"></i>
-
-													</a>
-												</li>
-												<li>
-													<a href="#" class="twitter2">
-														<i class="fab fa-twitter"></i>
-
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-									<h3>Esmeralda
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl nibh vel lacus.
-									</p>
-								</div>
-
-							</div>
-						</div>
-						<div class="carousel-item">
-							<div class="row test-slides">
-								<div class="col-md-6 testimonials_grid text-center">
-									<div class="testimonials_grid-inn">
-										<img src="images/t3.jpg" alt=" " class="img-fluid" />
-										<div class="test_social_pos">
-											<ul class="social_list1">
-												<li>
-													<a href="#" class="facebook1">
-														<i class="fab fa-facebook-f"></i>
-
-													</a>
-												</li>
-												<li>
-													<a href="#" class="twitter2">
-														<i class="fab fa-twitter"></i>
-
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-									<h3>Gretchen
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl nibh vel lacus.
-									</p>
-								</div>
-
-								<div class="col-md-6 testimonials_grid text-center">
-									<div class="testimonials_grid-inn">
-										<img src="images/t2.jpg" alt=" " class="img-fluid" />
-										<div class="test_social_pos">
-											<ul class="social_list1">
-												<li>
-													<a href="#" class="facebook1">
-														<i class="fab fa-facebook-f"></i>
-
-													</a>
-												</li>
-												<li>
-													<a href="#" class="twitter2">
-														<i class="fab fa-twitter"></i>
-
-													</a>
-												</li>
-
-											</ul>
-										</div>
-									</div>
-									<h3>Esmeralda
-										<span>Customer</span>
-									</h3>
-									<i>United States</i>
-									<p>Maecenas interdum, metus vitae tincidunt porttitor, magna quam egestas sem, ac scelerisque nisl nibh vel lacus.
-									</p>
-								</div>
-
-							</div>
-						</div>
-					</div>
-					<a class="carousel-control-prev test" href="#carouselExampleControls" role="button" data-slide="prev">
-						<span class="far fa-arrow-alt-circle-left"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next test" href="#carouselExampleControls" role="button" data-slide="next">
-						<span class="far fa-arrow-alt-circle-right" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
-				<!---->
-			</div>
-		</div>
-	</section>
-	<!---->
-
-	<!--footer-->
-	<footer>
-
-		<div class="instagram-posts">
-			<h3 class="tittle cen foot">Istagram Posts</h3>
-			<div class="row footer-top">
-				<!-- instagram posts -->
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g6.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g2.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g4.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g6.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g8.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-				<div class="col-md-2 col-sm-2 footer-grid-img">
-					<a href="single.html">
-						<img src="images/g1.jpg" class="img-fluid" alt="" />
-					</a>
-				</div>
-			</div>
-			<!-- //instagram posts -->
-			<!-- subscribe -->
-			<div class="footer-bottom-w3layouts-agileinfo">
-				<div class="subscribe-main text-center">
-					<h2>Signup to our newsletter</h2>
-					<div class="subscribe-form">
-						<form action="#" method="post" class="subscribe_form">
-							<input class="form-control" type="email" placeholder="Enter your email..." required="">
-							<input class="form-control" type="submit" value="Subscribe">
-						</form>
-
-					</div>
-					<p>We respect your privacy.No spam ever!</p>
-				</div>
-				<!-- //subscribe -->
-				<!-- footer -->
-				<div class="footer-cpy text-center">
-					<div class="footer-social">
-						<div class="copyrighttop">
-							<ul>
-								<li>
-									<a class="facebook" href="#">
-										<i class="fab fa-facebook-f"></i>
-										<span>Facebook</span>
-									</a>
-								</li>
-								<li>
-									<a class="facebook" href="#">
-										<i class="fab fa-twitter"></i>
-										<span>Twitter</span>
-									</a>
-								</li>
-								<li>
-									<a class="facebook" href="#">
-										<i class="fab fa-google-plus-g"></i>
-										<span>Google+</span>
-									</a>
-								</li>
-								<li>
-									<a class="facebook" href="#">
-										<i class="fab fa-pinterest-p"></i>
-										<span>Pinterest</span>
-									</a>
-								</li>
-							</ul>
-
-						</div>
-					</div>
-					<div class="copyrightbottom-w3ls-agile">
-						<p>Copyright &copy; 2018.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
-
-					</div>
-				</div>
-
-				<!-- //footer -->
-			</div>
-		</div>
-	</footer>
-=======
 	 <!--Begin:Content-->
 	<section id="content" class="table-layout animated fadeIn">
     <?= $content ?>
     </section>
     <!-- End: Content -->
 
->>>>>>> main
 	<!---->
 	<!--/model-->
 	<!-- Modal -->
@@ -682,14 +235,6 @@ AppAsset::register($this);
 
 			</div>
 		</div>
-<<<<<<< HEAD
-            <!--Begin:Content-->
-            <section id="content" class="table-layout animated fadeIn">
-            <?= $content ?>
-            </section>
-            <!-- End: Content -->
-=======
->>>>>>> main
 	</div>
 	<!--//model-->
 	<!-- js -->
