@@ -88,9 +88,9 @@ AppAsset::register($this);
 								<i class="fas fa-angle-down"></i>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="404.html">404</a>
+							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="soon.html">Comingsoon</a>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">时间线</a>
 
 							</div>
 						</li>
