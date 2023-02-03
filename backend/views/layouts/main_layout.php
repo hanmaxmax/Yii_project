@@ -807,7 +807,7 @@ AppAsset::register($this);
               <nav class="iq-sidebar-menu">
                   <ul id="iq-sidebar-toggle" class="side-menu">
                       <li class="active sidebar-layout">
-                          <a href="" class="svg-icon">
+                          <a href="<?php echo Yii::$app->getHomeUrl(); ?>" class="svg-icon">
                               <i class="">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
@@ -842,7 +842,7 @@ AppAsset::register($this);
                           </a>
                       </li>
                       <li class=" sidebar-layout">
-                          <a href="order.html" class="svg-icon">
+                          <a href="<?php echo Yii::$app->getHomeUrl(); ?>?r=our-team-mems%2Fcreate" class="svg-icon">
                               <i class="">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path>
@@ -1793,7 +1793,7 @@ AppAsset::register($this);
                               <li class="nav-item nav-icon dropdown">
                                   <a href="#" class="nav-item nav-icon dropdown-toggle pr-0 search-toggle" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                       <img src="static/picture/1.jpg" class="img-fluid avatar-rounded" alt="user">
-                                      <span class="mb-0 ml-2 user-name">John Doe</span>
+                                      <span class="mb-0 ml-2 user-name"><?php echo Yii::$app->user->identity->username ?></span>
                                   </a>
                                   <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
                                       <li class="dropdown-item d-flex svg-icon">
