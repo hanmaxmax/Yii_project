@@ -38,6 +38,7 @@ AppAsset::register($this);
 	<link href="css/fontawesome-all.css" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+	<?php $this->head() ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
