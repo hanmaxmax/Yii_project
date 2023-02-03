@@ -14,6 +14,7 @@ AppAsset::register($this);
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="<?= Yii::$app->language ?>">
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
@@ -23,6 +24,33 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
 
     <?php $this->head() ?>
+=======
+<html lang="zxx">
+<head>
+	<title>Home</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<meta name="keywords" content="" />
+
+	<script>
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+	<link href="css/style.css" rel='stylesheet' type='text/css' />
+	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
+	<link rel="stylesheet" href="css/owl.theme.css" type="text/css" media="all">
+	<link href="css/fontawesome-all.css" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
+	<?php $this->head() ?>
+>>>>>>> main
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -32,7 +60,11 @@ AppAsset::register($this);
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
 				<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 00950804988436
+<<<<<<< HEAD
 				<a href="contact.html">Contact Us </a>
+=======
+				<a href="contact.php">Contact Us </a>
+>>>>>>> main
 			</h6>
 			<div class="log">
 				<h5>Free delivery order over $100</h5>
@@ -72,9 +104,15 @@ AppAsset::register($this);
 								<i class="fas fa-angle-down"></i>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+<<<<<<< HEAD
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">时间线</a>
+=======
+								<a class="dropdown-item" href="404.html">404</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="soon.html">Comingsoon</a>
+>>>>>>> main
 
 							</div>
 						</li>
@@ -114,6 +152,7 @@ AppAsset::register($this);
 	</header>
 	<!--//header-->
 
+<<<<<<< HEAD
 	<!--/banner-->
 	<div class="banner">
 		<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -536,6 +575,14 @@ AppAsset::register($this);
 			</div>
 		</div>
 	</footer>
+=======
+	 <!--Begin:Content-->
+	<section id="content" class="table-layout animated fadeIn">
+    <?= $content ?>
+    </section>
+    <!-- End: Content -->
+
+>>>>>>> main
 	<!---->
 	<!--/model-->
 	<!-- Modal -->
@@ -635,11 +682,14 @@ AppAsset::register($this);
 
 			</div>
 		</div>
+<<<<<<< HEAD
             <!--Begin:Content-->
             <section id="content" class="table-layout animated fadeIn">
             <?= $content ?>
             </section>
             <!-- End: Content -->
+=======
+>>>>>>> main
 	</div>
 	<!--//model-->
 	<!-- js -->
