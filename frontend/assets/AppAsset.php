@@ -10,11 +10,14 @@ use yii\web\AssetBundle;
 class AppAsset extends AssetBundle
 {
     public $basePath = '@webroot';
-    public $baseUrl = '@web/statics';
+    public $baseUrl = '@web/statics'; 
     public $css = [
         //'css/site.css',
         'css/bootstrap.css',
         'css/style.css',
+        'newscss/style.css',
+        'newscss/font-awesome.min.css',
+        'newscss/bootstrap.min.css',
         'css/prettyPhoto.css',
         'css/owl.carousel.css',
         'css/owl.theme.css',
@@ -29,10 +32,13 @@ class AppAsset extends AssetBundle
         'js/jquery-1.7.2.js',
         'js/jquery.quicksand.js',
         'js/script.js',
-        'js/jquery.prettyPhoto.js'
+        'js/jquery.prettyPhoto.js',
+        'js/newsjs/bootstrap.min.js',
+        'js/newsjs/jquery.min.js',
+        'js/newsjs/main.js'
     ];
     public $depends = [
-        'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
+        //'yii\web\YiiAsset',
+        //'yii\bootstrap\BootstrapAsset',
     ];
 }
