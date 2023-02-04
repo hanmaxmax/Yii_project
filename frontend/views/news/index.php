@@ -10,6 +10,7 @@ use yii\widgets\Pjax;
 $this->title = 'News';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<<<<<<< HEAD
 <!-- BEGIN: .cover -->
 <!-- <?php
   header('content-type:image/jpg;');
@@ -667,6 +668,9 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</body>
 </html>
 
+=======
+<div class="news-index">
+>>>>>>> 63b1126fc9e90e5d46e53d8574b42290d2a57b76
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -693,4 +697,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <?php Pjax::end(); ?>
 
 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 63b1126fc9e90e5d46e53d8574b42290d2a57b76

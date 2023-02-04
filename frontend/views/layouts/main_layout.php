@@ -48,7 +48,11 @@ AppAsset::register($this);
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
 				<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 00950804988436
+<<<<<<< HEAD
 				<a href="index.php">Contact Us </a>
+=======
+				<a href="<?php echo Yii::$app->getHomeUrl(); ?>">Contact Us </a>
+>>>>>>> 63b1126fc9e90e5d46e53d8574b42290d2a57b76
 			</h6>
 			<div class="log">
 				<div class="collapse navbar-collapse" id="main-nav">
@@ -63,6 +67,10 @@ AppAsset::register($this);
 							$menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
 							$menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
 						} else {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 63b1126fc9e90e5d46e53d8574b42290d2a57b76
 							$menuItems[] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><span>"
 								. Html::beginForm(['/site/logout'], 'post')
 								. "<button class='btn btn-outline-secondary'>登出("
@@ -70,8 +78,13 @@ AppAsset::register($this);
 								. "</button>"
 								. Html::endForm()
 								. '</span></li>';
+<<<<<<< HEAD
 
 						}
+=======
+						}
+
+>>>>>>> 63b1126fc9e90e5d46e53d8574b42290d2a57b76
 						echo Nav::widget([
 							'options' => ['class' => 'nav-item'],
 							'items' => $menuItems
