@@ -47,8 +47,8 @@ AppAsset::register($this);
 	<header>
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
-				<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 00950804988436
-				<a href="<?php echo Yii::$app->getHomeUrl(); ?>">Contact Us </a>
+				<i class="fa fa-heart" aria-hidden="true"></i> We yearn for world peace
+				<a href="../../backend/web" >进入后台 </a>
 			</h6>
 			<div class="log">
 				<div class="collapse navbar-collapse" id="main-nav">
@@ -72,7 +72,6 @@ AppAsset::register($this);
 								. '</span></li>';
 
 						}
-
 						echo Nav::widget([
 							'options' => ['class' => 'nav-item'],
 							'items' => $menuItems
@@ -90,8 +89,12 @@ AppAsset::register($this);
 				    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
+				<img src="static2/picture/logo.png" width = "75" height = "60"/>
 				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
-					<i class="far fa-gem"></i>俄乌战争</a>
+			
+						   俄乌战争
+						
+						</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
 						<li class="nav-item active">
@@ -124,30 +127,11 @@ AppAsset::register($this);
 					</ul>
 
 				</div>
-				<div class="header-search-agileits-w3ls">
-					<form action="#" method="post">
-						<div class="search">
-							<input class="form-control" type="search" placeholder="Search here..." name="Search" required="">
-						</div>
-						<div class="section_room">
-							<select id="country" onchange="change_country(this.value)" class="frm-field required">
-								<option value="null">All Items</option>
-								<option value="null">Gold </option>
-								<option value="AX">Rings </option>
-								<option value="AX">Watches</option>
-								<option value="AX">Necklace</option>
-								<option value="AX">Bracelets</option>
-							</select>
-						</div>
-						<div class="sear-sub">
-							<button class="btn btn1">
-								<i class="fas fa-search"></i>
-							</button>
-
-						</div>
-						<div class="clearfix"></div>
-					</form>
-				</div>
+				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
+			
+						Russia Ukraine War
+						
+						</a>
 			</nav>
 
 		</div>

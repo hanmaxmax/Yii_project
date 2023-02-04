@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Datum | CRM Admin Dashboard Template</title>
+      <title>俄乌战争 | CRM Admin Dashboard Template</title>
       
       <link rel="stylesheet" href="static2/css/backend-plugin.min.css">
       <link rel="stylesheet" href="static2/css/backend.css">  <style type="text/css">.apexcharts-canvas {

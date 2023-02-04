@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Datum | CRM Admin Dashboard Template</title>
+      <title>俄乌战争 | CRM Admin Dashboard Template</title>
       
       <link rel="stylesheet" href="static/css/backend-plugin.min.css">
       <link rel="stylesheet" href="static/css/backend.css">  <style type="text/css">.apexcharts-canvas {
@@ -749,7 +749,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php ActiveForm::end(); ?>
 
             <div class="col-lg-12 mt-3">
-                                <p class="mb-0 text-center">Don't have an account? <a href="auth-sign-up.html">Sign Up</a></p>
+                                <p class="mb-0 text-center">Don't have an account? <a href="../../frontend/web">返回前台</a></p>
                            </div>
 
 

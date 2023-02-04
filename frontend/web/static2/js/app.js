@@ -1,5 +1,5 @@
 /*
-Template: Datum - Responsive Bootstrap 4 Admin Dashboard Template
+Template: 俄乌战争 - Responsive Bootstrap 4 Admin Dashboard Template
 Author: iqonic.design
 Design and Developed by: iqonic.design
 NOTE: This file contains the styling for responsive Template.

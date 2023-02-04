@@ -20,7 +20,7 @@ AppAsset::register($this);
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>Datum | CRM Admin Dashboard Template</title>
+      <title>俄乌战争 | CRM Admin Dashboard Template</title>
       
       <link rel="stylesheet" href="static/css/backend-plugin.min.css">
       <link rel="stylesheet" href="static/css/backend.css">  <style type="text/css">.apexcharts-canvas {
@@ -795,7 +795,7 @@ AppAsset::register($this);
                <a href="" class="header-logo">
                   <img src="static/picture/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
                   <img src="static/picture/logo-dark.png" class="img-fluid rounded-normal d-none sidebar-light-img" alt="logo">
-                  <span>Datum</span>            
+                  <span>俄乌战争</span>            
               </a>
               <div class="side-menu-bt-sidebar-1">
                       <svg xmlns="http://www.w3.org/2000/svg" class="text-light wrapper-menu open" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
