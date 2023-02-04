@@ -72,6 +72,7 @@ AppAsset::register($this);
 								. '</span></li>';
 
 						}
+
 						echo Nav::widget([
 							'options' => ['class' => 'nav-item'],
 							'items' => $menuItems

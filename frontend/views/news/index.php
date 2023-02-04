@@ -15,6 +15,11 @@ $this->params['breadcrumbs'][] = $this->title;
   header('content-type:image/jpg;');
   echo "<img alt='aaa' src='static/image/news1.jpg' width='px' height='400px'/>";
 ?> -->
+
+<!-- <body background="static/image/news1.jpg" style=" background-repeat:no-repeat ;background-size:100% 10%; background-attachment: fixed;">
+	。。。。。。
+</body> -->
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -662,7 +667,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 	</body>
 </html>
 
-
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -688,4 +692,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <?php Pjax::end(); ?>
 
 </div>
-
