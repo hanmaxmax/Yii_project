@@ -11,327 +11,221 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 
-AppAsset::register($this);
+$this->title = 'About us';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="zxx">
-<head>
-	<title>Home</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta charset="utf-8">
-	<meta name="keywords" content="" />
-
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
-	<link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
-	<link href="css/style.css" rel='stylesheet' type='text/css' />
-	<link href="css/prettyPhoto.css" rel="stylesheet" type="text/css" />
-	<link rel="stylesheet" href="css/owl.carousel.css" type="text/css" media="all">
-	<link rel="stylesheet" href="css/owl.theme.css" type="text/css" media="all">
-	<link href="css/fontawesome-all.css" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Quicksand:300,400,500,700" rel="stylesheet">
-	<link href="http://fonts.googleapis.com/css?family=Prata" rel="stylesheet">
-	<?php $this->head() ?>
-</head>
-
-<body>
-<?php $this->beginBody() ?>
-	<div class="banner-inner">
-	</div>
-	<ol class="breadcrumb">
+<div class="site-about">
+    <div class="page-heading-85912" style="background-image: url('statics/images/background1.jpg')">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="col-lg-6">
+                    <h1 class="mb-0 heading text-white" style="font-family: 华文楷体;">关于我们</h1>
+                    <h4 style="font-family: 华文楷体;"><p> 本页面介绍了我们的团队，展示了我们团队的每个人的个人作业链接地址和团队的整体介绍。</p></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ol class="breadcrumb">
 		<li class="breadcrumb-item">
-			<a href="#">Home</a>
+			<a href="#">主页</a>
 		</li>
-		<li class="breadcrumb-item active">About</li>
+		<li class="breadcrumb-item active">关于团队</li>
 	</ol>
 
-	<!--//banner-->
-	<!--/banner-bottom-w3ls-agileinfo-->
 	<section class="banner-bottom-w3ls-agileinfo">
 		<div class="container">
-			<h3 class="tittle text-center">团队介绍</h3>
 			<div class="row inner-sec-wthree-agileits">
-				<div class="col-lg-13 bt-bottom-info">
-					<p class="about-p">  本网站是南开大学互联网数据库开发课程大作业，由四名计算机学院和网络空间安全学院的大三学生创建，我们团队成员具有较强的个人能力和不错的团队协作能力，成员分工明确，各司其职，互帮互助，团队内有良好的学习氛围，遇到问题能及时沟通解决。
-                    </p>
+                <div class="col-lg-6 bt-bottom-info ab">
+					<img src="statics/images/background.jpg" class="img-fluid" alt=" " width = "600" height = "420" />
+				</div>
+				<div class="col-lg-6 bt-bottom-info">
+                    <h3 class="tittle text-center" style="font-family: 华文楷体;">团队介绍</h3>
+                    <h4 style="font-family: 华文楷体;"><p> &emsp; &emsp;本网站是南开大学互联网数据库开发课程大作业，网站建站依靠yii框架进行搭建，网站页面分为前台部分和后台部分，同时网站也连接了数据库进行使用。</p></h4>
+                    <h4 style="font-family: 华文楷体;"><p> &emsp; &emsp;本网站由四名计算机学院和网络空间安全学院的大三学生创建，我们团队成员具有较强的个人能力和不错的团队协作能力，成员分工明确，各司其职，互帮互助，团队内有良好的学习氛围，遇到问题能及时沟通解决。如果有任何问题，可以在下面点击团队成员github链接访问主页，并联系我们。
+                    </p></h4>
 				</div>
 			</div>
-			<!-- Three columns of text below the carousel -->
-			<div class="row inner-sec-wthree-agileits jewel-grids-main-in ab">
-                <div class="col-lg-3 bt-bottom-info ab">
-					<img src="statics/images/hjx.jpg" class="img-fluid" alt=" ">
-			    </div>
-				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
-					<h4 class="sub-tittle">韩佳迅</h4>
-					<p class="about-p">
-                        后台模板导入和页面设计，登入登出功能实现
-                    </p>
+        </div>
+    </section>
 
-				</div>
-				<!-- /.col-lg-4 -->
-                <div class="col-lg-3 bt-bottom-info ab">
-					<img src="statics/images/g1.jpg" class="img-fluid" alt=" ">
-			    </div>
-				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
-					<h4 class="sub-tittle">林语盈</h4>
-					<p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
-
-				</div>
-				<!-- /.col-lg-4 -->
-                <div class="col-lg-3 bt-bottom-info ab">
-					<img src="statics/images/pyt.jpg" class="img-fluid" alt=" ">
-			    </div>
-				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
-					<h4 class="sub-tittle">彭钰婷</h4>
-                    <p class="about-p">
-                        新闻页面和时间线页面设计和实现
-                    </p>
-
-				</div>
-				<!-- /.col-lg-4 -->
-                <div class="col-lg-3 bt-bottom-info ab">
-					<img src="statics/images/yx.jpg" class="img-fluid" alt=" ">
-			    </div>
-                <div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
-					<h4 class="sub-tittle">姚鑫</h4>
-                    <p class="about-p">
-                        前台模板导入和页面设计，团队介绍页面设计和实现
-                    </p>
-				</div>
-			</div>
-			<!-- /.row -->
+    <div class="container">
+        			<!-- /.row -->
 			<div class="row inner_stat">
 				<div class="col-md-3 stats_left counter_grid text-center">
 					<i class="far fa-building"></i>
-					<p class="counter">145</p>
-					<h4>Branches</h4>
+					<p class="counter">146</p>
+					<h4>git提交次数</h4>
 				</div>
 				<div class="col-md-3 stats_left counter_grid1 text-center">
 					<i class="fas fa-users"></i>
-					<p class="counter">165</p>
-					<h4>Experts</h4>
+					<p class="counter">4</p>
+					<h4>团队成员数量</h4>
 				</div>
 				<div class="col-md-3 stats_left counter_grid2 text-center">
 					<i class="far fa-edit"></i>
-					<p class="counter">563</p>
-					<h4>Designs</h4>
+					<p class="counter">15</p>
+					<h4>开发用的天数</h4>
 				</div>
 				<div class="col-md-3 stats_left counter_grid3 text-center">
 					<i class="far fa-smile"></i>
 					<p class="counter">1045</p>
-					<h4>Happy Clients</h4>
-				</div>
-
-			</div>
-		</div>
-	</section>
-	<!---->
-	
-	<!--/model-->
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="modal-body video">
-					<div class="signin-form profile">
-						<div class="login-m_page">
-							<h3 class="sign">Sign In</h3>
-							<div class="login-form">
-								<form action="#" method="post">
-									<input class="form-control" type="email" name="email" placeholder="E-mail" required="">
-									<input class="form-control" type="password" name="password" placeholder="Password" required="">
-									<div class="tp">
-										<input class="form-control" type="submit" value="Sign In">
-									</div>
-								</form>
-							</div>
-							<div class="login-social-grids">
-								<ul class="social_list1">
-									<li>
-										<a href="#" class="facebook1">
-											<i class="fab fa-facebook-f"></i>
-
-										</a>
-									</li>
-									<li>
-										<a href="#" class="twitter2">
-											<i class="fab fa-twitter"></i>
-
-										</a>
-									</li>
-									<li>
-										<a href="#" class="dribble3">
-											<i class="fab fa-dribbble"></i>
-										</a>
-									</li>
-								</ul>
-
-							</div>
-							<p>
-								<a href="#" data-toggle="modal" data-target="#exampleModal2"> Don't have an account?</a>
-							</p>
-						</div>
-
-					</div>
-
-
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<h4>文件总数</h4>
 				</div>
 			</div>
-		</div>
-	</div>
-	<!--//model-->
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-hidden="true">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
+			<!-- Three columns of text below the carousel -->
+		<div class="row inner-sec-wthree-agileits jewel-grids-main-in ab">
+                <div class="col-lg-3 bt-bottom-info ab">
+                    <img src="statics/images/hjx.jpg" alt=" " class="img-fluid" width = "250" height = "250" />
+			    </div>
+				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
+					<h4 class="sub-tittle" style="font-size:30px">韩佳迅</h4>
+					<p class="about-p" style="font-size:15px">
+                        后台模板导入和页面设计，登入登出功能实现
+                    </p>
+                    <li><a href="https://github.com/hanmaxmax">看我的github主页</a></li>
 				</div>
-				<div class="modal-body video">
-					<div class="signin-form profile">
-						<div class="login-m_page">
-							<h3 class="sign">Sign Up</h3>
-							<div class="login-form">
-								<form action="#" method="post">
-									<input class="form-control" type="text" name="name" placeholder="Name" required="">
-									<input class="form-control" type="email" name="email" placeholder="Email" required="">
-									<input class="form-control" type="password" name="password" id="password1" placeholder="Password" required="">
-									<input class="form-control" type="password" name="password" id="password2" placeholder="Confirm Password" required="">
-									<input class="form-control" type="submit" value="Sign Up">
-								</form>
-							</div>
-							<p>
-								<a href="#"> By clicking Sign up, I agree to your terms</a>
-							</p>
-						</div>
-
-
-					</div>
-
-
+				<!-- /.col-lg-4 -->
+                <div class="col-lg-3 bt-bottom-info ab">
+					<img src="statics/images/lyy.jpg" alt=" " class="img-fluid" width = "250" height = "250" />
+			    </div>
+				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
+					<h4 class="sub-tittle" style="font-size:30px">林语盈</h4>
+					<p class="about-p" style="font-size:15px">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+                    <li><a href="https://github.com/AldebaranL">看我的github主页</a></li>
 				</div>
+				<!-- /.col-lg-4 -->
+                <div class="col-lg-3 bt-bottom-info ab">
+					<img src="statics/images/pyt.jpg" alt=" " class="img-fluid" width = "250" height = "250" />
+			    </div>
+				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
+					<h4 class="sub-tittle" style="font-size:30px">彭钰婷</h4>
+                    <p class="about-p" style="font-size:15px">
+                        新闻页面和时间线页面设计和实现
+                    </p>
+                    <li><a href="https://github.com/tttran67">看我的github主页</a></li>
+				</div>
+				<!-- /.col-lg-4 -->
+                <div class="col-lg-3 bt-bottom-info ab">
+					<img src="statics/images/yx.jpg" alt=" " class="img-fluid" width = "250" height = "250" />
+			    </div>
+                <div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
+					<h4 class="sub-tittle" style="font-size:30px">姚鑫</h4>
+                    <p class="about-p" style="font-size:15px">
+                        前台模板导入和页面设计，团队介绍页面设计和实现
+                    </p>
+                    <li><a href="https://github.com/yx66667">看我的github主页</a></li>
+				</div>
+        </div>
+    </div>
 
-			</div>
-		</div>
-	</div>
-	<!--//model-->
-	<!-- js -->
-	<script src="js/jquery-2.2.3.min.js"></script>
-	<script src="js/bootstrap.js"></script>
-	<!-- //js -->
-	<!-- password-script -->
-	<script>
-		window.onload = function () {
-			document.getElementById("password1").onchange = validatePassword;
-			document.getElementById("password2").onchange = validatePassword;
-		}
+    <div class="site-section">
+        <h2 class="section-heading text-center" style="font-family: 华文楷体;">组员作业展示</h2>
+        <p class="text-center" style="font-family: 华文楷体; font-size: 20px">下面是我们团队成员在课程中个人作业的github链接，欢迎浏览。</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- BEGIN: .widget-29182 -->
+                    <!--
+                      Add '.widget-29182-v2' class for v2 style
+                    -->
+                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                        <div class="widget-inner"><img src="statics/images/web前端.png" alt="Image"
+                                                       class="img-mb-2 img-fluid" width = "250" height = "200" />
+                        </div>
 
-		function validatePassword() {
-			var pass2 = document.getElementById("password2").value;
-			var pass1 = document.getElementById("password1").value;
-			if (pass1 != pass2)
-				document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-			else
-				document.getElementById("password2").setCustomValidity('');
-			//empty string means no validation error
-		}
-	</script>
-	<!-- //password-script -->
-	<!-- stats -->
-	<script src="js/jquery.waypoints.min.js"></script>
-	<script src="js/jquery.countup.js"></script>
-	<script>
-		$('.counter').countUp();
-	</script>
-	<!-- //stats -->
-	<!-- carousel -->
-	<script src="js/owl.carousel.js"></script>
-	<script>
-		$(document).ready(function () {
-			$('.owl-carousel').owlCarousel({
-				loop: true,
-				margin: 10,
-				responsiveClass: true,
-				responsive: {
-					0: {
-						items: 1,
-						nav: true
-					},
-					600: {
-						items: 1,
-						nav: false
-					},
-					900: {
-						items: 2,
-						nav: false
-					},
-					1000: {
-						items: 5,
-						nav: true,
-						loop: false,
-						margin: 20
-					}
-				}
-			})
-		})
-	</script>
-	<!-- //carousel -->
+                        <div class="widget-inner">
+                            <h3>Web前端初探</h3>
+                        </div>
+                        <div class="widget-inner">
+                            <ul class="list-unstyled">
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A1(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 第一次个人作业链接</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> qqqq</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">> qqqqq</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> qqqq</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END: .widget-29182 -->
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- BEGIN: .widget-29182 -->
+                    <!--
+                      Add '.widget-29182-v2' class for v2 style
+                    -->
+                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
 
+                        <div class="widget-inner"><img src="statics/images/web前端2.jpg" alt="Image"
+                                                       class="img-mb-2 img-fluid" width = "250" height = "200" />
+                        </div>
+                        <div class="widget-inner">
+                            <h3>Web前端设计</h3>
+                        </div>
 
-	<!-- start-smoth-scrolling -->
-	<script src="js/move-top.js"></script>
-	<script src="js/easing.js"></script>
-	<script>
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 900);
-			});
-		});
-	</script>
-	<!-- start-smoth-scrolling -->
+                        <div class="widget-inner">
+                            <ul class="list-unstyled">
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A2(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 第二次个人作业</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">qwer</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">bbbbb</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">aaaa</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END: .widget-29182 -->
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- BEGIN: .widget-29182 -->
+                    <!--
+                      Add '.widget-29182-v2' class for v2 style
+                    -->
+                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                        <div class="widget-inner"><img src="statics/images/web前端3.png" alt="Image"
+                                                       class="img-mb-2 img-fluid" width = "250" height = "200" />
+                        </div>
+                        <div class="widget-inner">
+                            <h3>开源建站工具初试</h3>
+                        </div>
 
-	<script>
-		$(document).ready(function () {
-			/*
-									var defaults = {
-							  			containerID: 'toTop', // fading element id
-										containerHoverID: 'toTopHover', // fading element hover id
-										scrollSpeed: 1200,
-										easingType: 'linear' 
-							 		};
-									*/
+                        <div class="widget-inner">
+                            <ul class="list-unstyled">
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A3(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">kkkk</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">lllll</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">oooo</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">llll</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END: .widget-29182 -->
+                </div>
 
-			$().UItoTop({
-				easingType: 'easeOutQuart'
-			});
+                <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+                    <!-- BEGIN: .widget-29182 -->
+                    <!--
+                      Add '.widget-29182-v2' class for v2 style
+                    -->
+                    <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                        <div class="widget-inner"><img src="statics/images/web前端4.jpg" alt="Image"
+                                                       class="img-mb-2 img-fluid" width = "250" height = "200" />
+                        </div>
+                        <div class="widget-inner">
+                            <h3>团队作业开发文档</h3>
+                        </div>
 
-		});
-	</script>
+                        <div class="widget-inner">
+                            <ul class="list-unstyled">
+                                <li><a href="https://github.com/fengjk12138">才不要你来我github呢</a></li>
+                                <li><a href="https://github.com/NickSkyyy">你看这个star竟然可以点</a></li>
+                                <li><a href="https://github.com/VitalC-3026">不就是代码么，push就是了</a></li>
+                                <li><a href="https://github.com/king-wk">码量发量反比例</a></li>
+                                <li><a href="https://github.com/Pixie-King">lll</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- END: .widget-29182 -->
+                </div>
 
-<?php $this->endBody() ?>
-</body>
-</html>
-<?php $this->endPage() ?>
+            </div>
+        </div>
+    </div>
+    <!-- END: .site-section -->
+
+</div>	
