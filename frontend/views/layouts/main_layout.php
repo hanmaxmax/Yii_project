@@ -48,14 +48,37 @@ AppAsset::register($this);
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
 				<i class="fa fa-phone" aria-hidden="true"></i> Call Us : 00950804988436
-				<a href="contact.php">Contact Us </a>
+				<a href="<?php echo Yii::$app->getHomeUrl(); ?>">Contact Us </a>
 			</h6>
 			<div class="log">
-				<h5>Free delivery order over $100</h5>
-				<h5>
-					<a class="sign" href="#" data-toggle="modal" data-target="#exampleModal">
-						<i class="fas fa-user"></i> User Account</a>
-				</h5>
+				<div class="collapse navbar-collapse" id="main-nav">
+					<ul class="navbar-nav ml-auto">
+						<?php
+
+						$menuItems = [
+							['label' => '主页', 'url' => ['/site/index']],
+						];
+
+						if (Yii::$app->user->isGuest) {
+							$menuItems[] = ['label' => '注册', 'url' => ['/site/signup']];
+							$menuItems[] = ['label' => '登录', 'url' => ['/site/login']];
+						} else {
+							$menuItems[] = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<li><span>"
+								. Html::beginForm(['/site/logout'], 'post')
+								. "<button class='btn btn-outline-secondary'>登出("
+								. Yii::$app->user->identity->username . ')'
+								. "</button>"
+								. Html::endForm()
+								. '</span></li>';
+
+						}
+						echo Nav::widget([
+							'options' => ['class' => 'nav-item'],
+							'items' => $menuItems
+						]);
+						?>
+					</ul>
+				</div>
 			</div>
 			<div class="clearfix"> </div>
 		</div>
@@ -66,17 +89,17 @@ AppAsset::register($this);
 				    aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<a class="navbar-brand" href="index.html">
-					<i class="far fa-gem"></i>Jewel</a>
+				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
+					<i class="far fa-gem"></i>俄乌战争</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
 						<li class="nav-item active">
-							<a class="nav-link cool" href="index.html">Home
+						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">主页
 								<span class="sr-only">(current)</span>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="about.html">About</a>
+						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site/about">关于团队</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link cool" href="price.html">Pricing</a>
@@ -84,7 +107,7 @@ AppAsset::register($this);
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
 							    aria-expanded="false">
-								Dropdown
+								战争实况
 								<i class="fas fa-angle-down"></i>
 							</a>
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -95,7 +118,7 @@ AppAsset::register($this);
 							</div>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="contact.html">Contact</a>
+						<a class="nav-link cool" href="contact.html">留言板</a>
 						</li>
 					</ul>
 
