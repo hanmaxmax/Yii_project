@@ -1,6 +1,7 @@
 <?php
 
 namespace frontend\models;
+use yii\data\Pagination;
 
 use Yii;
 
@@ -50,4 +51,25 @@ class News extends \yii\db\ActiveRecord
     {
         return new NewsQuery(get_called_class());
     }
+    // public static function getAll($pageSize = 5)
+    // {
+        
+    //     $query = News::find()->latest();
+
+    
+    //     $count = $query->count();
+
+
+    //     $pagination = new Pagination(['totalCount' => $count, 'pageSize'=>$pageSize]);
+
+  
+    //     $news = $query->offset($pagination->offset)
+    //         ->limit($pagination->limit)
+    //         ->all();
+        
+    //     $data['news'] = $news;
+    //     $data['pagination'] = $pagination;
+        
+    //     return $data;
+    // }
 }

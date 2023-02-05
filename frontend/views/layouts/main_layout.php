@@ -47,7 +47,7 @@ AppAsset::register($this);
 	<header>
 		<div class="top-bar_sub_w3layouts_agile">
 			<h6>
-				<i class="fa fa-heart" aria-hidden="true"></i> We yearn for world peace
+			<i class="fa fa-heart" aria-hidden="true"></i> We yearn for world peace
 				<a href="../../backend/web" >进入后台 </a>
 			</h6>
 			<div class="log">
@@ -92,7 +92,7 @@ AppAsset::register($this);
 				<img src="static2/picture/logo.png" width = "75" height = "60"/>
 				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
 			
-						   俄乌战争
+				俄乌战争
 						
 						</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -117,7 +117,7 @@ AppAsset::register($this);
 							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">时间线</a>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=timeline">时间线</a>
 
 							</div>
 						</li>

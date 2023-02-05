@@ -3,12 +3,16 @@
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
+use yii\widgets\LinkPager;
 /* @var $this yii\web\View */
 /* @var $searchModel frontend\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'News';
 $this->params['breadcrumbs'][] = $this->title;
+$cnt4image = 1;
+$cnt4color = 1;
+$cnt4loop = 1;
 ?>
 <!-- BEGIN: .cover -->
 <!-- <?php
@@ -53,42 +57,36 @@ $this->params['breadcrumbs'][] = $this->title;
 	<body>
 		<!-- section -->
 		<div class="section">
+		
+		
 			<!-- container -->
 			<div class="container">
 				<!-- row -->
 				<div class="row">	
+				<?php $cnt4loop = 1;?>
+				<?php foreach ($news as $new) : ?>
+					<?php
+						if($cnt4loop++ > 2){
+							break;
+						}
+					?>
 					<!-- post -->
 					<div class="col-md-6">
 						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
+							<a class="post-img" href="<?= $new->url ?>"><img src="static/image/news/news0<?=$cnt4image++?>.jpg" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
+									<span class="post-date"><?= $new->date ?></span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
+								<h3 class="post-title"><a href="<?= $new->url ?>"><?= $new->name ?></a></h3>
 							</div>
 						</div>
 					</div>
 					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-6">
-						<div class="post post-thumb">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+					<?php endforeach; ?>
 				</div>
 				<!-- /row -->
-
+				
 				<!-- row -->
 				<div class="row">
 					<div class="col-md-12">
@@ -96,358 +94,37 @@ $this->params['breadcrumbs'][] = $this->title;
 							<h2>Recent Posts</h2>
 						</div>
 					</div>
-
+					<?php $cnt4loop = 1; ?>
+					<?php foreach ($news as $new) : ?>
+						<?php
+							if($cnt4loop < 3){
+								$cnt4loop++;
+								continue;
+							}
+						?>
 					<!-- post -->
 					<div class="col-md-4">
 						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
+							<a class="post-img" href="<?= $new->url ?>"><img src="static/image/news/news0<?=$cnt4image++?>.jpg" alt=""></a>
 							<div class="post-body">
 								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
+									<?php
+										if($cnt4color > 4) {$cnt4color=1;}
+									?>
+									<a class="post-category cat-<?=$cnt4color++?>" href="<?= $new->url ?>">Web Design</a>
+									<span class="post-date"><?= $new->date ?></span>
 								</div>
-								<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
+								<h3 class="post-title"><a href="<?= $new->url ?>"><?= $new->name ?></a></h3>
 							</div>
 						</div>
 					</div>
 					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<div class="clearfix visible-md visible-lg"></div>
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-4" href="category.html">Css</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
+					<?php endforeach; ?>
 				</div>
-				<!-- /row -->
-
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-8">
-						<div class="row">
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-thumb">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">Css</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<div class="clearfix visible-md visible-lg"></div>
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-1" href="category.html">Web Design</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-6">
-								<div class="post">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<!-- post widget -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Most Read</h2>
-							</div>
-
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-1.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-								</div>
-							</div>
-
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-2.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-								</div>
-							</div>
-
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-3.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-								</div>
-							</div>
-
-							<div class="post post-widget">
-								<a class="post-img" href="blog-post.html"><img src="./img/widget-4.jpg" alt=""></a>
-								<div class="post-body">
-									<h3 class="post-title"><a href="blog-post.html">Tell-A-Tool: Guide To Web Design And Development Tools</a></h3>
-								</div>
-							</div>
-						</div>
-						<!-- /post widget -->
-
-						<!-- post widget -->
-						<div class="aside-widget">
-							<div class="section-title">
-								<h2>Featured Posts</h2>
-							</div>
-							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-meta">
-										<a class="post-category cat-3" href="category.html">Jquery</a>
-										<span class="post-date">March 27, 2018</span>
-									</div>
-									<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-								</div>
-							</div>
-
-							<div class="post post-thumb">
-								<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-								<div class="post-body">
-									<div class="post-meta">
-										<a class="post-category cat-2" href="category.html">JavaScript</a>
-										<span class="post-date">March 27, 2018</span>
-									</div>
-									<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-								</div>
-							</div>
-						</div>
-						<!-- /post widget -->
-						
-						<!-- ad -->
-						<div class="aside-widget text-center">
-							<a href="#" style="display: inline-block;margin: auto;">
-								<img class="img-responsive" src="./img/ad-1.jpg" alt="">
-							</a>
-						</div>
-						<!-- /ad -->
-					</div>
-				</div>
-				<!-- /row -->
 			</div>
 			<!-- /container -->
 		</div>
-		<!-- /section -->
 		
-		<!-- section -->
-		<div class="section section-grey">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-title text-center">
-							<h2>Featured Posts</h2>
-						</div>
-					</div>
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-2" href="category.html">JavaScript</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-5.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-3" href="category.html">Jquery</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-
-					<!-- post -->
-					<div class="col-md-4">
-						<div class="post">
-							<a class="post-img" href="blog-post.html"><img src="./img/post-3.jpg" alt=""></a>
-							<div class="post-body">
-								<div class="post-meta">
-									<a class="post-category cat-1" href="category.html">Web Design</a>
-									<span class="post-date">March 27, 2018</span>
-								</div>
-								<h3 class="post-title"><a href="blog-post.html">Pagedraw UI Builder Turns Your Website Design Mockup Into Code Automatically</a></h3>
-							</div>
-						</div>
-					</div>
-					<!-- /post -->
-				</div>
-				<!-- /row -->
-			</div>
-			<!-- /container -->
-		</div>
 		<!-- /section -->
 
 		<!-- section -->
@@ -463,70 +140,29 @@ $this->params['breadcrumbs'][] = $this->title;
 									<h2>Most Read</h2>
 								</div>
 							</div>
+							<?php $cnt4loop = 1; ?>
+							<?php $cnt4color = 1; ?>
+							<?php $cnt4image = 1; ?>
+							<?php foreach ($news as $new) : ?>
 							<!-- post -->
 							<div class="col-md-12">
 								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-4.jpg" alt=""></a>
+									<a class="post-img" href="<?= $new->url ?>"><img src="static/image/news/news0<?=$cnt4image++?>.jpg" alt=""></a>
 									<div class="post-body">
 										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
+											<?php
+												if($cnt4color > 4) {$cnt4color=1;}
+											?>
+											<a class="post-category cat-<?=$cnt4color++?>" href="category.html">JavaScript</a>
+											<span class="post-date"><?= $new->date ?></span>
 										</div>
-										<h3 class="post-title"><a href="blog-post.html">Chrome Extension Protects Against JavaScript-Based CPU Side-Channel Attacks</a></h3>
+										<h3 class="post-title"><a href="<?= $new->url ?>"><?= $new->name ?></a></h3>
 										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
 									</div>
 								</div>
 							</div>
 							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-6.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-2" href="category.html">JavaScript</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Why Node.js Is The Coolest Kid On The Backend Development Block!</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-1.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-4" href="category.html">Css</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">CSS Float: A Tutorial</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-							
-							<!-- post -->
-							<div class="col-md-12">
-								<div class="post post-row">
-									<a class="post-img" href="blog-post.html"><img src="./img/post-2.jpg" alt=""></a>
-									<div class="post-body">
-										<div class="post-meta">
-											<a class="post-category cat-3" href="category.html">Jquery</a>
-											<span class="post-date">March 27, 2018</span>
-										</div>
-										<h3 class="post-title"><a href="blog-post.html">Ask HN: Does Anybody Still Use JQuery?</a></h3>
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam...</p>
-									</div>
-								</div>
-							</div>
-							<!-- /post -->
-							
+							<?php endforeach; ?>
 							<div class="col-md-12">
 								<div class="section-row">
 									<button class="primary-button center-block">Load More</button>
@@ -542,7 +178,6 @@ $this->params['breadcrumbs'][] = $this->title;
 								<img class="img-responsive" src="./img/ad-1.jpg" alt="">
 							</a>
 						</div>
-						<!-- /ad -->
 						
 						<!-- catagories -->
 						<div class="aside-widget">
@@ -585,80 +220,158 @@ $this->params['breadcrumbs'][] = $this->title;
 		</div>
 		<!-- /section -->
 
-		<!-- Footer -->
-		<footer id="footer">
-			<!-- container -->
-			<div class="container">
-				<!-- row -->
-				<div class="row">
-					<div class="col-md-5">
-						<div class="footer-widget">
-							<div class="footer-logo">
-								<a href="index.html" class="logo"><img src="./img/logo.png" alt=""></a>
-							</div>
-							<ul class="footer-nav">
-								<li><a href="#">Privacy Policy</a></li>
-								<li><a href="#">Advertisement</a></li>
-							</ul>
-							<div class="footer-copyright">
-								<span>&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-4">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="footer-widget">
-									<h3 class="footer-title">About Us</h3>
-									<ul class="footer-links">
-										<li><a href="about.html">About Us</a></li>
-										<li><a href="#">Join Us</a></li>
-										<li><a href="contact.html">Contacts</a></li>
-									</ul>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="footer-widget">
-									<h3 class="footer-title">Catagories</h3>
-									<ul class="footer-links">
-										<li><a href="category.html">Web Design</a></li>
-										<li><a href="category.html">JavaScript</a></li>
-										<li><a href="category.html">Css</a></li>
-										<li><a href="category.html">Jquery</a></li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-md-3">
-						<div class="footer-widget">
-							<h3 class="footer-title">Join our Newsletter</h3>
-							<div class="footer-newsletter">
-								<form>
-									<input class="input" type="email" name="newsletter" placeholder="Enter your email">
-									<button class="newsletter-btn"><i class="fa fa-paper-plane"></i></button>
-								</form>
-							</div>
-							<ul class="footer-social">
-								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-								<li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-							</ul>
-						</div>
-					</div>
-
+		<!--footer-->
+<footer>
+		<div class="instagram-posts">
+			<h3 class="tittle cen foot">We yearn for world peace</h3>
+			<div class="row footer-top">
+				<!-- instagram posts -->
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g6.jpg" class="img-fluid" alt="" />
+					</a>
 				</div>
-				<!-- /row -->
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g2.jpg" class="img-fluid" alt="" />
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g4.jpg" class="img-fluid" alt="" />
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g6.jpg" class="img-fluid" alt="" />
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g8.jpg" class="img-fluid" alt="" />
+					</a>
+				</div>
+				<div class="col-md-2 col-sm-2 footer-grid-img">
+					<a href="single.html">
+						<img src="statics/images/g1.jpg" class="img-fluid" alt="" />
+					</a>
+				</div>
 			</div>
-			<!-- /container -->
-		</footer>
-		<!-- /Footer -->
 
+			<div class="col-md-3 agileinfo_footer_grid">
+			<h3><p style="color:white">We are</p></h3>
+				<p>Duis aute irure dolor in esse cillum dolore eu 
+				fugiat nulla pariatur. <span>Excepteur sint proident 
+				sunt in culpa qui officia anim id est laborum.</span></p>
+				<div class="w3ls-social-icons-2">
+				<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+				<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+				<a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
+				<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+				<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+				</div>
+			</div>
+
+
+			<div class="col-md-3 agileinfo_footer_grid f3">
+				<h3 ><p style="color:white">导航</p></h3>					
+				<div class="nav-w3-l">
+				<ul>
+					<li><a href="index.php" >首页</a></li>
+					<li><a href="../../backend/web" >登录后台</a></li>
+					<li><a href="index.php?r=site/about" >关于团队</a></li>
+					<li><a href="index.php?r=news" >战争新闻</a></li>
+					<li><a href="index.php?r=news" >战争时间线</a></li>
+				</ul>
+				</div>
+			</div>
+
+
+
+
+			<div class="col-md-3 agileinfo_footer_grid f3">
+				<h3 ><p style="color:white">相关网站</p></h3>					
+				<div class="nav-w3-l">
+				<ul>
+					<li><a href="index.php" >首页</a></li>
+					<li><a href="../../backend/web" >登录后台</a></li>
+					<li><a href="index.php?r=site/about" >关于团队</a></li>
+					<li><a href="index.php?r=news" >战争新闻</a></li>
+					<li><a href="index.php?r=news" >战争时间线</a></li>
+
+				</ul>
+				</div>
+			</div>
+
+
+
+
+
+
+			<div class="col-md-3 agileinfo_footer_grid">
+			<h3><p style="color:white">We are</p></h3>
+				<p>Duis aute irure dolor in esse cillum dolore eu 
+				fugiat nulla pariatur. <span>Excepteur sint proident 
+				sunt in culpa qui officia anim id est laborum.</span></p>
+				<div class="w3ls-social-icons-2">
+				<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+				<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+				<a class="pinterest" href="#"><i class="fa fa-google-plus"></i></a>
+				<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+				<a class="tumblr" href="#"><i class="fa fa-tumblr"></i></a>
+				</div>
+			</div>
+
+
+
+
+
+
+			<div class="footer-bottom-w3layouts-agileinfo">
+				<!-- //subscribe -->
+				<!-- footer -->
+				<div class="footer-cpy text-center">
+					<div class="footer-social">
+						<div class="copyrighttop">
+							<ul>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-facebook-f"></i>
+									</a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-twitter"></i>
+									</a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-google-plus-g"></i>
+									</a>
+								</li>
+								<li>
+									<a class="facebook" href="#">
+										<i class="fab fa-pinterest-p"></i>
+									</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+					<div class="copyrightbottom-w3ls-agile">
+						<p>Copyright &copy; 2022. NKU hply All rights reserved.<a target="_blank" href="https://github.com/hanmaxmax/Yii_project">源代码Github链接</a></p>
+
+					</div>
+				</div>
+
+				<!-- //footer -->
+			</div>
+
+
+
+		</div>
+	</footer>
+	<!---->
 		<!-- jQuery Plugins -->
 		<script src="statics/js/newsjs/jquery.min.js"></script>
 		<script src="statics/js/newsjs/bootstrap.min.js"></script>
@@ -666,29 +379,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	</body>
 </html>
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create News', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php Pjax::begin(); ?>
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'name',
-            'url:url',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-    <?php Pjax::end(); ?>
-
-</div>

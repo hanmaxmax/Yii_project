@@ -31,4 +31,7 @@ class NewsQuery extends \yii\db\ActiveQuery
     {
         return parent::one($db);
     }
+    // public function latest(){
+    //     return $this->orderBy(['date'=>SORT_DESC]);
+    // }
 }

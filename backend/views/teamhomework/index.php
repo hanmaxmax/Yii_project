@@ -9,40 +9,60 @@ use yii\widgets\Pjax;
 
 ?>
 
-<h1>
-    团队作业
-</h1>
-<h3>
-    团队成员:韩佳迅 林语盈 彭钰婷 姚鑫
-</h3>
-<p>
-    <br />
-</p>
-<p>
-    <br />
-    <span style="font-size:24px;">1.需求文档:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
-    
+<div class="site-index">
 
-    <span style="font-size:24px;">2.设计文档:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+    <div class="jumbotron">
+        <h1><p align="center">团队作业</p></h1>
 
-    <span style="font-size:24px;">3.实现文档:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
-   
+        <p align="center"style="font-size:20px">团队成员：韩佳迅、林语盈、彭钰婷、姚鑫</p>
+    </div>
 
-    <span style="font-size:24px;">4.用户手册:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+    <div class="body-content">
+        <div class="row">
+            <div class="col-lg-4">
+                <h3><p style="color:navy">需求文档</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
 
-    <span style="font-size:24px;">5.项目展示PPT:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            <div class="col-lg-4">
+                <h3><p style="color:navy">设计文档</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
 
-    <span style="font-size:24px;">6.数据库文件:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            <div class="col-lg-4">
+                <h3><p style="color:navy">实现文档</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
 
-    <span style="font-size:24px;">7.部署文档:</span><br>
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
-    <span style="font-size:24px;">8.录屏讲解:</span>   <span style="font-size:12px;">压缩包形式&nbsp;&nbsp;&nbsp;</span> <br> 
-    <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            <div class="col-lg-4">
+                <h3><p style="color:navy">用户手册</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
 
-</p>
+            <div class="col-lg-4">
+                <h3><p style="color:navy">项目展示PPT</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
+
+            <div class="col-lg-4">
+                <h3><p style="color:navy">数据库文件</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
+
+            <div class="col-lg-4">
+                <h3><p style="color:navy">部署文档</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
+
+            <div class="col-lg-4">
+                <h3><p style="color:navy">录屏讲解</p></h3>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+            </div>
+
+
+        </div>
+        <p align="center"><a class="btn btn-lg btn-info" href="https://github.com/hanmaxmax/Yii_project">项目Github链接</a></p>
+
+    </div>
+</div>
+

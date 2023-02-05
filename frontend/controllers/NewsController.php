@@ -8,7 +8,10 @@ use frontend\models\NewsSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-
+use yii\data\Pagination;
+use yii\db\ActiveRecord;
+use yii\data\Sort;
+$news = News::find() -> orderBy('date') -> all();
 /**
  * NewsController implements the CRUD actions for News model.
  */
@@ -36,12 +39,42 @@ class NewsController extends Controller
      */
     public function actionIndex()
     {
+        // $data = News::getAll(16);
+
+        // $data1 = $data['news'][0];
+        // for ($i = 1, $j = 0; $i < 5;) {
+        //     $data2[$j++] = $data['news'][$i++];
+        // }
+        // for ($i = 5, $j = 0; $i < 10;) {
+        //     $data3[$j++] = $data['news'][$i++];
+        // }
+        // for ($i = 10, $j = 0; $i < 16;) {
+        //     $data4[$j++] = $data['news'][$i++];
+        // }
+        // return $this->render("index", [
+        //     'news1' => $data1,
+        //     'news2' => $data2,
+        //     'news3' => $data3,
+        //     'news4' => $data4,
+        //     'pagination' => $data['pagination'],
+        // ]);
+        $query = News::find();
+        $pagination = new Pagination([
+            'totalCount' =>  $query-> count(),
+            'pageSize' =>  10            
+          ]);
+        $news = $query-> orderBy('date')
+        -> offset($pagination-> offset)
+        -> limit($pagination-> limit)
+        -> all();
         $searchModel = new NewsSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'news' => $news,
+            'pagination' => $pagination
         ]);
     }
 

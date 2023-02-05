@@ -20,7 +20,7 @@ AppAsset::register($this);
 <head>
     <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <title>俄乌战争 | CRM Admin Dashboard Template</title>
+      <title>Datum | CRM Admin Dashboard Template</title>
       
       <link rel="stylesheet" href="static/css/backend-plugin.min.css">
       <link rel="stylesheet" href="static/css/backend.css">  <style type="text/css">.apexcharts-canvas {
@@ -795,7 +795,7 @@ AppAsset::register($this);
                <a href="" class="header-logo">
                   <img src="static/picture/logo.png" class="img-fluid rounded-normal light-logo" alt="logo">
                   <img src="static/picture/logo-dark.png" class="img-fluid rounded-normal d-none sidebar-light-img" alt="logo">
-                  <span>俄乌战争</span>            
+                  <span>Datum</span>            
               </a>
               <div class="side-menu-bt-sidebar-1">
                       <svg xmlns="http://www.w3.org/2000/svg" class="text-light wrapper-menu open" width="30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -965,7 +965,7 @@ AppAsset::register($this);
                           <span class="text-uppercase small font-weight-bold">Pages</span>
                       </li>
                       <li class=" sidebar-layout">
-                          <a href="chat.html" class="svg-icon">
+                          <a href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news" class="svg-icon">
                               <i class="">
                                   <svg xmlns="http://www.w3.org/2000/svg" width="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
