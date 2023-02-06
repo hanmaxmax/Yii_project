@@ -221,6 +221,14 @@ $cnt4loop = 1;
 		<!-- /section -->
 
 		<!--footer-->
+
+
+
+
+
+
+
+
 <footer>
 		<div class="instagram-posts">
 			<h3 class="tittle cen foot">We yearn for world peace</h3>
