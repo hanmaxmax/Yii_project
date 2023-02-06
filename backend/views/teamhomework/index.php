@@ -17,51 +17,62 @@ use yii\widgets\Pjax;
         <p align="center"style="font-size:20px">团队成员：韩佳迅、林语盈、彭钰婷、姚鑫</p>
     </div>
 
+
+    <body>
+        <p style="text-align: center;"> 
+            <img src="static/picture/nku2.png" alt="" height = "150" >
+        </p>
+    </body>
+
+
+
+
+
     <div class="body-content">
         <div class="row">
             <div class="col-lg-4">
-                <h3><p style="color:navy">需求文档</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">设计文档</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">实现文档</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">用户手册</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">项目展示PPT</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">数据库文件</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">部署文档</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
             <div class="col-lg-4">
-                <h3><p style="color:navy">录屏讲解</p></h3>
-                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:24px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a>
+                <p style="font-size:24px;color:navy"><b>需求文档：</b>
+                <a href="../../../data/team/xxx.pdf" download="xxx" ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
 
 
         </div>
-        <p align="center"><a class="btn btn-lg btn-info" href="https://github.com/hanmaxmax/Yii_project">项目Github链接</a></p>
+        <p align="center"><a class="btn btn-default btn-info" href="https://github.com/hanmaxmax/Yii_project">项目Github链接 >></a></p>
 
     </div>
 </div>
