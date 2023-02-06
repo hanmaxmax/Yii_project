@@ -3,21 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Personhomework;
-use backend\models\PersonhomeworkSearch;
+use backend\models\Energy;
+use backend\models\EnergySearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\Pagination;
-use yii\db\ActiveRecord;
-use yii\data\Sort;
-$Personhomework = Personhomework::find() -> orderBy('num_id') -> all();
-
 
 /**
- * PersonhomeworkController implements the CRUD actions for Personhomework model.
+ * EnergyController implements the CRUD actions for Energy model.
  */
-class PersonhomeworkController extends Controller
+class EnergyController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -37,34 +32,22 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Lists all Personhomework models.
+     * Lists all Energy models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PersonhomeworkSearch();
+        $searchModel = new EnergySearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $query = Personhomework::find();
-        $pagination = new Pagination([
-            'totalCount' =>  $query-> count(),
-            'pageSize' =>  10            
-          ]);
-        $Personhomework = $query-> orderBy('num_id')
-        -> offset($pagination-> offset)
-        -> limit($pagination-> limit)
-        -> all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'Personhomework' => $Personhomework,
-            'pagination' => $pagination
         ]);
     }
 
     /**
-     * Displays a single Personhomework model.
+     * Displays a single Energy model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -77,13 +60,13 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Creates a new Personhomework model.
+     * Creates a new Energy model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Personhomework();
+        $model = new Energy();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->num_id]);
@@ -95,7 +78,7 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Updates an existing Personhomework model.
+     * Updates an existing Energy model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -115,7 +98,7 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Deletes an existing Personhomework model.
+     * Deletes an existing Energy model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -129,15 +112,15 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Finds the Personhomework model based on its primary key value.
+     * Finds the Energy model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Personhomework the loaded model
+     * @return Energy the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Personhomework::findOne($id)) !== null) {
+        if (($model = Energy::findOne($id)) !== null) {
             return $model;
         }
 

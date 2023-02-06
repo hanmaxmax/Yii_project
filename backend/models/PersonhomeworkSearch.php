@@ -18,6 +18,7 @@ class PersonhomeworkSearch extends Personhomework
     {
         return [
             [['num_id'], 'integer'],
+            [['name', 'hw1', 'hw2', 'hw3', 'github'], 'safe'],
         ];
     }
 
@@ -59,6 +60,12 @@ class PersonhomeworkSearch extends Personhomework
         $query->andFilterWhere([
             'num_id' => $this->num_id,
         ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'hw1', $this->hw1])
+            ->andFilterWhere(['like', 'hw2', $this->hw2])
+            ->andFilterWhere(['like', 'hw3', $this->hw3])
+            ->andFilterWhere(['like', 'github', $this->github]);
 
         return $dataProvider;
     }

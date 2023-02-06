@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\PersonhomeworkSearch */
+/* @var $model backend\models\EnergySearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="personhomework-search">
+<div class="energy-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -22,13 +22,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name') ?>
 
-    <?= $form->field($model, 'hw1') ?>
+    <?= $form->field($model, 'influence') ?>
 
-    <?= $form->field($model, 'hw2') ?>
+    <?= $form->field($model, 'picture') ?>
 
-    <?= $form->field($model, 'hw3') ?>
+    <?= $form->field($model, 'picture2') ?>
 
-    <?php // echo $form->field($model, 'github') ?>
+    <?php // echo $form->field($model, 'picture3') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

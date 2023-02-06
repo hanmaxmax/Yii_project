@@ -4,12 +4,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Teamhomework;
+use backend\models\Energy;
 
 /**
- * TeamhomeworkSearch represents the model behind the search form of `backend\models\Teamhomework`.
+ * EnergySearch represents the model behind the search form of `backend\models\Energy`.
  */
-class TeamhomeworkSearch extends Teamhomework
+class EnergySearch extends Energy
 {
     /**
      * {@inheritdoc}
@@ -18,7 +18,7 @@ class TeamhomeworkSearch extends Teamhomework
     {
         return [
             [['num_id'], 'integer'],
-            [['name', 'position'], 'safe'],
+            [['name', 'influence', 'picture', 'picture2', 'picture3'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class TeamhomeworkSearch extends Teamhomework
      */
     public function search($params)
     {
-        $query = Teamhomework::find();
+        $query = Energy::find();
 
         // add conditions that should always apply here
 
@@ -62,7 +62,10 @@ class TeamhomeworkSearch extends Teamhomework
         ]);
 
         $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'position', $this->position]);
+            ->andFilterWhere(['like', 'influence', $this->influence])
+            ->andFilterWhere(['like', 'picture', $this->picture])
+            ->andFilterWhere(['like', 'picture2', $this->picture2])
+            ->andFilterWhere(['like', 'picture3', $this->picture3]);
 
         return $dataProvider;
     }

@@ -3,14 +3,14 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Teamhomework */
+/* @var $model backend\models\Energy */
 
-$this->title = 'Update Teamhomework: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Teamhomeworks', 'url' => ['index']];
+$this->title = 'Update Energy: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Energies', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->num_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
-<div class="teamhomework-update">
+<div class="energy-update">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

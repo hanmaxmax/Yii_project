@@ -8,6 +8,10 @@ use backend\models\TeamhomeworkSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\data\Pagination;
+use yii\db\ActiveRecord;
+use yii\data\Sort;
+$Teamhomework = Teamhomework::find() -> orderBy('num_id') -> all();
 
 /**
  * TeamhomeworkController implements the CRUD actions for Teamhomework model.
@@ -18,6 +22,7 @@ class TeamhomeworkController extends Controller
      * {@inheritdoc}
      */
     public $layout = "main_layout";
+
     public function behaviors()
     {
         return [
@@ -39,9 +44,21 @@ class TeamhomeworkController extends Controller
         $searchModel = new TeamhomeworkSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
+        $query = Teamhomework::find();
+        $pagination = new Pagination([
+            'totalCount' =>  $query-> count(),
+            'pageSize' =>  10            
+          ]);
+        $Teamhomework = $query-> orderBy('num_id')
+        -> offset($pagination-> offset)
+        -> limit($pagination-> limit)
+        -> all();
+
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+            'Teamhomework' => $Teamhomework,
+            'pagination' => $pagination
         ]);
     }
 

@@ -4,14 +4,14 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model backend\models\Teamhomework */
+/* @var $model backend\models\Energy */
 
 $this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Teamhomeworks', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Energies', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="teamhomework-view">
+<div class="energy-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
@@ -31,7 +31,10 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'num_id',
             'name',
-            'position',
+            'influence:ntext',
+            'picture',
+            'picture2',
+            'picture3',
         ],
     ]) ?>
 

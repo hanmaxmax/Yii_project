@@ -4,12 +4,12 @@ namespace backend\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use backend\models\Teamhomework;
+use backend\models\User;
 
 /**
- * TeamhomeworkSearch represents the model behind the search form of `backend\models\Teamhomework`.
+ * UserSearch represents the model behind the search form of `backend\models\User`.
  */
-class TeamhomeworkSearch extends Teamhomework
+class UserSearch extends User
 {
     /**
      * {@inheritdoc}
@@ -17,8 +17,8 @@ class TeamhomeworkSearch extends Teamhomework
     public function rules()
     {
         return [
-            [['num_id'], 'integer'],
-            [['name', 'position'], 'safe'],
+            [['id', 'status', 'created_at', 'updated_at'], 'integer'],
+            [['username', 'auth_key', 'password_hash', 'password_reset_token', 'email', 'verification_token'], 'safe'],
         ];
     }
 
@@ -40,7 +40,7 @@ class TeamhomeworkSearch extends Teamhomework
      */
     public function search($params)
     {
-        $query = Teamhomework::find();
+        $query = User::find();
 
         // add conditions that should always apply here
 
@@ -58,11 +58,18 @@ class TeamhomeworkSearch extends Teamhomework
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'num_id' => $this->num_id,
+            'id' => $this->id,
+            'status' => $this->status,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['like', 'name', $this->name])
-            ->andFilterWhere(['like', 'position', $this->position]);
+        $query->andFilterWhere(['like', 'username', $this->username])
+            ->andFilterWhere(['like', 'auth_key', $this->auth_key])
+            ->andFilterWhere(['like', 'password_hash', $this->password_hash])
+            ->andFilterWhere(['like', 'password_reset_token', $this->password_reset_token])
+            ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'verification_token', $this->verification_token]);
 
         return $dataProvider;
     }

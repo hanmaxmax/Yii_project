@@ -3,21 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use backend\models\Personhomework;
-use backend\models\PersonhomeworkSearch;
+use backend\models\User;
+use backend\models\UserSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use yii\data\Pagination;
-use yii\db\ActiveRecord;
-use yii\data\Sort;
-$Personhomework = Personhomework::find() -> orderBy('num_id') -> all();
-
 
 /**
- * PersonhomeworkController implements the CRUD actions for Personhomework model.
+ * UserController implements the CRUD actions for User model.
  */
-class PersonhomeworkController extends Controller
+class UserController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -37,34 +32,22 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Lists all Personhomework models.
+     * Lists all User models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PersonhomeworkSearch();
+        $searchModel = new UserSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $query = Personhomework::find();
-        $pagination = new Pagination([
-            'totalCount' =>  $query-> count(),
-            'pageSize' =>  10            
-          ]);
-        $Personhomework = $query-> orderBy('num_id')
-        -> offset($pagination-> offset)
-        -> limit($pagination-> limit)
-        -> all();
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
-            'Personhomework' => $Personhomework,
-            'pagination' => $pagination
         ]);
     }
 
     /**
-     * Displays a single Personhomework model.
+     * Displays a single User model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -77,16 +60,16 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Creates a new Personhomework model.
+     * Creates a new User model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Personhomework();
+        $model = new User();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->num_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('create', [
@@ -95,7 +78,7 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Updates an existing Personhomework model.
+     * Updates an existing User model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $id
      * @return mixed
@@ -106,7 +89,7 @@ class PersonhomeworkController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->num_id]);
+            return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
@@ -115,7 +98,7 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Deletes an existing Personhomework model.
+     * Deletes an existing User model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $id
      * @return mixed
@@ -129,15 +112,15 @@ class PersonhomeworkController extends Controller
     }
 
     /**
-     * Finds the Personhomework model based on its primary key value.
+     * Finds the User model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Personhomework the loaded model
+     * @return User the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Personhomework::findOne($id)) !== null) {
+        if (($model = User::findOne($id)) !== null) {
             return $model;
         }
 
