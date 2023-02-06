@@ -106,7 +106,7 @@ AppAsset::register($this);
 						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site/about">关于团队</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="price.html">Pricing</a>
+							<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=countriesview">国际视野</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
