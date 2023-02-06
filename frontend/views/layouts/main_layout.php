@@ -118,15 +118,27 @@ AppAsset::register($this);
 							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=timeline">时间线</a>
-
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+							    aria-expanded="false">
+								战争影响
+								<i class="fas fa-angle-down"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=energy">能源</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=economics">经济</a>
 							</div>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link cool" href="contact.html">留言板</a>
 						</li>
 					</ul>
-
 				</div>
+
+
 				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
 			
 						Russia Ukraine War
