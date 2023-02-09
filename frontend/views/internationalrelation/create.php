@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 林语盈
+ * 本文件用于Internationalrelation界面
+ */
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */

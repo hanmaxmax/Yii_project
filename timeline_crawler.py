@@ -1,3 +1,8 @@
+'''
+ * Team: NKU-HLPY
+ * Coding By: 林语盈
+ * 本文件用于timeline界面中最新新闻都爬虫（中国新闻网）
+'''
 import pymysql
 import requests
 import re

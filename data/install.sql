@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2023-02-09 02:59:01
--- 服务器版本： 8.0.28
--- PHP 版本： 8.1.2
+-- 生成日期： 2023-02-09 06:02:35
+-- 服务器版本： 8.0.19
+-- PHP 版本： 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 
 --
 -- 数据库： `yii2advanced`
-
+--
 
 -- --------------------------------------------------------
 
@@ -27,7 +27,6 @@ SET time_zone = "+00:00";
 -- 表的结构 `comment`
 --
 
-DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int NOT NULL,
   `user_id` int NOT NULL COMMENT '用户id',
@@ -56,12 +55,11 @@ INSERT INTO `comment` (`id`, `user_id`, `content`, `created_at`, `username`) VAL
 -- 表的结构 `countriesview`
 --
 
-DROP TABLE IF EXISTS `countriesview`;
 CREATE TABLE `countriesview` (
-  `country` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '国家',
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '人名',
-  `view` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '观点',
-  `picture` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片',
+  `country` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '国家',
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '人名',
+  `view` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '观点',
+  `picture` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片',
   `num_id` int NOT NULL COMMENT '序号'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -84,13 +82,12 @@ INSERT INTO `countriesview` (`country`, `name`, `view`, `picture`, `num_id`) VAL
 -- 表的结构 `economics`
 --
 
-DROP TABLE IF EXISTS `economics`;
 CREATE TABLE `economics` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
-  `influence` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
-  `picture1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
-  `picture2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2'
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `influence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
+  `picture1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
+  `picture2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -109,14 +106,13 @@ INSERT INTO `economics` (`num_id`, `name`, `influence`, `picture1`, `picture2`) 
 -- 表的结构 `energy`
 --
 
-DROP TABLE IF EXISTS `energy`;
 CREATE TABLE `energy` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
-  `influence` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
-  `picture` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
-  `picture2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
-  `picture3` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `influence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
+  `picture` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
+  `picture2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
+  `picture3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='能源影响';
 
 --
@@ -134,7 +130,6 @@ INSERT INTO `energy` (`num_id`, `name`, `influence`, `picture`, `picture2`, `pic
 -- 表的结构 `internationalrelation`
 --
 
-DROP TABLE IF EXISTS `internationalrelation`;
 CREATE TABLE `internationalrelation` (
   `num_id` int NOT NULL COMMENT '序号',
   `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
@@ -159,9 +154,8 @@ INSERT INTO `internationalrelation` (`num_id`, `name`, `influence`, `picture`, `
 -- 表的结构 `migration`
 --
 
-DROP TABLE IF EXISTS `migration`;
 CREATE TABLE `migration` (
-  `version` varchar(180) COLLATE utf8mb4_general_ci NOT NULL,
+  `version` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `apply_time` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -180,11 +174,10 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 -- 表的结构 `news`
 --
 
-DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
-  `name` varchar(512) COLLATE utf8mb4_general_ci NOT NULL COMMENT '新闻标题',
+  `name` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '新闻标题',
   `date` datetime NOT NULL COMMENT '发布时间',
-  `url` varchar(512) COLLATE utf8mb4_general_ci NOT NULL COMMENT '链接',
+  `url` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '链接',
   `num_id` int NOT NULL COMMENT '序号'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='新闻表';
 
@@ -208,12 +201,11 @@ INSERT INTO `news` (`name`, `date`, `url`, `num_id`) VALUES
 -- 表的结构 `ourteammems`
 --
 
-DROP TABLE IF EXISTS `ourteammems`;
 CREATE TABLE `ourteammems` (
-  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT '成员姓名',
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '成员姓名',
   `id` int NOT NULL COMMENT '学号',
   `num_id` int NOT NULL COMMENT '序号',
-  `major` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT '专业'
+  `major` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '专业'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='团队成员表';
 
 --
@@ -223,7 +215,8 @@ CREATE TABLE `ourteammems` (
 INSERT INTO `ourteammems` (`name`, `id`, `num_id`, `major`) VALUES
 ('韩佳迅', 2012682, 1, '计算机科学与技术'),
 ('姚鑫', 2014089, 2, '信息安全'),
-('彭钰婷', 2013631, 3, '计算机科学与技术');
+('彭钰婷', 2013631, 3, '计算机科学与技术'),
+('林语盈', 2012174, 4, '计算机科学与技术');
 
 -- --------------------------------------------------------
 
@@ -231,14 +224,13 @@ INSERT INTO `ourteammems` (`name`, `id`, `num_id`, `major`) VALUES
 -- 表的结构 `personhomework`
 --
 
-DROP TABLE IF EXISTS `personhomework`;
 CREATE TABLE `personhomework` (
   `num_id` int NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名字',
-  `hw1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业1',
-  `hw2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业2',
-  `hw3` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业3',
-  `github` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'GitHub链接'
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名字',
+  `hw1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业1',
+  `hw2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业2',
+  `hw3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业3',
+  `github` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'GitHub链接'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='个人作业';
 
 --
@@ -257,10 +249,9 @@ INSERT INTO `personhomework` (`num_id`, `name`, `hw1`, `hw2`, `hw3`, `github`) V
 -- 表的结构 `tb_user_authority`
 --
 
-DROP TABLE IF EXISTS `tb_user_authority`;
 CREATE TABLE `tb_user_authority` (
   `tb_uaId` int UNSIGNED NOT NULL COMMENT '权限编号',
-  `tb_uaRemark` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '权限说明',
+  `tb_uaRemark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '权限说明',
   `tb_uaIsmanager` tinyint(1) DEFAULT NULL COMMENT '是否为管理员'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户权限表' ROW_FORMAT=DYNAMIC;
 
@@ -279,11 +270,10 @@ INSERT INTO `tb_user_authority` (`tb_uaId`, `tb_uaRemark`, `tb_uaIsmanager`) VAL
 -- 表的结构 `teamhomework`
 --
 
-DROP TABLE IF EXISTS `teamhomework`;
 CREATE TABLE `teamhomework` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业名称',
-  `position` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '文件名称'
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业名称',
+  `position` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '文件名称'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='团队作业';
 
 --
@@ -302,43 +292,20 @@ INSERT INTO `teamhomework` (`num_id`, `name`, `position`) VALUES
 -- --------------------------------------------------------
 
 --
--- 表的结构 `test`
---
-
-DROP TABLE IF EXISTS `test`;
-CREATE TABLE `test` (
-  `test1` int NOT NULL COMMENT 'test1',
-  `test2` int NOT NULL COMMENT 'test2',
-  `test_id` int NOT NULL COMMENT 'test_id'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- 转存表中的数据 `test`
---
-
-INSERT INTO `test` (`test1`, `test2`, `test_id`) VALUES
-(1, 1, 1),
-(2, 2, 2),
-(3, 3, 3);
-
--- --------------------------------------------------------
-
---
 -- 表的结构 `user`
 --
 
-DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
   `id` int NOT NULL,
-  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `auth_key` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
-  `password_hash` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
-  `password_reset_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `auth_key` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `password_reset_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `status` smallint NOT NULL DEFAULT '10',
   `created_at` int NOT NULL,
   `updated_at` int NOT NULL,
-  `verification_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
+  `verification_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -424,12 +391,6 @@ ALTER TABLE `teamhomework`
   ADD PRIMARY KEY (`num_id`);
 
 --
--- 表的索引 `test`
---
-ALTER TABLE `test`
-  ADD PRIMARY KEY (`test_id`);
-
---
 -- 表的索引 `user`
 --
 ALTER TABLE `user`
@@ -482,7 +443,7 @@ ALTER TABLE `news`
 -- 使用表AUTO_INCREMENT `ourteammems`
 --
 ALTER TABLE `ourteammems`
-  MODIFY `num_id` int NOT NULL AUTO_INCREMENT COMMENT '序号', AUTO_INCREMENT=4;
+  MODIFY `num_id` int NOT NULL AUTO_INCREMENT COMMENT '序号', AUTO_INCREMENT=5;
 
 --
 -- 使用表AUTO_INCREMENT `personhomework`
