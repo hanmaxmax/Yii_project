@@ -8,6 +8,8 @@ use Yii;
  * This is the model class for table "{{%teamhomework}}".
  *
  * @property int $num_id 序号
+ * @property string $name 作业名称
+ * @property string $position 文件名称
  */
 class Teamhomework extends \yii\db\ActiveRecord
 {
@@ -24,7 +26,10 @@ class Teamhomework extends \yii\db\ActiveRecord
      */
     public function rules()
     {
-        return [];
+        return [
+            [['name', 'position'], 'required'],
+            [['name', 'position'], 'string', 'max' => 100],
+        ];
     }
 
     /**
@@ -34,6 +39,8 @@ class Teamhomework extends \yii\db\ActiveRecord
     {
         return [
             'num_id' => '序号',
+            'name' => '作业名称',
+            'position' => '文件名称',
         ];
     }
 

@@ -49,9 +49,9 @@ class TimelineController extends Controller
         $query = Timeline::find();
         $pagination = new Pagination([
             'totalCount' =>  $query-> count(),
-            'pageSize' =>  10            
+            'pageSize' =>  200            
           ]);
-        $timelines = $query-> orderBy('date')
+        $timelines = $query-> orderBy('date DESC')
         -> offset($pagination-> offset)
         -> limit($pagination-> limit)
         -> all();

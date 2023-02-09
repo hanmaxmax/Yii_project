@@ -18,6 +18,7 @@ class TeamhomeworkSearch extends Teamhomework
     {
         return [
             [['num_id'], 'integer'],
+            [['name', 'position'], 'safe'],
         ];
     }
 
@@ -59,6 +60,9 @@ class TeamhomeworkSearch extends Teamhomework
         $query->andFilterWhere([
             'num_id' => $this->num_id,
         ]);
+
+        $query->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'position', $this->position]);
 
         return $dataProvider;
     }

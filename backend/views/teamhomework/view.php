@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Teamhomework */
 
-$this->title = $model->num_id;
+$this->title = $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Teamhomeworks', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -30,6 +30,8 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'num_id',
+            'name',
+            'position',
         ],
     ]) ?>
 

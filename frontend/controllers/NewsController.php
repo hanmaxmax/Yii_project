@@ -61,7 +61,7 @@ class NewsController extends Controller
         $query = News::find();
         $pagination = new Pagination([
             'totalCount' =>  $query-> count(),
-            'pageSize' =>  10            
+            'pageSize' =>  200            
           ]);
         $news = $query-> orderBy('date')
         -> offset($pagination-> offset)

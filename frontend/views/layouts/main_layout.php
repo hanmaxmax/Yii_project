@@ -97,16 +97,15 @@ AppAsset::register($this);
 						</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-						<li class="nav-item active">
-						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">主页
-								<span class="sr-only">(current)</span>
-							</a>
+						
+					<li class="nav-item">
+						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">主页</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site/about">关于团队</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link cool" href="price.html">Pricing</a>
+							<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=countriesview">国际视野</a>
 						</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
@@ -118,15 +117,29 @@ AppAsset::register($this);
 							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=news">新闻</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=timeline">时间线</a>
-
+							</div>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle cool" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+							    aria-expanded="false">
+								战争影响
+								<i class="fas fa-angle-down"></i>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=energy">能源</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=economics">经济</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=internationalrelation">国际关系</a>
 							</div>
 						</li>
 						<li class="nav-item">
-						<a class="nav-link cool" href="contact.html">留言板</a>
+						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=comment">网友评论</a>
 						</li>
 					</ul>
-
 				</div>
+
+
 				<a class="navbar-brand" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">
 			
 						Russia Ukraine War
