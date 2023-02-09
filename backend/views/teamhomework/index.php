@@ -31,7 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?php foreach ($Teamhomework as $th) : ?>
             <div class="col-lg-4">
                 <p style="font-size:24px;color:navy"><b><?= $th->name ?>：</b>
-                <a href="../../data/team/<?=$th->position?>"  ><span style="font-size:20px;">PDF下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
+                <a href="../../data/team/<?=$th->position?>"  ><span style="font-size:20px;">文件下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
         <?php endforeach; ?>
 

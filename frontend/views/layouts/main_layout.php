@@ -97,10 +97,9 @@ AppAsset::register($this);
 						</a>
 				<div class="collapse navbar-collapse" id="navbarNavDropdown">
 					<ul class="navbar-nav">
-						<li class="nav-item active">
-						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">主页
-								<span class="sr-only">(current)</span>
-							</a>
+						
+					<li class="nav-item">
+						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site">主页</a>
 						</li>
 						<li class="nav-item">
 						<a class="nav-link cool" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=site/about">关于团队</a>
@@ -130,6 +129,8 @@ AppAsset::register($this);
 							<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=energy">能源</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=economics">经济</a>
+								<div class="dropdown-divider"></div>
+								<a class="dropdown-item" href="<?php echo Yii::$app->getHomeUrl(); ?>?r=internationalrelation">国际关系</a>
 							</div>
 						</li>
 						<li class="nav-item">

@@ -25,7 +25,10 @@ $this->title = 'My Yii Application';
                 <h3><p style="color:navy">韩佳迅</p></h3>
                 
                 <p>  </p>
-                <p>韩佳迅</p>
+                <p>完成后台模板的导入、用户管理、作业下载、部分数据管理页面</p>
+                <p>完成前台主页、国际视野页面、对经济、能源的影响页面</p>
+                <p>完成了对应于数据表countriesview、energy、economics、ourteammems、teamhomework、personhomework、user的MVC结构</p>
+                <p>负责文档：实现文档、项目展示PPT</p>
 
                 <p><a class="btn btn-default" href="https://github.com/hanmaxmax">进入Github &raquo;</a></p>
             </div>
@@ -33,31 +36,31 @@ $this->title = 'My Yii Application';
             <h3><p style="color:navy">林语盈</p></h3>
 
                 <p>  </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>完成前台对国际关系的影响的页面</p>
+                <p>完成了对应于数据表internalrelation的MVC结构，以及相应的后台数据管理</p>
+                <p>完成了爬虫，对news数据表的数据爬取</p>
+                <p>实现一键部署功能</p>
+                <p>负责文档：实现文档、部署文档</p>
 
                 <p><a class="btn btn-default" href="https://github.com/AldebaranL">进入Github &raquo;</a></p>
             </div>
             <div class="col-lg-6">
             <h3><p style="color:navy">彭钰婷</p></h3>
                 <p>  </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
-
+                <p>完成前台的战争实况中的新闻、时间线页面</p>
+                <p>完成了对应于数据表news的MVC结构</p>
+                <p>完成了爬虫，对news数据表的数据爬取</p>
+                <p>负责文档：实现文档、用户手册</p>
                 <p><a class="btn btn-default" href="https://github.com/tttran67">进入Github &raquo;</a></p>
             </div>
 
             <div class="col-lg-6">
             <h3><p style="color:navy">姚鑫</p></h3>
                 <p>  </p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+                <p>完成前台模板的导入，前台导航栏和主页</p>
+                <p>完成前台关于团队、网友评论页面</p>
+                <p>完成了对应于数据表comment的MVC结构</p>
+                <p>负责文档：实现文档、需求文档、设计文档</p>
 
                 <p><a class="btn btn-default" href="https://github.com/yx66667">进入Github &raquo;</a></p>
             </div>
