@@ -125,10 +125,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A1(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第一次作业</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第一次作业</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第一次作业</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第一次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A1(2012682_%E9%9F%A9%E4%BD%B3%E8%BF%85).zip">> 韩佳迅第一次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A1(2012174_%E6%9E%97%E8%AF%AD%E7%9B%88).zip">> 林语盈第一次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A1(2013631_%E5%BD%AD%E9%92%B0%E5%A9%B7).zip">> 彭钰婷第一次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A1(2014089_%E5%A7%9A%E9%91%AB).zip">> 姚鑫第一次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -150,10 +150,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A2(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第二次作业</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第二次作业</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第二次作业</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第二次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A2(2012682_%E9%9F%A9%E4%BD%B3%E8%BF%85).zip">> 韩佳迅第二次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A2(2012174_%E6%9E%97%E8%AF%AD%E7%9B%88).zip">> 林语盈第二次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A2(2013631_%E5%BD%AD%E9%92%B0%E5%A9%B7).zip">> 彭钰婷第二次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A2(2014089_%E5%A7%9A%E9%91%AB).zip">> 姚鑫第二次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -174,10 +174,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A3(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第三次作业</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第三次作业</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第三次作业</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第三次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A3(2012682_%E9%9F%A9%E4%BD%B3%E8%BF%85).zip">> 韩佳迅第三次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A3(2012174_%E6%9E%97%E8%AF%AD%E7%9B%88).zip">> 林语盈第三次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A3(2013631_%E5%BD%AD%E9%92%B0%E5%A9%B7).zip">> 彭钰婷第三次作业</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/personal/%E4%BD%9C%E4%B8%9A3(2014089_%E5%A7%9A%E9%91%AB).zip">> 姚鑫第三次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -199,11 +199,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138">> 需求文档</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/team/NKU-HLPY_%E9%9C%80%E6%B1%82%E6%96%87%E6%A1%A3(2012682_2012174_2013631_2014089).pdf">> 需求文档</a></li>
                                 <li><a href="https://github.com/NickSkyyy">> 设计文档</a></li>
                                 <li><a href="https://github.com/VitalC-3026">> 实现文档</a></li>
-                                <li><a href="https://github.com/king-wk">> 用户手册</a></li>
-                                <li><a href="https://github.com/Pixie-King">> 部署文档</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/team/NKU-HLPY_%E7%94%A8%E6%88%B7%E6%89%8B%E5%86%8C(2012682_2012174_2013631_2014089).pdf">> 用户手册</a></li>
+                                <li><a href="https://github.com/hanmaxmax/Yii_project/blob/main/data/team/NKU-HLPY_%E9%83%A8%E7%BD%B2%E6%96%87%E6%A1%A3(2012682_2012174_2013631_2014089).pdf">> 部署文档</a></li>
 								<li><a href="https://github.com/Pixie-King">> 展示PPT</a></li>
                             </ul>
                         </div>
