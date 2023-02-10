@@ -94,13 +94,26 @@ function clear_cache($conn)
 
                     $myfile = fopen("../common/config/main-local.php", "w");
 
-                    $contents = "<?php \n return [ \n 'components' => [ \n
-    'db' => [ \n
-        'class' => 'yii\db\Connection', \n
-        'dsn' => 'mysql:host=" . $_POST["sql_ip"] . ";dbname=" . $_POST["sql_name"] . "',  \n
-        'username' => '" . $_POST["sql_account"] . "',  \n
-        'password' => '" . $_POST["sql_password"] . "', \n
-        'charset' => 'utf8'   \n],\n],\n];\n ?>";
+                    $contents ="<?php
+                    return [
+                        'components' => [
+                            'db' => [
+                                'class' => 'yii\db\Connection',
+                                'dsn' => 'mysql:host=" . $_POST["sql_ip"] . ";dbname=" . $_POST["sql_name"] . "',
+                                'username' => '" . $_POST["sql_account"] . "',
+                                'password' => '" . $_POST["sql_password"] . "',
+                                'charset' => 'utf8',
+                            ],
+                            'mailer' => [
+                                'class' => 'yii\swiftmailer\Mailer',
+                                'viewPath' => '@common/mail',
+                                // send all mails to a file by default. You have to set
+                                // 'useFileTransport' to false and configure a transport
+                                // for the mailer to send real emails.
+                                'useFileTransport' => true,
+                            ],
+                        ],
+                    ];";
                     fwrite($myfile, $contents);
                     fclose($myfile);
                     $myfile = fopen("../frontend/config/main-local.php", "w");
