@@ -82,10 +82,10 @@ function clear_cache($conn)
                 }
 
                 $password_hash = password_hash($_POST["admin_password"], PASSWORD_DEFAULT, ['cost' => 13]);
-                $admin = "INSERT INTO user (id, password_hash, auth_key,username) VALUES ('0','$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc','admin')";
+                $admin = "delete FROM `user` WHERE id=0; INSERT INTO user (id, password_hash, auth_key,username) VALUES ('0','$password_hash','nS7srBBk1qUOQvaYtVif494hdoTNSkAc','admin')";
 
                 if ($is_ok === TRUE) {
-                    if (!$conn->query($admin) === TRUE)
+                    if (!$conn->multi_query($admin) === TRUE)
                         $is_ok = false;
                 }
 
@@ -103,12 +103,24 @@ function clear_cache($conn)
         'charset' => 'utf8'   \n],\n],\n];\n ?>";
                     fwrite($myfile, $contents);
                     fclose($myfile);
+                    $myfile = fopen("../frontend/config/main-local.php", "w");
+                    $contents = "<?php \n \$config = [ \n
+    'components' => [  \n
+        'request' => [  \n
+            // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation \n
+            'cookieValidationKey' => 'lXfAJ_cFiUH-Ze0SsHpXrpmwmn_sAonW', \n ], \n], \n];   return \$config;";
+                    fwrite($myfile, $contents);
+                    fclose($myfile);
+                    
                     if ($is_ok === TRUE) {
                         echo "<h1 style='color: #66ccff;'>配置local文件完成，正在后台启动爬虫程序。。。</h1>";
                         shell_exec("pip install pymysql bs4");
                         $cmd = "python ../timeline_crawler.py > /dev/null &";
                         unset($output);
                         $output = shell_exec($cmd);
+                        //shell_exec("../init.bat");
+                        //shell_exec("cd ..");
+                        //shell_exec("php yii migrate");
                         echo "<h1 style='color: #99DD00;'>如果上述操作没有产生错误信息，那么您的安装已经完成，可以退出此界面了，
                 之后进入前（frontend/web/index.php）或后台（backend/web/index.php） 即可正常使用此网站</h1>";
                     } else {

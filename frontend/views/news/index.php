@@ -104,10 +104,10 @@ $cnt4label = 1;
 					<?php foreach ($news as $new) : ?>
 						<?php
 							$cnt4loop++;
-							if($cnt4loop < 3){
+							if($cnt4loop < 4){
 								continue;
 							}
-							if($cnt4loop > 8){
+							if($cnt4loop > 9){
 								break;
 							}
 						?>
