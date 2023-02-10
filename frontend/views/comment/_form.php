@@ -3,9 +3,11 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Comment */
-/* @var $form yii\widgets\ActiveForm */
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 ?>
 
 <div class="comment-form">

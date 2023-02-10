@@ -2,7 +2,7 @@
 /**
  * Team: NKU-HLPY
  * Coding By: 林语盈
- * 本文件用于Internationalrelation界面
+ * 本文件用于后台Internationalrelation管理
  */
 namespace backend\controllers;
 

@@ -8,7 +8,11 @@ use yii\helpers\Html;
     position:relative;
     margin-bottom:60px;
 }
-/* left */
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 .timeline .timeline-left .item {
     background-color: rgba(240, 240, 240, 0.3);
     border-right:rgba(240, 240, 240, 0.3) 3px solid;

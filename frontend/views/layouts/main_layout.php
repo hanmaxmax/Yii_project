@@ -1,7 +1,9 @@
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于前台导航栏
+ */
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于后台个人作业下载
+ */
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -47,10 +52,10 @@ $this->title = 'My Yii Application';
                     
 
                     <p><span style="font-size:24px;">个人作业二：</span>
-                    <a href="../../../data/personal/<?=$ph->hw2?>"  ><span style="font-size:24px;">zip下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
+                    <a href="../../data/personal/<?=$ph->hw2?>"  ><span style="font-size:24px;">zip下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
                     
                     <p><span style="font-size:24px;">个人作业三：</span>
-                    <a href="../../../data/personal/<?=$ph->hw3?>"  ><span style="font-size:24px;">zip下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
+                    <a href="../../data/personal/<?=$ph->hw3?>"  ><span style="font-size:24px;">zip下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
                     
 
                 </p>

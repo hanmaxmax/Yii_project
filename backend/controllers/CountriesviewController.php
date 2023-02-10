@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于后台各国观点管理
+ */
 namespace backend\controllers;
 
 use Yii;

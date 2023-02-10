@@ -2,8 +2,11 @@
 
 use yii\helpers\Html;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\Comment */
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 
 $this->title = 'Create Comment';
 $this->params['breadcrumbs'][] = ['label' => 'Comments', 'url' => ['index']];

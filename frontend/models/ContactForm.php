@@ -4,7 +4,11 @@ namespace frontend\models;
 
 use Yii;
 use yii\base\Model;
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 /**
  * ContactForm is the model behind the contact form.
  */

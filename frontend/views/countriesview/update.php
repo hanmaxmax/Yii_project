@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于各国观点界面
+ */
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */

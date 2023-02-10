@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 彭钰婷
+ * 本文件用于新闻界面
+ */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 

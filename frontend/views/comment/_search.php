@@ -1,11 +1,13 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model frontend\models\CommentSearch */
-/* @var $form yii\widgets\ActiveForm */
+
 ?>
 
 <div class="comment-search">

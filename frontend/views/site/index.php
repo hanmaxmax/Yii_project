@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅、姚鑫
+ * 本文件用于前台主页
+ */
 /* @var $this \yii\web\View */
 /* @var $content string */
 

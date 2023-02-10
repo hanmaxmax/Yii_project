@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于经济影响界面
+ */
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 

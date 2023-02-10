@@ -2,7 +2,9 @@
 namespace frontend\widgets\chat;
 
 /**
- * 留言板组件
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
  */
 use Yii;
 use yii\bootstrap\Widget;

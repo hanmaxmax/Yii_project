@@ -1,8 +1,10 @@
 
 <?php
-
-/* @var $this \yii\web\View */
-/* @var $content string */
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于关于团队界面
+ */
 
 use yii\helpers\Html;
 use yii\bootstrap\Nav;
@@ -38,7 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			<div class="row inner_stat">
 				<div class="col-md-3 stats_left counter_grid text-center">
 					<i class="far fa-building"></i>
-					<p class="counter">146</p>
+					<p class="counter">60+</p>
 					<h4>git提交次数</h4>
 				</div>
 				<div class="col-md-3 stats_left counter_grid1 text-center">
@@ -48,12 +50,12 @@ $this->params['breadcrumbs'][] = $this->title;
 				</div>
 				<div class="col-md-3 stats_left counter_grid2 text-center">
 					<i class="far fa-edit"></i>
-					<p class="counter">15</p>
+					<p class="counter">10+</p>
 					<h4>开发用的天数</h4>
 				</div>
 				<div class="col-md-3 stats_left counter_grid3 text-center">
 					<i class="far fa-smile"></i>
-					<p class="counter">1045</p>
+					<p class="counter">7000+</p>
 					<h4>文件总数</h4>
 				</div>
 			</div>
@@ -65,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
 					<h4 class="sub-tittle" style="font-size:30px">韩佳迅</h4>
 					<p class="about-p" style="font-size:15px">
-                        后台模板导入和页面设计，登入登出功能实现
+                        后台模板导入，前台主页、国际视野、经济、能源的页面实现，后台用户管理、数据管理、作业下载功能实现。
                     </p>
                     <li><a href="https://github.com/hanmaxmax">看我的github主页</a></li>
 				</div>
@@ -75,7 +77,7 @@ $this->params['breadcrumbs'][] = $this->title;
 			    </div>
 				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
 					<h4 class="sub-tittle" style="font-size:30px">林语盈</h4>
-					<p class="about-p" style="font-size:15px">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+					<p class="about-p" style="font-size:15px">前台国际关系页面实现，实现了爬虫，对news数据表进行数据爬取，实现了一键部署功能。</p>
                     <li><a href="https://github.com/AldebaranL">看我的github主页</a></li>
 				</div>
 				<!-- /.col-lg-4 -->
@@ -85,7 +87,7 @@ $this->params['breadcrumbs'][] = $this->title;
 				<div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
 					<h4 class="sub-tittle" style="font-size:30px">彭钰婷</h4>
                     <p class="about-p" style="font-size:15px">
-                        新闻页面和时间线页面设计和实现
+                        前台新闻页面、时间线页面设计和实现，实现爬虫，对news数据表进行数据爬取。
                     </p>
                     <li><a href="https://github.com/tttran67">看我的github主页</a></li>
 				</div>
@@ -96,7 +98,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <div class="col-lg-3 bottom-sub-grid" data-aos="fade-up">
 					<h4 class="sub-tittle" style="font-size:30px">姚鑫</h4>
                     <p class="about-p" style="font-size:15px">
-                        前台模板导入和页面设计，团队介绍页面设计和实现
+                        前台模板导入，导航栏部分页面设计，团队介绍、网友评论页面设计和实现。
                     </p>
                     <li><a href="https://github.com/yx66667">看我的github主页</a></li>
 				</div>
@@ -123,10 +125,10 @@ $this->params['breadcrumbs'][] = $this->title;
                         </div>
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A1(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 第一次个人作业链接</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> qqqq</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">> qqqqq</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> qqqq</a></li>
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A1(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第一次作业</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第一次作业</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第一次作业</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A1%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第一次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -148,10 +150,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A2(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 第二次个人作业</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">qwer</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">bbbbb</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">aaaa</a></li>
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A2(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第二次作业</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第二次作业</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第二次作业</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A2%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第二次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -172,10 +174,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A3(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">kkkk</a></li>
-                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">lllll</a></li>
-                                <li><a href="https://github.com/VitalC-3026/Internet">oooo</a></li>
-                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">llll</a></li>
+                                <li><a href="https://github.com/fengjk12138/-/blob/master/%E4%B8%AA%E4%BA%BA%E4%BD%9C%E4%B8%9A/%E4%BD%9C%E4%B8%9A3(1813402_%E5%86%AF%E6%9D%B0%E5%BA%B7).zip">> 韩佳迅第三次作业</a></li>
+                                <li><a href="https://github.com/NickSkyyy/Homework/blob/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811412_%E6%88%9A%E6%99%93%E7%9D%BF%EF%BC%89.zip">> 林语盈第三次作业</a></li>
+                                <li><a href="https://github.com/VitalC-3026/Internet">> 彭钰婷第三次作业</a></li>
+                                <li><a href="https://github.com/king-wk/homework_internet/tree/master/%E4%BD%9C%E4%B8%9A3%EF%BC%881811507_%E6%96%87%E9%9D%99%E9%9D%99%EF%BC%89">> 姚鑫第三次作业</a></li>
                             </ul>
                         </div>
                     </div>
@@ -197,11 +199,12 @@ $this->params['breadcrumbs'][] = $this->title;
 
                         <div class="widget-inner">
                             <ul class="list-unstyled">
-                                <li><a href="https://github.com/fengjk12138">才不要你来我github呢</a></li>
-                                <li><a href="https://github.com/NickSkyyy">你看这个star竟然可以点</a></li>
-                                <li><a href="https://github.com/VitalC-3026">不就是代码么，push就是了</a></li>
-                                <li><a href="https://github.com/king-wk">码量发量反比例</a></li>
-                                <li><a href="https://github.com/Pixie-King">lll</a></li>
+                                <li><a href="https://github.com/fengjk12138">> 需求文档</a></li>
+                                <li><a href="https://github.com/NickSkyyy">> 设计文档</a></li>
+                                <li><a href="https://github.com/VitalC-3026">> 实现文档</a></li>
+                                <li><a href="https://github.com/king-wk">> 用户手册</a></li>
+                                <li><a href="https://github.com/Pixie-King">> 部署文档</a></li>
+								<li><a href="https://github.com/Pixie-King">> 展示PPT</a></li>
                             </ul>
                         </div>
                     </div>
@@ -273,12 +276,7 @@ $this->params['breadcrumbs'][] = $this->title;
 					<li><a href="../../backend/web" >登录后台</a></li>
 					<li><a href="index.php?r=site/about" >关于团队</a></li>
 					<li><a href="index.php?r=news" >战争新闻</a></li>
-					<li><a href="index.php?r=timeline" >战争时间线</a></li>
-					<li><a href="index.php?r=energy" >影响-能源</a></li>
-					<li><a href="index.php?r=economics" >影响-经济</a></li>
-					<li><a href="index.php?r=internationalrelation" >影响-国际关系</a></li>
-					<li><a href="index.php?r=comment" >网友评论</a></li>
-
+					<li><a href="index.php?r=news" >战争时间线</a></li>
 				</ul>
 				</div>
 			</div>
@@ -344,7 +342,7 @@ $this->params['breadcrumbs'][] = $this->title;
 						</div>
 					</div>
 					<div class="copyrightbottom-w3ls-agile">
-						<p>Copyright &copy; 2022. NKU-HLPY All rights reserved.<a target="_blank" href="https://github.com/hanmaxmax/Yii_project">源代码Github链接</a></p>
+						<p>Copyright &copy; 2022. NKU-hply All rights reserved.<a target="_blank" href="https://github.com/hanmaxmax/Yii_project">源代码Github链接</a></p>
 
 					</div>
 				</div>

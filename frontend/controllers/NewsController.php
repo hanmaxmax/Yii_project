@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 彭钰婷
+ * 本文件用于新闻界面
+ */
 namespace frontend\controllers;
 
 use Yii;
@@ -63,7 +67,7 @@ class NewsController extends Controller
             'totalCount' =>  $query-> count(),
             'pageSize' =>  200            
           ]);
-        $news = $query-> orderBy('date')
+        $news = $query-> orderBy('date DESC')
         -> offset($pagination-> offset)
         -> limit($pagination-> limit)
         -> all();

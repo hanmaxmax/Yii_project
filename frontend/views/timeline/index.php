@@ -1,9 +1,15 @@
-<?php $cnt4loop = 1; $cnt4image = 1;?>
+<?php 
+/**
+ * Team: NKU-HLPY
+ * Coding By: 彭钰婷
+ * 本文件用于新闻界面
+ */
+$cnt4loop = 1; $cnt4image = 1;?>
 <!DOCTYPE html> 
 <html lang=""> 
     <head> 
         <meta charset=utf-8> 
-        <title>山东辱母杀人案</title> 
+        <title>俄乌战争新闻时间线</title> 
         <meta http-equiv=X-UA-Compatible content="IE=edge"> 
         <meta name=viewport content="width=device-width,initial-scale=1"> 
         <meta name=description content="最新进展：于欢曾应聘外卖员被拒"> 
@@ -21,7 +27,7 @@
                         <?php $cnt4loop=1; ?>
                         <?php $latestdate;?>
                         <?php foreach ($timelines as $timeline) : ?>
-                            <?php if($cnt4loop++ > 1)  $latestdate = $timeline->date; ?>
+                            <?php if($cnt4loop == 1)  $latestdate = $timeline->date; break; ?>
                         <?php endforeach; ?>
                         <p class="create-time">更新至<?= $latestdate?></p>
                         <div class="realtime-content c-bg-color-white">

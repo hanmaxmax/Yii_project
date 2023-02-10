@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
+ */
 use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;

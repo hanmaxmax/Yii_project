@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- 主机： 127.0.0.1
--- 生成日期： 2023-02-09 06:02:35
+-- 生成日期： 2023-02-10 03:41:53
 -- 服务器版本： 8.0.19
 -- PHP 版本： 8.2.0
 
@@ -56,10 +56,10 @@ INSERT INTO `comment` (`id`, `user_id`, `content`, `created_at`, `username`) VAL
 --
 
 CREATE TABLE `countriesview` (
-  `country` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '国家',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '人名',
-  `view` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '观点',
-  `picture` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片',
+  `country` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '国家',
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '人名',
+  `view` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '观点',
+  `picture` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片',
   `num_id` int NOT NULL COMMENT '序号'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -84,10 +84,10 @@ INSERT INTO `countriesview` (`country`, `name`, `view`, `picture`, `num_id`) VAL
 
 CREATE TABLE `economics` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
-  `influence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
-  `picture1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
-  `picture2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2'
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `influence` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
+  `picture1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
+  `picture2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -108,11 +108,11 @@ INSERT INTO `economics` (`num_id`, `name`, `influence`, `picture1`, `picture2`) 
 
 CREATE TABLE `energy` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
-  `influence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
-  `picture` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
-  `picture2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
-  `picture3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `influence` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
+  `picture` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
+  `picture2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
+  `picture3` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='能源影响';
 
 --
@@ -132,11 +132,11 @@ INSERT INTO `energy` (`num_id`, `name`, `influence`, `picture`, `picture2`, `pic
 
 CREATE TABLE `internationalrelation` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
-  `influence` text CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
-  `picture` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
-  `picture2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
-  `picture3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名称',
+  `influence` text COLLATE utf8mb4_general_ci NOT NULL COMMENT '影响',
+  `picture` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片1',
+  `picture2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片2',
+  `picture3` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '图片3'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='国际关系影响';
 
 --
@@ -155,7 +155,7 @@ INSERT INTO `internationalrelation` (`num_id`, `name`, `influence`, `picture`, `
 --
 
 CREATE TABLE `migration` (
-  `version` varchar(180) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `version` varchar(180) COLLATE utf8mb4_general_ci NOT NULL,
   `apply_time` int DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -175,9 +175,9 @@ INSERT INTO `migration` (`version`, `apply_time`) VALUES
 --
 
 CREATE TABLE `news` (
-  `name` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '新闻标题',
+  `name` varchar(512) COLLATE utf8mb4_general_ci NOT NULL COMMENT '新闻标题',
   `date` datetime NOT NULL COMMENT '发布时间',
-  `url` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '链接',
+  `url` varchar(512) COLLATE utf8mb4_general_ci NOT NULL COMMENT '链接',
   `num_id` int NOT NULL COMMENT '序号'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='新闻表';
 
@@ -186,14 +186,106 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`name`, `date`, `url`, `num_id`) VALUES
-('开局之年 北京民建企业家会员谈高质量发展之道', '2023-01-19 13:39:52', 'http://www.chinanews.com.cn/gn/2023/01-19/9938838.shtml', 1),
-('中国复苏 世界机遇：总台CGTN成功举办新年首场电视主题论坛', '2023-01-08 23:40:08', 'http://www.chinanews.com.cn/gj/2023/01-08/9930571.shtml', 2),
-('苹果失守 2万亿俱乐部解散', '2023-01-05 11:22:44', 'http://www.chinanews.com.cn/cj/2023/01-05/9928059.shtml', 3),
-('美媒：2022，美国股市14年来最差，2023年可能依旧颠簸', '2022-12-31 13:00:39', 'http://www.chinanews.com.cn/gj/2022/12-31/9925141.shtml', 4),
-('多家机构预测：明年台湾经济增长率恐难“保三”', '2022-12-16 21:11:30', 'http://www.chinanews.com.cn/gn/2022/12-16/9916380.shtml', 5),
-('外贸人群像：订单有流失，但已看到隧道尽头的光亮', '2022-12-15 17:04:05', 'http://www.chinanews.com.cn/cj/2022/12-15/9915543.shtml', 6),
-('俄议员：美国退出北约将是缓解世界紧张局势的好机会', '2022-11-30 21:37:26', 'http://www.chinanews.com.cn/gj/2022/11-30/9906057.shtml', 7),
-('罗思义：拯救了上百万生命的中国政府，不应在经济上被误解', '2023-02-05 13:43:55', 'https://www.baidu.com/', 8);
+('俄防长：美西方向乌提供重型武器将导致局势朝着不可预测方向升级', '2023-02-07 22:18:58', 'http://www.chinanews.com.cn/gj/2023/02-07/9949306.shtml', 1),
+('俄乌局势进展：俄称普京与格罗西本周未安排会面  泽连斯基召开最高统帅部会议', '2023-02-07 21:11:28', 'http://www.chinanews.com.cn/gj/2023/02-07/9949259.shtml', 2),
+('局势紧张，换不换防长，泽连斯基犯难了', '2023-02-07 16:40:21', 'http://www.chinanews.com.cn/gj/2023/02-07/9949101.shtml', 3),
+('非法移民和难民问题让欧盟左右为难（环球热点）', '2023-02-07 14:59:22', 'http://www.chinanews.com.cn/gj/2023/02-07/9949030.shtml', 4),
+('土耳其强震将对该国和世界经济带来哪些影响？', '2023-02-07 11:25:31', 'http://www.chinanews.com.cn/cj/2023/02-07/9948916.shtml', 5),
+('中方呼吁乌克兰危机有关方早日停火止战', '2023-02-07 05:51:18', 'http://www.chinanews.com.cn/gj/2023/02-07/9948716.shtml', 6),
+('俄乌局势进展：泽连斯基宣布制裁俄核工业 俄白领导人将于近期举行会晤', '2023-02-06 22:06:21', 'http://www.chinanews.com.cn/gj/2023/02-06/9948561.shtml', 7),
+('2022年进口量大降近3成，洋牛奶为何突然“不香了”？', '2023-02-06 16:36:10', 'http://www.chinanews.com.cn/cj/2023/02-06/9948423.shtml', 8),
+('中国汽车“开足马力”出海（专家解读）', '2023-02-06 15:39:25', 'http://www.chinanews.com.cn/cj/2023/02-06/9948349.shtml', 9),
+('63名俄方在押军事人员被乌方释放返回俄罗斯', '2023-02-06 08:54:41', 'http://www.chinanews.com.cn/gj/shipin/cns-d/2023/02-06/news950577.shtml', 10),
+('德国经济去年实现正增长 GDP比上年实际增长1.9%', '2023-02-06 05:54:22', 'http://www.chinanews.com.cn/gj/2023/02-06/9948043.shtml', 11),
+('花生“配齐”风险管理工具见成效', '2023-02-06 05:50:46', 'http://www.chinanews.com.cn/cj/2023/02-06/9948036.shtml', 12),
+('世界经济论坛执行董事施力伟：相信2023年中国经济增速将加快', '2023-02-06 05:05:40', 'http://www.chinanews.com.cn/cj/2023/02-06/9948022.shtml', 13),
+('全球连线|俄乌局势升级后首次举办 这场峰会谈了些啥？', '2023-02-05 20:46:00', 'http://www.chinanews.com.cn/shipin/2023/02-05/news950542.shtml', 14),
+('俄乌局势进展：俄警告美提供远程武器将致局势升级 泽连斯基剥夺多名前高官乌克兰国籍', '2023-02-05 19:10:04', 'http://www.chinanews.com.cn/gj/2023/02-05/9947839.shtml', 15),
+('俄乌局势进展：西方多国决定对俄石油产品实施限价 俄称将采取措施维护利益', '2023-02-04 21:32:12', 'http://www.chinanews.com.cn/gj/2023/02-04/9947445.shtml', 16),
+('俄国防部：63名被俘俄军人从乌克兰返回', '2023-02-04 20:46:21', 'http://www.chinanews.com.cn/gj/2023/02-04/9947419.shtml', 17),
+('又增一国！英媒：葡萄牙总理称将向乌克兰运送“豹”式坦克', '2023-02-04 20:30:56', 'http://www.chinanews.com.cn/gj/2023/02-04/9947404.shtml', 18),
+('美首次援乌远程火箭弹 俄就美新一轮军援发出警告', '2023-02-04 13:44:08', 'http://www.chinanews.com.cn/gj/2023/02-04/9947201.shtml', 19),
+('美国向乌克兰再提供超过20亿美元军事援助', '2023-02-04 07:44:48', 'http://www.chinanews.com.cn/gj/2023/02-04/9947068.shtml', 20),
+('乌克兰外长：随时可能与伊朗断绝外交关系', '2023-02-03 21:29:21', 'http://www.chinanews.com.cn/gj/2023/02-03/9946974.shtml', 21),
+('德媒：西方在为乌克兰提供弹药上面临困境', '2023-02-03 20:58:58', 'http://www.chinanews.com.cn/gj/2023/02-03/9946941.shtml', 22),
+('俄乌局势进展：乌促欧盟对俄实施更多制裁 俄称今年俄武器交付量将大增', '2023-02-03 19:25:57', 'http://www.chinanews.com.cn/gj/2023/02-03/9946849.shtml', 23),
+('埃尔多安谈西方向乌提供武器：高风险举动，“只会肥了军火商的私囊”', '2023-02-03 10:36:12', 'http://www.chinanews.com.cn/gj/2023/02-03/9946434.shtml', 24),
+('“世界小商品之都”开市：客流超预期，有店铺散货被抢空', '2023-02-03 10:32:24', 'http://www.chinanews.com.cn/cj/2023/02-03/9946425.shtml', 25),
+('美联储首提通胀降温，“加息潮”能否迎来拐点', '2023-02-03 10:28:32', 'http://www.chinanews.com.cn/cj/2023/02-03/9946419.shtml', 26),
+('外贸如何推动我国经济复苏', '2023-02-03 09:44:55', 'http://www.chinanews.com.cn/cj/2023/02-03/9946376.shtml', 27),
+('动作频频！美高官密集到亚洲谈论“挑战”，专家：不利于地区稳定', '2023-02-02 19:35:41', 'http://www.chinanews.com.cn/gj/2023/02-02/9946096.shtml', 28),
+('俄乌局势进展：乌每月国际融资需求约为30亿美元 俄称若乌展现诚意俄有意谈判', '2023-02-02 18:49:50', 'http://www.chinanews.com.cn/gj/2023/02-02/9946047.shtml', 29),
+('乌防长称俄动员50万士兵，最快2月24日发起重大攻势', '2023-02-02 17:12:16', 'http://www.chinanews.com.cn/gj/2023/02-02/9945990.shtml', 30),
+('加码拱火 美国首次准备向乌克兰提供远程火箭弹', '2023-02-02 16:20:27', 'http://www.chinanews.com.cn/gj/2023/02-02/9945922.shtml', 31),
+('瑞士信贷银行：美元在全球外汇储备中的地位或继续下降', '2023-02-02 11:06:39', 'http://www.chinanews.com.cn/gj/2023/02-02/9945704.shtml', 32),
+('一文读懂美联储兔年首秀：首提通胀降温，重申年内无降息', '2023-02-02 11:01:53', 'http://www.chinanews.com.cn/cj/2023/02-02/9945701.shtml', 33),
+('乘油价东风 埃克森美孚时赚630万美元', '2023-02-02 10:02:17', 'http://www.chinanews.com.cn/cj/2023/02-02/9945648.shtml', 34),
+('美联储宣布加息25个基点 预计还将持续上调利率', '2023-02-02 06:59:57', 'http://www.chinanews.com.cn/gj/2023/02-02/9945517.shtml', 35),
+('俄乌局势进展：英美拒绝向乌提供战机 以总理称愿考虑担任俄乌调解人', '2023-02-01 21:24:58', 'http://www.chinanews.com.cn/gj/2023/02-01/9945409.shtml', 36),
+('外媒：克宫回应美国拟向乌提供远程火箭弹，“不会改变事件进程”', '2023-02-01 18:51:26', 'http://www.chinanews.com.cn/gj/2023/02-01/9945305.shtml', 37),
+('戴高乐之孙谴责美国拱火俄乌冲突：“法国正付出沉重代价”', '2023-02-01 14:51:05', 'http://www.chinanews.com.cn/gj/2023/02-01/9945091.shtml', 38),
+('岸田会见北约秘书长，还告诉对方日本计划设常驻北约代表团', '2023-02-01 11:34:02', 'http://www.chinanews.com.cn/gj/2023/02-01/9945000.shtml', 39),
+('西方向乌克兰提供更多武器 遭多方批评', '2023-02-01 10:12:13', 'http://www.chinanews.com.cn/gj/2023/02-01/9944932.shtml', 40),
+('IMF最新经济展望为何变乐观了？', '2023-02-01 10:01:37', 'http://www.chinanews.com.cn/cj/2023/02-01/9944916.shtml', 41),
+('关注俄乌冲突：俄称控制一居民点 乌称打击俄军事目标', '2023-02-01 09:40:41', 'http://www.chinanews.com.cn/gj/shipin/2023/02-01/news950067.shtml', 42),
+('四大航去年预亏总额超千亿：看好今年表现，国内市场恢复更快', '2023-02-01 09:39:47', 'http://www.chinanews.com.cn/cj/2023/02-01/9944886.shtml', 43),
+('公募“逆势”调仓半导体：减持绩优设备企业，增持绩差设计公司', '2023-02-01 09:38:37', 'http://www.chinanews.com.cn/cj/2023/02-01/9944884.shtml', 44),
+('欧元区去年GDP增长 但“火车头”掉队', '2023-02-01 09:14:44', 'http://www.chinanews.com.cn/cj/2023/02-01/9944855.shtml', 45),
+('俄乌局势进展：拜登称不会向乌提供F-16战机 英法等国就向乌提供军火发声', '2023-01-31 18:37:45', 'http://www.chinanews.com.cn/gj/2023/01-31/9944609.shtml', 46),
+('重重危机笼罩欧洲三大国，法媒：英法德等将再迎一个艰难的春天', '2023-01-31 11:34:44', 'http://www.chinanews.com.cn/gj/2023/01-31/9944378.shtml', 47),
+('给不给乌克兰提供F-16战斗机？拜登：NO！', '2023-01-31 10:25:58', 'http://www.chinanews.com.cn/gj/2023/01-31/9944291.shtml', 48),
+('不断“鹰化”，能否给日本带来安全？', '2023-01-31 09:45:59', 'http://www.chinanews.com.cn/gj/2023/01-31/9944239.shtml', 49),
+('韩国赶超日本，成为中国第四大贸易伙伴', '2023-01-30 20:14:24', 'http://www.chinanews.com.cn/cj/2023/01-30/9944010.shtml', 50),
+('俄乌局势进展：德总理重申不会向乌提供战机  俄称普京愿意与朔尔茨交流', '2023-01-30 19:03:46', 'http://www.chinanews.com.cn/gj/2023/01-30/9943949.shtml', 51),
+('关注俄乌冲突 德总理警告向乌克兰提供武器要谨慎行事', '2023-01-30 13:37:10', 'http://www.chinanews.com.cn/gj/shipin/2023/01-30/news949894.shtml', 52),
+('关注俄乌冲突 乌防长称东部战事困难但仍在控制之下', '2023-01-30 13:33:31', 'http://www.chinanews.com.cn/gj/shipin/2023/01-30/news949890.shtml', 53),
+('关注俄乌冲突 俄称在多地打击乌军人员和装备', '2023-01-30 13:31:47', 'http://www.chinanews.com.cn/gj/shipin/2023/01-30/news949887.shtml', 54),
+('西方主战坦克援乌 美国怂恿欧洲冲前面', '2023-01-30 11:11:50', 'http://www.chinanews.com.cn/gj/2023/01-30/9943663.shtml', 55),
+('港媒：西方“普世主义”应让位于平等对话', '2023-01-30 11:02:08', 'http://www.chinanews.com.cn/gj/2023/01-30/9943648.shtml', 56),
+('被做空的亚洲首富冤不冤', '2023-01-30 10:20:21', 'http://www.chinanews.com.cn/cj/2023/01-30/9943603.shtml', 57),
+('十大券商看后市｜内外资接力，A股打响春季攻势，如何配置', '2023-01-30 09:34:20', 'http://www.chinanews.com.cn/cj/2023/01-30/9943559.shtml', 58),
+('分歧公开化 土方对瑞典芬兰“入约”三方会谈机制“说不”', '2023-01-30 02:19:31', 'http://www.chinanews.com.cn/gj/2023/01-30/9943468.shtml', 59),
+('乌克兰：已要到321辆坦克，正在要远程导弹！', '2023-01-29 22:44:22', 'http://www.chinanews.com.cn/gj/shipin/cns-d/2023/01-29/news949852.shtml', 60),
+('俄乌局势进展：北约高级军官称已为与俄直接对抗做好准备 乌克兰提出远程导弹请求', '2023-01-29 20:58:52', 'http://www.chinanews.com.cn/gj/2023/01-29/9943409.shtml', 61),
+('一个春节，读懂中国经济的世界意义', '2023-01-29 15:36:46', 'http://www.chinanews.com.cn/gn/2023/01-29/9943256.shtml', 62),
+('“面包店给补贴了，那肉店呢？”', '2023-01-29 15:25:55', 'http://www.chinanews.com.cn/gj/2023/01-29/9943249.shtml', 63),
+('金正恩妹妹发声，谴责美国是“罪魁祸首”', '2023-01-29 14:12:51', 'http://www.chinanews.com.cn/gj/2023/01-29/9943192.shtml', 64),
+('乌克兰：已要到321辆坦克，正在要远程导弹！', '2023-01-29 09:08:04', 'http://www.chinanews.com.cn/gj/2023/01-29/9943014.shtml', 65),
+('俄罗斯将在前线补充部署新式防空系统', '2023-01-29 07:17:13', 'http://www.chinanews.com.cn/gj/2023/01-29/9942995.shtml', 66),
+('乌克兰再求战斗机 俄罗斯指美国借军援延长冲突', '2023-01-28 21:22:56', 'http://www.chinanews.com.cn/gj/2023/01-28/9942861.shtml', 67),
+('俄乌局势进展：乌反对俄白参加巴黎奥运会 俄称西方将与俄对抗升至新水平', '2023-01-28 18:52:02', 'http://www.chinanews.com.cn/gj/2023/01-28/9942781.shtml', 68),
+('网友：美国无视俄乌民众代价攫取利润', '2023-01-28 11:28:15', 'http://www.chinanews.com.cn/gj/shipin/2023/01-28/news949708.shtml', 69),
+('紧急“灭火” 德国否认直接参与俄乌冲突', '2023-01-28 11:11:58', 'http://www.chinanews.com.cn/gj/shipin/2023/01-28/news949699.shtml', 70),
+('关注俄乌冲突：俄称打击乌军工企业 乌称击退俄军进攻', '2023-01-28 10:46:06', 'http://www.chinanews.com.cn/gj/shipin/2023/01-28/news949691.shtml', 71),
+('俄方：西方向乌克兰提供坦克会将对抗推向新高度', '2023-01-28 03:40:18', 'http://www.chinanews.com.cn/gj/2023/01-28/9942341.shtml', 72),
+('乌克兰危机推动美国2022财年军售额激增', '2023-01-28 03:38:30', 'http://www.chinanews.com.cn/gj/2023/01-28/9942338.shtml', 73),
+('联合国：西方向乌提供多款主战坦克与和平背道而驰', '2023-01-28 01:41:51', 'http://www.chinanews.com.cn/gj/2023/01-28/9942323.shtml', 74),
+('俄乌局势进展：英法等国就援乌坦克相继表态  俄方要求德国说明立场', '2023-01-27 21:00:22', 'http://www.chinanews.com.cn/gj/2023/01-27/9942274.shtml', 75),
+('欧洲头条丨德国“豹”放行入乌 战火升级谁买单？', '2023-01-27 19:34:47', 'http://www.chinanews.com.cn/gj/2023/01-27/9942249.shtml', 76),
+('克宫：泽连斯基失去与普京对话资格 泽连斯基：不感兴趣', '2023-01-27 10:04:36', 'http://www.chinanews.com.cn/gj/2023/01-27/9942039.shtml', 77),
+('紧盯“三个之变”，加快军事理论现代化', '2023-01-27 02:36:20', 'http://www.chinanews.com.cn/gn/2023/01-27/9941971.shtml', 78),
+('俄乌局势进展：美德宣布向乌提供主战坦克 外媒称乌军证实撤离索列达尔', '2023-01-26 19:52:53', 'http://www.chinanews.com.cn/gj/2023/01-26/9941908.shtml', 79),
+('不装了！美国、德国供乌克兰坦克', '2023-01-26 13:05:57', 'http://www.chinanews.com.cn/gj/2023/01-26/9941765.shtml', 80),
+('美国宣布向乌克兰提供31辆主战坦克', '2023-01-26 06:30:32', 'http://www.chinanews.com.cn/gj/2023/01-26/9941632.shtml', 81),
+('德国政府预计今年德国经济增长0.2%', '2023-01-26 02:55:37', 'http://www.chinanews.com.cn/gj/2023/01-26/9941607.shtml', 82),
+('最新动态：德国决定向乌克兰提供“豹2”坦克 俄称看不到外交解决乌问题的前景', '2023-01-26 00:25:59', 'http://www.chinanews.com.cn/gj/2023/01-26/9941599.shtml', 83),
+('俄乌局势进展：外媒称美德将向乌提供主战坦克 俄官员称俄罗斯武器供应充足', '2023-01-25 19:58:18', 'http://www.chinanews.com.cn/gj/2023/01-25/9941541.shtml', 84),
+('德国终于松口援乌这一主战坦克！美国预计很快跟进！', '2023-01-25 19:09:16', 'http://www.chinanews.com.cn/gj/2023/01-25/9941539.shtml', 85),
+('美国和德国为何一反常态准备向乌克兰提供主战坦克？', '2023-01-25 09:53:26', 'http://www.chinanews.com.cn/gj/2023/01-25/9941342.shtml', 86),
+('德国防长：盟国可以开始训练乌克兰士兵使用“豹”式坦克', '2023-01-24 19:09:13', 'http://www.chinanews.com.cn/gj/2023/01-24/9941211.shtml', 87),
+('俄乌局势进展：俄外长就谈判议题发声 欧盟同意进一步向乌提供援助', '2023-01-24 18:41:27', 'http://www.chinanews.com.cn/gj/2023/01-24/9941204.shtml', 88),
+('虚伪双标 美国政府被曝操纵社交媒体', '2023-01-24 06:25:31', 'http://www.chinanews.com.cn/gj/2023/01-24/9941031.shtml', 89),
+('最新动态：俄外长说乌可通过中间人澄清谈判前景 乌官员称今春至初夏为战局关键期', '2023-01-24 02:09:43', 'http://www.chinanews.com.cn/gj/2023/01-24/9940995.shtml', 90),
+('俄外交部宣布降低与爱沙尼亚外交关系等级', '2023-01-23 21:00:48', 'http://www.chinanews.com.cn/gj/2023/01-23/9940975.shtml', 91),
+('俄乌局势进展：法德两国承诺坚定支持乌克兰 俄警告对乌军援将导致“全球悲剧”', '2023-01-23 20:08:49', 'http://www.chinanews.com.cn/gj/2023/01-23/9940937.shtml', 92),
+('日本第211届例行国会开幕 岸田文雄发表施政演说', '2023-01-23 19:30:52', 'http://www.chinanews.com.cn/gj/2023/01-23/9940920.shtml', 93),
+('俄乌谈判时间是否来临？克宫：目前不具备任何条件', '2023-01-23 19:28:48', 'http://www.chinanews.com.cn/gj/2023/01-23/9940919.shtml', 94),
+('泽连斯基“盯”上德制豹2型坦克，德国能否“松口”？', '2023-01-23 18:18:00', 'http://www.chinanews.com.cn/gj/2023/01-23/9940907.shtml', 95),
+('日本第211届例行国会开幕 岸田文雄发表施政方针演说', '2023-01-23 17:14:02', 'http://www.chinanews.com.cn/gj/2023/01-23/9940888.shtml', 96),
+('俄乌局势进展：泽连斯基称俄破坏全球粮食市场  RT法国频道账户遭冻结而关闭', '2023-01-22 19:46:05', 'http://www.chinanews.com.cn/gj/2023/01-22/9940546.shtml', 97),
+('俄乌局势进展：德国未与盟友就向乌提供坦克达成一致  俄指责乌主战派拒绝对话', '2023-01-21 19:15:35', 'http://www.chinanews.com.cn/gj/2023/01-21/9940174.shtml', 98),
+('50国国防官员相聚德国，只为讨论这件事儿', '2023-01-20 22:27:00', 'http://www.chinanews.com.cn/gj/2023/01-20/9939901.shtml', 99),
+('俄乌局势进展：美对乌新一批军援未包括坦克  北约称将向乌提供重型武器', '2023-01-20 19:52:26', 'http://www.chinanews.com.cn/gj/2023/01-20/9939824.shtml', 100);
 
 -- --------------------------------------------------------
 
@@ -202,10 +294,10 @@ INSERT INTO `news` (`name`, `date`, `url`, `num_id`) VALUES
 --
 
 CREATE TABLE `ourteammems` (
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '成员姓名',
+  `name` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT '成员姓名',
   `id` int NOT NULL COMMENT '学号',
   `num_id` int NOT NULL COMMENT '序号',
-  `major` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '专业'
+  `major` varchar(255) COLLATE utf8mb4_general_ci NOT NULL COMMENT '专业'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='团队成员表';
 
 --
@@ -226,11 +318,11 @@ INSERT INTO `ourteammems` (`name`, `id`, `num_id`, `major`) VALUES
 
 CREATE TABLE `personhomework` (
   `num_id` int NOT NULL,
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '名字',
-  `hw1` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业1',
-  `hw2` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业2',
-  `hw3` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业3',
-  `github` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'GitHub链接'
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '名字',
+  `hw1` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业1',
+  `hw2` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业2',
+  `hw3` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业3',
+  `github` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT 'GitHub链接'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='个人作业';
 
 --
@@ -238,10 +330,10 @@ CREATE TABLE `personhomework` (
 --
 
 INSERT INTO `personhomework` (`num_id`, `name`, `hw1`, `hw2`, `hw3`, `github`) VALUES
-(1, '韩佳迅', '作业1（2012682_韩佳迅）.zip', '作业2（2012682_韩佳迅）.zip', '作业3（2012682_韩佳迅）.zip', 'https://github.com/hanmaxmax'),
-(2, '林语盈', 'test1.zip', 'test2.zip', 'test3.zip', 'https://github.com/AldebaranL'),
-(3, '彭钰婷', 'test1.zip', 'test2.zip', 'test3.zip', 'https://github.com/tttran67'),
-(4, '姚鑫', 'test1.zip', 'test2.zip', 'test3.zip', 'https://github.com/yx66667');
+(1, '韩佳迅', '作业1(2012682_韩佳迅).zip', '作业2(2012682_韩佳迅).zip', '作业3(2012682_韩佳迅).zip', 'https://github.com/hanmaxmax'),
+(2, '林语盈', '作业1(2012174_林语盈).zip', '作业2(2012174_林语盈).zip', '作业3(2012174_林语盈).zip', 'https://github.com/AldebaranL'),
+(3, '彭钰婷', '作业1(2013631_彭钰婷).zip', '作业2(2013631_彭钰婷).zip', '作业3(2013631_彭钰婷).zip', 'https://github.com/tttran67'),
+(4, '姚鑫', '作业1(2014089_姚鑫).zip', '作业2(2014089_姚鑫).zip', '作业3(2014089_姚鑫).zip', 'https://github.com/yx66667');
 
 -- --------------------------------------------------------
 
@@ -251,7 +343,7 @@ INSERT INTO `personhomework` (`num_id`, `name`, `hw1`, `hw2`, `hw3`, `github`) V
 
 CREATE TABLE `tb_user_authority` (
   `tb_uaId` int UNSIGNED NOT NULL COMMENT '权限编号',
-  `tb_uaRemark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '权限说明',
+  `tb_uaRemark` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '权限说明',
   `tb_uaIsmanager` tinyint(1) DEFAULT NULL COMMENT '是否为管理员'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='用户权限表' ROW_FORMAT=DYNAMIC;
 
@@ -272,8 +364,8 @@ INSERT INTO `tb_user_authority` (`tb_uaId`, `tb_uaRemark`, `tb_uaIsmanager`) VAL
 
 CREATE TABLE `teamhomework` (
   `num_id` int NOT NULL COMMENT '序号',
-  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业名称',
-  `position` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT '文件名称'
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '作业名称',
+  `position` varchar(100) COLLATE utf8mb4_general_ci NOT NULL COMMENT '文件名称'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='团队作业';
 
 --
@@ -281,13 +373,12 @@ CREATE TABLE `teamhomework` (
 --
 
 INSERT INTO `teamhomework` (`num_id`, `name`, `position`) VALUES
-(1, '需求文档', 'test1.pdf'),
-(2, '设计文档', 'test2.pdf'),
-(3, '实现文档', 'test3.pdf'),
-(4, '用户手册', '互联网数据库开发.pdf'),
-(5, '部署文档', 'test5.pdf'),
-(6, '项目展示PPT', 'test6.pdf'),
-(7, '数据库文件', 'install.sql');
+(1, '需求文档', 'NKU-HLPY_需求文档(2012682_2012174_2013631_2014089).pdf'),
+(2, '设计文档', 'NKU-HLPY_设计文档(2012682_2012174_2013631_2014089).pdf'),
+(3, '实现文档', 'NKU-HLPY_实现文档(2012682_2012174_2013631_2014089).pdf'),
+(4, '用户手册', 'NKU-HLPY_用户手册(2012682_2012174_2013631_2014089).pdf'),
+(5, '部署文档', 'NKU-HLPY_部署文档(2012682_2012174_2013631_2014089).pdf'),
+(6, '项目展示PPT', 'NKU-HLPY_项目展示PPT(2012682_2012174_2013631_2014089).pptx');
 
 -- --------------------------------------------------------
 
@@ -297,15 +388,15 @@ INSERT INTO `teamhomework` (`num_id`, `name`, `position`) VALUES
 
 CREATE TABLE `user` (
   `id` int NOT NULL,
-  `username` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `auth_key` varchar(32) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password_hash` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `password_reset_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
-  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `username` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `auth_key` varchar(32) COLLATE utf8mb4_general_ci NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password_reset_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `status` smallint NOT NULL DEFAULT '10',
   `created_at` int NOT NULL,
   `updated_at` int NOT NULL,
-  `verification_token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL
+  `verification_token` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -437,7 +528,7 @@ ALTER TABLE `internationalrelation`
 -- 使用表AUTO_INCREMENT `news`
 --
 ALTER TABLE `news`
-  MODIFY `num_id` int NOT NULL AUTO_INCREMENT COMMENT '序号', AUTO_INCREMENT=9;
+  MODIFY `num_id` int NOT NULL AUTO_INCREMENT COMMENT '序号', AUTO_INCREMENT=101;
 
 --
 -- 使用表AUTO_INCREMENT `ourteammems`

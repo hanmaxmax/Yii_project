@@ -8,9 +8,9 @@ use yii\helpers\Html;
 
 
 /**
- * Class CustomEventsWidget
- * 放用户定义的，可以随意拖动的活动
- * @package backend\widgets
+ * Team: NKU-HLPY
+ * Coding By: 姚鑫
+ * 本文件用于网友评论界面
  */
 class CustomEventsWidget extends Widget
 {
@@ -44,14 +44,10 @@ class CustomEventsWidget extends Widget
             $count++;
             if($count>=CustomEventsWidget::LIMIT)
                 break;
-            //TODO:增加 "增加活动"与"删除活动"按钮
         }
 
         $content .= '<button id="new-custom-event">新的日常任务</button>';
         $content .= '<button id="new-student-event">新的事件</button>';
-        //        $content .= '<script>$("#new-custom-event").click(function () {
-        //            window.alert("111");
-        //    });</script>';
         $content .= '</div>';
         return $content;
     }

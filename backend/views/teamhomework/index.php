@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于后台团队作业下载
+ */
 
 use yii\helpers\Html;
 use yii\grid\GridView;
@@ -30,10 +35,15 @@ $this->params['breadcrumbs'][] = $this->title;
 
         <?php foreach ($Teamhomework as $th) : ?>
             <div class="col-lg-4">
-                <p style="font-size:24px;color:navy"><b><?= $th->name ?>：</b>
+                <p style="font-size:24px;color:navy"><b><?= $th->num_id ?>. </b>  <b><?= $th->name ?>：</b>
                 <a href="../../data/team/<?=$th->position?>"  ><span style="font-size:20px;">文件下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
             </div>
         <?php endforeach; ?>
+
+        <div class="col-lg-4">
+                <p style="font-size:24px;color:navy">  <b>数据库文件：</b>
+                <a href="../../data/install.sql"  ><span style="font-size:20px;">文件下载&nbsp;&nbsp;&nbsp;</span><br /></a></p>
+            </div>
 
         </div>
         <p align="center"><a class="btn btn-default btn-info" href="https://github.com/hanmaxmax/Yii_project">项目Github链接 >></a></p>

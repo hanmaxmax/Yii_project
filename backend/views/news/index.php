@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于后台新闻页面
+ */
 
 use yii\helpers\Html;
 use yii\grid\GridView;

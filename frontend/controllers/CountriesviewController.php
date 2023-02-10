@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Team: NKU-HLPY
+ * Coding By: 韩佳迅
+ * 本文件用于国际视野界面
+ */
 namespace frontend\controllers;
 
 use Yii;
